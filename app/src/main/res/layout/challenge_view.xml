@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:layout_margin="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/ChallengeImgView"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_margin="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/ChallengeNameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ChallengeImgView"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        tools:text="Challenge Name here"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/ChallengeBlurbTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ChallengeNameTxt"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        tools:text="Challenge Blurb here"
+        android:layout_margin="5dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/ChallengeBlurbTxt"
+        android:background="@color/black"
+        android:layout_marginTop="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/ChallengeImgView"
+        android:background="@color/black"
+        android:layout_marginBottom="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/ChallengeImgView"
+        android:background="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/ChallengeImgView"
+        android:background="@color/black"
+        />
+
+
+</RelativeLayout>
