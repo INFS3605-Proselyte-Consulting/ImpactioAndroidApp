@@ -14,6 +14,7 @@ public class ProfileActivity extends AppCompatActivity {
     public static final String INTENT_MESSAGE = "intent_message";
     private TextView tvName, tvBiography, tvImpactioRole, tvCompany, tvPosition, tvEmail, tvLinkedIn;
     private ImageView ivProfilePic;
+    private Button btnEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,12 @@ public class ProfileActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmail);
         tvLinkedIn = findViewById(R.id.tvLinkedin);
 
-        Button editSDGButton = (Button) findViewById(R.id.btnSdgEdit);
-        editSDGButton.setOnClickListener(new View.OnClickListener() {
+        Button btnEdit = findViewById(R.id.btnEdit);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
-                Intent intent = new Intent(ProfileActivity.this, ProfileSDGEdit.class);
+                Intent intent = new Intent(ProfileActivity.this, ProfileEditActivity.class);
                 startActivity(intent);
             }
         });

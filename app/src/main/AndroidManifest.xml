@@ -15,7 +15,7 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
-        <activity android:name=".ProfileSDGEdit">
+        <activity android:name=".ProfileEditActivity">
 
         </activity>
         <activity

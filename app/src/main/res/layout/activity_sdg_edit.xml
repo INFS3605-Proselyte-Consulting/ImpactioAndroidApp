@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="No Poverty"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG2"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Zero Hunger"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG3"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Good Health And Well-Being"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG4"
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Quality Education"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG5"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Gender Equality"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG6"
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Clean Water and Sanitation"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG7"
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Affordable and Clean Energy"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG8"
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Decent Work and Economic Growth"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG9"
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Industry Innovation and Infrastructure"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG10"
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Reduced Inequalities"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG11"
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Sustainable Cities and Communities"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG12"
@@ -126,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Responsible Consumption and Production"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG13"
@@ -134,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Climate Action"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG14"
@@ -142,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Life Below Water"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG15"
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Life On Land"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG16"
@@ -158,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Peace Justice and Strong Institutions"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG17"
@@ -166,12 +166,12 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="Partnerships For The Goals"
-            android:textSize="10dp" />
+            android:textSize="10sp" />
 
     </com.google.android.material.chip.ChipGroup>
 
     <Button
-        android:id="@+id/bSdgEditDone"
+        android:id="@+id/btnDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"

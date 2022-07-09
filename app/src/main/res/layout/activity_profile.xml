@@ -38,12 +38,11 @@
 
     <ImageView
         android:id="@+id/ivProfilePic"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileHeading"
+        android:layout_width="79dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/profileName"
+        app:layout_constraintTop_toBottomOf="@+id/profileName"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -63,24 +62,25 @@
         android:id="@+id/profileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Name"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ivProfilePic"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileHeading" />
 
     <TextView
         android:id="@+id/expertiseArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="Areas of Expertise"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tvPhone"
-        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
         android:id="@+id/preferredSdgs"
@@ -113,7 +113,7 @@
         android:id="@+id/tvImpactioRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:text="Impactio Role"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -196,30 +196,6 @@
         app:layout_constraintTop_toBottomOf="@+id/company" />
 
     <TextView
-        android:id="@+id/tvPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Phone"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
-
-    <TextView
-        android:id="@+id/tvTwitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Twitter"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/linkedIn"
-        app:layout_constraintTop_toBottomOf="@+id/linkedIn" />
-
-    <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -230,30 +206,6 @@
         android:textStyle="normal"
         app:layout_constraintStart_toEndOf="@+id/email"
         app:layout_constraintTop_toTopOf="@+id/email" />
-
-    <TextView
-        android:id="@+id/tvTwitter2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Twitter"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTwitter"
-        app:layout_constraintStart_toEndOf="@+id/tvTwitter" />
-
-    <TextView
-        android:id="@+id/tvPhone2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Twitter"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPhone"
-        app:layout_constraintStart_toEndOf="@+id/tvPhone" />
 
     <TextView
         android:id="@+id/linkedIn"
@@ -279,12 +231,12 @@
         app:layout_constraintTop_toTopOf="@+id/linkedIn" />
 
     <Button
-        android:id="@+id/btnSdgEdit"
-        android:layout_width="55dp"
+        android:id="@+id/btnEdit"
+        android:layout_width="86dp"
         android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:text="EDIT"
+        android:layout_marginEnd="24dp"
+        android:text="Edit"
         android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="@+id/preferredSdgs"
-        app:layout_constraintStart_toEndOf="@+id/preferredSdgs" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/preferredSdgs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
