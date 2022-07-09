@@ -12,18 +12,19 @@
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@+id/preferredSdgs"
         app:layout_constraintTop_toBottomOf="@+id/preferredSdgs"
+        app:singleSelection="false"
         app:chipSpacingHorizontal="10dp">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG1"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SDG1 No Poverty" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG2"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SDG2 Zero Hunger" />
