@@ -277,4 +277,14 @@
         android:textStyle="normal"
         app:layout_constraintStart_toEndOf="@+id/linkedIn"
         app:layout_constraintTop_toTopOf="@+id/linkedIn" />
+
+    <Button
+        android:id="@+id/btnSdgEdit"
+        android:layout_width="55dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:text="EDIT"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/preferredSdgs"
+        app:layout_constraintStart_toEndOf="@+id/preferredSdgs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
