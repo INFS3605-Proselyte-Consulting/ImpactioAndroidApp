@@ -7,35 +7,42 @@
     tools:context=".ProfileActivity">
 
     <com.google.android.material.chip.ChipGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="367dp"
+        android:layout_height="85dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        app:chipSpacingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/preferredSdgs"
         app:layout_constraintTop_toBottomOf="@+id/preferredSdgs"
-        app:singleSelection="false"
-        app:chipSpacingHorizontal="10dp">
+        app:singleSelection="false">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipSDG1"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SDG1 No Poverty" />
+            android:layout_height="48dp"
+            android:text="No Poverty"
+            android:textSize="10dp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG2"
+            android:id="@+id/chipSDG4"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SDG2 Zero Hunger" />
+            android:layout_height="48dp"
+            android:text="Quality Education"
+            android:textSize="10dp" />
+
     </com.google.android.material.chip.ChipGroup>
 
     <ImageView
         android:id="@+id/ivProfilePic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/profileHeading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileHeading"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -43,12 +50,12 @@
         android:id="@+id/profileHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Your Profile"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,43 +63,30 @@
         android:id="@+id/profileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:text="Name"
         android:textColor="#000000"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
-        app:layout_constraintTop_toTopOf="@+id/ivProfilePic" />
-
-    <TextView
-        android:id="@+id/personalDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Personal Details"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/ivProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
+        app:layout_constraintTop_toBottomOf="@+id/profileHeading" />
 
     <TextView
         android:id="@+id/expertiseArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="4dp"
         android:text="Areas of Expertise"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/personalDetails"
-        app:layout_constraintTop_toBottomOf="@+id/linkedIn" />
+        app:layout_constraintStart_toStartOf="@+id/tvPhone"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
 
     <TextView
         android:id="@+id/preferredSdgs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="28dp"
         android:text="Preferred SDGs"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -101,36 +95,25 @@
         app:layout_constraintTop_toBottomOf="@+id/expertiseArea" />
 
     <TextView
-        android:id="@+id/biographyHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:text="Biography"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/profileName" />
-
-    <TextView
         android:id="@+id/tvBiography"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="291dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
         android:text="Biography"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="12sp"
         android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/biographyHeading" />
+        app:layout_constraintTop_toTopOf="@+id/ivProfilePic" />
 
     <TextView
         android:id="@+id/tvImpactioRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="Impactio Role"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -142,19 +125,19 @@
         android:id="@+id/impactioRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="Impactio Role:"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/personalDetails"
-        app:layout_constraintTop_toBottomOf="@+id/personalDetails" />
+        app:layout_constraintStart_toStartOf="@+id/ivProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
 
     <TextView
         android:id="@+id/company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="Company:"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -166,7 +149,7 @@
         android:id="@+id/tvCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="Company"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -178,19 +161,21 @@
         android:id="@+id/position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="128dp"
         android:text="Position:"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/company"
-        app:layout_constraintTop_toBottomOf="@+id/company" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCompany"
+        app:layout_constraintTop_toTopOf="@+id/tvCompany" />
 
     <TextView
         android:id="@+id/tvPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="Position"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -202,19 +187,43 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:text="Email:"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/position"
-        app:layout_constraintTop_toBottomOf="@+id/position" />
+        app:layout_constraintStart_toStartOf="@+id/company"
+        app:layout_constraintTop_toBottomOf="@+id/company" />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Phone"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <TextView
+        android:id="@+id/tvTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Twitter"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/linkedIn"
+        app:layout_constraintTop_toBottomOf="@+id/linkedIn" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="Email"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -223,22 +232,45 @@
         app:layout_constraintTop_toTopOf="@+id/email" />
 
     <TextView
+        android:id="@+id/tvTwitter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Twitter"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTwitter"
+        app:layout_constraintStart_toEndOf="@+id/tvTwitter" />
+
+    <TextView
+        android:id="@+id/tvPhone2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Twitter"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPhone"
+        app:layout_constraintStart_toEndOf="@+id/tvPhone" />
+
+    <TextView
         android:id="@+id/linkedIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="LinkedIn:"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintStart_toStartOf="@+id/position"
+        app:layout_constraintTop_toTopOf="@+id/tvEmail" />
 
     <TextView
         android:id="@+id/tvLinkedin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:text="LinkedIn"
         android:textColor="#000000"
         android:textSize="14sp"

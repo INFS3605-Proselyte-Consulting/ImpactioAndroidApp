@@ -26,5 +26,6 @@ public class ProfileActivity extends AppCompatActivity {
         tvPosition = findViewById(R.id.tvPosition);
         tvEmail = findViewById(R.id.tvEmail);
         tvLinkedIn = findViewById(R.id.tvLinkedin);
+
     }
 }
