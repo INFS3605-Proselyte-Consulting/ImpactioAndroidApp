@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmail);
         tvLinkedIn = findViewById(R.id.tvLinkedin);
 
-        Button btnEdit = findViewById(R.id.btnEdit);
+        btnEdit = findViewById(R.id.btnEdit);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
