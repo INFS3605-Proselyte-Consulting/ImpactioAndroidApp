@@ -14,7 +14,7 @@ public class ProfileActivity extends AppCompatActivity {
     public static final String INTENT_MESSAGE = "intent_message";
     private TextView tvName, tvBiography, tvImpactioRole, tvCompany, tvPosition, tvEmail, tvLinkedIn;
     private ImageView ivProfilePic;
-    private Button btnEdit;
+    private Button btnEdit, btnLogOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvPosition = findViewById(R.id.tvPosition);
         tvEmail = findViewById(R.id.tvEmail);
         tvLinkedIn = findViewById(R.id.tvLinkedin);
+        btnLogOut = findViewById(R.id.btnLogOut);
 
         btnEdit = findViewById(R.id.btnEdit);
         btnEdit.setOnClickListener(new View.OnClickListener() {
