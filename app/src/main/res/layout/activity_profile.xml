@@ -6,36 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-    <com.google.android.material.chip.ChipGroup
-        android:layout_width="367dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        app:chipSpacingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/preferredSdgs"
-        app:layout_constraintTop_toBottomOf="@+id/preferredSdgs"
-        app:singleSelection="false">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG1"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="No Poverty"
-            android:textSize="10dp" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG4"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="Quality Education"
-            android:textSize="10dp" />
-
-    </com.google.android.material.chip.ChipGroup>
-
     <ImageView
         android:id="@+id/ivProfilePic"
         android:layout_width="79dp"
@@ -234,18 +204,39 @@
         android:id="@+id/btnEdit"
         android:layout_width="69dp"
         android:layout_height="35dp"
+        android:layout_marginStart="178dp"
         android:layout_marginEnd="24dp"
         android:text="Edit"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/preferredSdgs"
         app:layout_constraintTop_toTopOf="@+id/preferredSdgs" />
 
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="105dp"
         android:layout_height="40dp"
+        android:layout_marginStart="31dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="21dp"
         android:text="Log out"
+        app:layout_constraintBottom_toTopOf="@+id/tvBiography"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileHeading"
         app:layout_constraintTop_toTopOf="@+id/profileHeading" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="368dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="308dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEdit"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

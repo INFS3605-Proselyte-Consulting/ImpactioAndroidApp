@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_alignWithParentIfMissing="false">
 
     <TextView
         android:id="@+id/sdgEditTitle"
@@ -33,7 +34,7 @@
         app:singleSelection="false">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG1"
+            android:id="@+id/chipNoPoverty"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -41,7 +42,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG2"
+            android:id="@+id/chipZeroHunger"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -49,7 +50,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG3"
+            android:id="@+id/chipGoodHealth"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -57,7 +58,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG4"
+            android:id="@+id/chipQuality"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -65,7 +66,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG5"
+            android:id="@+id/chipGender"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -73,7 +74,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG6"
+            android:id="@+id/chipCleanWater"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -81,7 +82,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG7"
+            android:id="@+id/chipAffordable"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -89,7 +90,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG8"
+            android:id="@+id/chipDecent"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -97,7 +98,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG9"
+            android:id="@+id/chipIndustry"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -105,7 +106,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG10"
+            android:id="@+id/chipReduced"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -113,7 +114,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG11"
+            android:id="@+id/chipSustainable"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -121,7 +122,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG12"
+            android:id="@+id/chipResponsible"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -129,7 +130,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG13"
+            android:id="@+id/chipClimate"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -137,7 +138,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG14"
+            android:id="@+id/chipLifeBelow"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -145,7 +146,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG15"
+            android:id="@+id/chipLifeOn"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -153,7 +154,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG16"
+            android:id="@+id/chipPeace"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -161,7 +162,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG17"
+            android:id="@+id/chipPartnership"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"

@@ -1,5 +1,6 @@
 package com.example.impactioproselyteconsulting;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,12 +10,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.chip.Chip;
+
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
     public static final String INTENT_MESSAGE = "intent_message";
     private TextView tvName, tvBiography, tvImpactioRole, tvCompany, tvPosition, tvEmail, tvLinkedIn;
     private ImageView ivProfilePic;
     private Button btnEdit, btnLogOut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +36,29 @@ public class ProfileActivity extends AppCompatActivity {
         tvLinkedIn = findViewById(R.id.tvLinkedin);
         btnLogOut = findViewById(R.id.btnLogOut);
 
+
+
+
+
         btnEdit = findViewById(R.id.btnEdit);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
                 Intent intent = new Intent(ProfileActivity.this, ProfileEditActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 101);
             }
         });
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==101){
+            TextView textView = findViewById(R.id.tvResult);
+            textView.setText(data.getStringExtra("data"));
+
+        }
     }
 }
