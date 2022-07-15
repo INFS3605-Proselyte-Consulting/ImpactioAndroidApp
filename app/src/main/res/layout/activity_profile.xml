@@ -11,43 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="205dp"
         app:itemBackground="@color/teal_700"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"
         app:menu="@menu/menu_navigation" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:layout_width="367dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        app:chipSpacingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/preferredSdgs"
-        app:layout_constraintTop_toBottomOf="@+id/preferredSdgs"
-        app:singleSelection="false">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG1"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="No Poverty"
-            android:textSize="10dp" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipSDG4"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="Quality Education"
-            android:textSize="10dp" />
-
-    </com.google.android.material.chip.ChipGroup>
 
     <ImageView
         android:id="@+id/ivProfilePic"
@@ -261,4 +233,19 @@
         android:text="Log out"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profileHeading" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="360dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="30dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEdit"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.impactioproselyteconsulting;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.menuNav_Discover);
@@ -36,15 +37,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.menuNav_Dashboard:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.menuNav_Discover:
-                        startActivity(new Intent(getApplicationContext(),DiscoverChallengeActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), DiscoverChallengeActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.menuNav_Profile:
                         return true;
@@ -70,9 +70,20 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
                 Intent intent = new Intent(ProfileActivity.this, ProfileEditActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 101);
             }
         });
-
     }
+
+        // Filter and Produce selected SDGs
+        @Override
+        protected void onActivityResult ( int requestCode, int resultCode, @Nullable Intent data){
+            super.onActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == 101) {
+                TextView textView = findViewById(R.id.tvResult);
+                textView.setText(data.getStringExtra("data"));
+
+            }
+        }
 }

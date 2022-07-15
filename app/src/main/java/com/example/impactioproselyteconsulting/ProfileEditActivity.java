@@ -80,6 +80,9 @@ public class ProfileEditActivity extends AppCompatActivity {
 
 
         Button btnDone = findViewById(R.id.btnDone);
+
+        ///Filter Method
+
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,8 +92,7 @@ public class ProfileEditActivity extends AppCompatActivity {
                 finish();
 
 
-                //Intent intent = new Intent(ProfileEditActivity.this, ProfileActivity.class);
-                //startActivity(intent);
+
             }
         });
         // Get handle for view elements
