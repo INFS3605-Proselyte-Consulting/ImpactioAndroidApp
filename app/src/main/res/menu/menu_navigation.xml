@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuNav_Dashboard"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/menuNav_Discover"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Discover" />
+
+    <item
+        android:id="@+id/menuNav_Profile"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Profile" />
+
+</menu>
