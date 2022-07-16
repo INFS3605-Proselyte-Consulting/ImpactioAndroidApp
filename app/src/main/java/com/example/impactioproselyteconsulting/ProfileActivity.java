@@ -29,8 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.menuNav_Discover);
+        // Set Profile selected
+        bottomNavigationView.setSelectedItemId(R.id.menuNav_Profile);
 
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

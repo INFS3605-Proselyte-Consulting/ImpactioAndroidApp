@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/menuNav_Dashboard"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@android:drawable/ic_menu_mapmode"
         android:title="Dashboard" />
     <item
         android:id="@+id/menuNav_Discover"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@android:drawable/ic_menu_today"
         android:title="Discover" />
 
     <item
         android:id="@+id/menuNav_Profile"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@drawable/fui_ic_anonymous_white_24dp"
         android:title="Profile" />
 
 </menu>

@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.menuNav_Discover);
+        // Set Dashboard selected
+        bottomNavigationView.setSelectedItemId(R.id.menuNav_Dashboard);
 
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
