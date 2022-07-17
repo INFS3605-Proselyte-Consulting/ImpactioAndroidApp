@@ -71,8 +71,8 @@ public class DiscoverChallengeActivity extends AppCompatActivity {
     }
 
     protected void launchDetailActivity(String challengeName) {
-        Intent intent = new Intent(DiscoverChallengeActivity.this, ChallengeDetailActivity.class);
-        intent.putExtra(ChallengeDetailActivity.INTENT_MESSAGE, challengeName);
+        Intent intent = new Intent(this, ChallengeDetailActivity.class);
+        intent.putExtra("Name", challengeName);
         startActivity(intent);
 
     }

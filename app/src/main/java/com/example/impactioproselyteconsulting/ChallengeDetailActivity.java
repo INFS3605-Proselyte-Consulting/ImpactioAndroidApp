@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ChallengeDetailActivity extends AppCompatActivity {
-    public static final String INTENT_MESSAGE = "message";
-    private static final String TAG = "DetailActivity";
 
     private ImageView challengeImageViewDtl;
     private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl;
@@ -31,15 +29,17 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         challengeDescTextDtl = findViewById(R.id.ChallengeDescTxtDetail);
 
         Intent intent = getIntent();
+        Challenge challenge = Challenge.getChallenge(intent.getStringExtra("Name"));
+
+        loadChallengeData(challenge);
+
 //        TODO: fix this - gives null object reference
 //        String challengeName = intent.getStringExtra(INTENT_MESSAGE);
 //        Challenge challenge = Challenge.getChallenge(challengeName);
-//        Log.d(TAG, "INTENT_MESSAGE = " + challengeName);
+
 
         // test
-        Challenge challenge = Challenge.getChallenge("The Great Fashion Decarbonisation");
-
-        loadChallengeData(challenge);
+        //Challenge challenge = Challenge.getChallenge("The Great Fashion Decarbonisation");
     }
 
     private void loadChallengeData(Challenge challenge) {

@@ -39,6 +39,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         holder.challengeNameText.setText(challenge.getChallengeName());
         holder.challengeBlurbText.setText(challenge.getChallengeBlurb());
         holder.challengeImageView.setImageResource(challenge.getChallengeImage());
+        holder.itemView.setTag(challenge.getChallengeName());
     }
 
     @Override
