@@ -47,4 +47,7 @@ dependencies {
     // Material components: for the chips ui
     implementation 'com.google.android.material:material:1.1.0-alpha05'
     implementation 'com.google.android.material:material:1.2.1'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button discoverChallengesBtn = (Button) findViewById(R.id.DiscoverChallengesButton);
+       /* Button discoverChallengesBtn = (Button) findViewById(R.id.DiscoverChallengesButton);
         discoverChallengesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, DiscoverChallengeActivity.class);
                 startActivity(intent);
             }
-        });
+        }); */
 
         Button profileMainBtn = (Button) findViewById(R.id.bProfileMain);
         profileMainBtn.setOnClickListener(new View.OnClickListener() {
