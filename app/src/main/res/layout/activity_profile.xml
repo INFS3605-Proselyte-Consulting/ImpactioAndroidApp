@@ -53,13 +53,14 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBiography"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:layout_margin="5dp"
-            app:cardElevation="30dp"
+            android:layout_weight="1"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">>
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="30dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -69,8 +70,8 @@
                 <ImageView
                     android:layout_width="62dp"
                     android:layout_height="65dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
                     android:src="@drawable/bio_icon">
 
                 </ImageView>
@@ -107,13 +108,14 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAreaOfExpertise"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:layout_margin="5dp"
-            app:cardElevation="30dp"
+            android:layout_weight="1"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">>
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="30dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -161,13 +163,14 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSustainable"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:layout_margin="5dp"
-            app:cardElevation="30dp"
+            android:layout_weight="1"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">>
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="30dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -215,13 +218,14 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPreferredTags"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:layout_margin="5dp"
-            app:cardElevation="30dp"
+            android:layout_weight="1"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">>
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="30dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"

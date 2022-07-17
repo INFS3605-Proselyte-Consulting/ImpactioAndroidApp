@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactioProselyteConsulting">
         <activity
+            android:name=".ProfilePreferredTagsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileAreaOfExpertiseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileBiographyActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -25,7 +34,7 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
-        <activity android:name=".ProfileEditActivity"></activity>
+        <activity android:name=".ProfileEditActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -3,6 +3,7 @@ package com.example.impactioproselyteconsulting;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +15,13 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "ProfileActivity";
     public static final String INTENT_MESSAGE = "intent_message";
     private TextView tvName, tvBiography;
     private ImageView ivProfilePic;
     private Button btnEdit, btnLogOut;
+    private CardView cardBiography, cardAreaOfExpertise, cardSustainable, cardPreferredTags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,21 @@ public class ProfileActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvBiography = findViewById(R.id.tvBiography);
         btnLogOut = findViewById(R.id.btnLogOut);
+        cardBiography = (CardView) findViewById(R.id.cardBiography);
+        cardAreaOfExpertise = (CardView) findViewById(R.id.cardAreaOfExpertise);
+        cardSustainable = (CardView) findViewById(R.id.cardSustainable);
+        cardPreferredTags = (CardView) findViewById(R.id.cardPreferredTags);
+
+        cardBiography.setOnClickListener(this);
+        cardAreaOfExpertise.setOnClickListener(this);
+        cardSustainable.setOnClickListener(this);
+        cardPreferredTags.setOnClickListener(this);
+
+
+
+
+
+
 
 //        btnEdit = findViewById(R.id.btnEdit);
 //        btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -70,15 +87,46 @@ public class ProfileActivity extends AppCompatActivity {
 //        });
     }
 
-        // Filter and Produce selected SDGs
-        @Override
-        protected void onActivityResult ( int requestCode, int resultCode, @Nullable Intent data){
-            super.onActivityResult(requestCode, resultCode, data);
+    //Switch to desired profile activity when cardView is clicked
 
-            if (requestCode == 101) {
-                TextView textView = findViewById(R.id.tvResult);
-                textView.setText(data.getStringExtra("data"));
+    @Override
+    public void onClick(View view) {
+        Intent i;
 
-            }
+        switch (view.getId()){
+            case R.id.cardBiography:
+                i = new Intent(this,ProfileBiographyActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardAreaOfExpertise:
+                i = new Intent(this, ProfileAreaOfExpertiseActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardSustainable:
+                i = new Intent(this, ProfileEditActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardPreferredTags:
+                i = new Intent(this, ProfilePreferredTagsActivity.class);
+                startActivity(i);
+                break;
+
         }
+
+    }
+
+    //        Filter and Produce selected SDGs
+ //       @Override
+ //       protected void onActivityResult ( int requestCode, int resultCode, @Nullable Intent data){
+ //           super.onActivityResult(requestCode, resultCode, data);
+//
+  //          if (requestCode == 101) {
+ //               TextView textView = findViewById(R.id.tvResult);
+  //              textView.setText(data.getStringExtra("data"));
+//
+  //          }
+   //     }
 }
