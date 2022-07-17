@@ -19,20 +19,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize">
-
-                <Button
-                    android:id="@+id/bProfileMain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="11dp"
-                    android:text="Profile"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </RelativeLayout>
+                android:layout_height="?actionBarSize"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -59,15 +59,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }); */
 
-        Button profileMainBtn = (Button) findViewById(R.id.bProfileMain);
-        profileMainBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //launch profile activity
-                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button profileMainBtn = (Button) findViewById(R.id.bProfileMain);
+//        profileMainBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //launch profile activity
+//                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         }

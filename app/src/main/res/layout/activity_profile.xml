@@ -53,6 +53,7 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBiography"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -107,6 +108,7 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAreaOfExpertise"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -161,6 +163,7 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSustainable"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -215,6 +218,7 @@
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPreferredTags"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
