@@ -49,11 +49,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="118dp"
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardBiography"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -68,8 +67,8 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="62dp"
-                    android:layout_height="65dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/bio_icon">
@@ -104,11 +103,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="118dp"
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardAreaOfExpertise"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -123,7 +121,7 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="62dp"
+                    android:layout_width="30dp"
                     android:layout_height="65dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
@@ -159,11 +157,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="118dp"
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardSustainable"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -178,8 +175,8 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="62dp"
-                    android:layout_height="65dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/sdg">
@@ -214,11 +211,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="118dp"
         android:padding="5dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardPreferredTags"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
@@ -233,8 +229,8 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="62dp"
-                    android:layout_height="65dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:src="@drawable/tag">
@@ -267,17 +263,21 @@
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/teal_700"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_navigation" />
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:itemBackground="@color/teal_700"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_navigation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
