@@ -2,28 +2,78 @@ package com.example.impactioproselyteconsulting;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.logging.Filter;
 
 public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.ChallengeViewHolder> {
-
+    private static final String TAG = "ChallengeAdapterActivity";
     //Context context;
-    List<Challenge> challenges;
+    List<Challenge> mChallenges, mChallengesFiltered;
     private RecyclerViewClickListener mListener;
+
+    // Constants for sort method
+    public static final int SORT_DESTINATION_NAME_ASCENDING = 1;
+    public static final int SORT_DESTINATION_NAME_DESCENDING = 2;
 
     public ChallengeAdapter(List<Challenge> challenges, RecyclerViewClickListener listener) {
         //this.context = context;
-        this.challenges = challenges;
+        mChallenges = challenges;
+        mChallengesFiltered = challenges;
         mListener = listener;
     }
+
+//    @Override
+//    public Filter getFilter() {
+//        return new Filter() {
+//            // Perform the search to get filtered results and send to publishResults method
+//            @Override
+//            protected FilterResults performFiltering(CharSequence charSequence) {
+//                // Compare charString to charSequence
+//                String charString = charSequence.toString();
+//                // if search bar is empty
+//                if (charString.isEmpty()){
+//                    mChallengesFiltered = mChallenges;
+//                } else {
+//                    ArrayList<Challenge> filteredList = new ArrayList<>();
+//                    // Go through the entire list of destinations
+//                    for (Challenge challenge: mChallenges){
+//                        // Convert destination name and charString to lower case so the search function is not case sensitive
+//                        if(challenge.getChallengeName().toLowerCase().contains(charString.toLowerCase())){
+//                            // If destination name contains charString, add the destination to filteredList
+//                            filteredList.add(challenge);
+//                        }
+//                    }
+//                    // Set the filtered destination into filtered results
+//                    mChallengesFiltered = filteredList;
+//                }
+//                FilterResults filterResults = new FilterResults();
+//                filterResults.values = mChallengesFiltered;
+//                return filterResults;
+//            }
+//
+//            // Display the filtered results
+//            @Override
+//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+//                mChallengesFiltered = (ArrayList<Challenge>) filterResults.values;
+//                // Notify the adapter about the changes
+//                notifyDataSetChanged();
+//            }
+//        };
+//    }
 
     @NonNull
     @Override
@@ -34,7 +84,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
 
     @Override
     public void onBindViewHolder(@NonNull ChallengeAdapter.ChallengeViewHolder holder, int position) {
-        Challenge challenge = challenges.get(position);
+        Challenge challenge = mChallenges.get(position);
 
         holder.challengeNameText.setText(challenge.getChallengeName());
         holder.challengeBlurbText.setText(challenge.getChallengeBlurb());
@@ -44,7 +94,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
 
     @Override
     public int getItemCount() {
-        return challenges.size();
+        return mChallenges.size();
     }
 
     //ClickListener interface
@@ -75,4 +125,28 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         }
     }
 
+    // Use the Java Collections.sort() and Comparator methods to sort the list
+    public void sort(final int sortMethod){
+        // Only sort the list if the list has 1 or more items
+        if(mChallengesFiltered.size() > 0){
+            // Pass the list to Collection.sort()
+            Collections.sort(mChallengesFiltered, new Comparator<Challenge>() {
+                @Override
+                public int compare(Challenge c1, Challenge c2) {
+                    if(sortMethod == SORT_DESTINATION_NAME_ASCENDING){
+                        // Sort the list by Challenge name in ascending order (from A to Z)
+                        // Compare c1 with c2
+                        return c1.getChallengeName().compareTo(c2.getChallengeName());
+                    } else if(sortMethod == SORT_DESTINATION_NAME_DESCENDING) {
+                        // Sort the list by Challenge name in descending order (from Z to A)
+                        // Compare c2 with c1
+                        return c2.getChallengeName().compareTo(c1.getChallengeName());
+                    }
+                    return 0;
+                }
+            });
+        }
+        // Notify the adapter on changes to the list
+        notifyDataSetChanged();
+    }
 }
