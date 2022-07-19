@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.logging.Filter;
 
-public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.ChallengeViewHolder> {
+public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.ChallengeViewHolder> implements Filterable {
     private static final String TAG = "ChallengeAdapterActivity";
     //Context context;
     List<Challenge> mChallenges, mChallengesFiltered;
@@ -36,45 +36,6 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         mListener = listener;
     }
 
-//    @Override
-//    public Filter getFilter() {
-//        return new Filter() {
-//            // Perform the search to get filtered results and send to publishResults method
-//            @Override
-//            protected FilterResults performFiltering(CharSequence charSequence) {
-//                // Compare charString to charSequence
-//                String charString = charSequence.toString();
-//                // if search bar is empty
-//                if (charString.isEmpty()){
-//                    mChallengesFiltered = mChallenges;
-//                } else {
-//                    ArrayList<Challenge> filteredList = new ArrayList<>();
-//                    // Go through the entire list of destinations
-//                    for (Challenge challenge: mChallenges){
-//                        // Convert destination name and charString to lower case so the search function is not case sensitive
-//                        if(challenge.getChallengeName().toLowerCase().contains(charString.toLowerCase())){
-//                            // If destination name contains charString, add the destination to filteredList
-//                            filteredList.add(challenge);
-//                        }
-//                    }
-//                    // Set the filtered destination into filtered results
-//                    mChallengesFiltered = filteredList;
-//                }
-//                FilterResults filterResults = new FilterResults();
-//                filterResults.values = mChallengesFiltered;
-//                return filterResults;
-//            }
-//
-//            // Display the filtered results
-//            @Override
-//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-//                mChallengesFiltered = (ArrayList<Challenge>) filterResults.values;
-//                // Notify the adapter about the changes
-//                notifyDataSetChanged();
-//            }
-//        };
-//    }
-
     @NonNull
     @Override
     public ChallengeAdapter.ChallengeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -84,7 +45,7 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
 
     @Override
     public void onBindViewHolder(@NonNull ChallengeAdapter.ChallengeViewHolder holder, int position) {
-        Challenge challenge = mChallenges.get(position);
+        Challenge challenge = mChallengesFiltered.get(position);
 
         holder.challengeNameText.setText(challenge.getChallengeName());
         holder.challengeBlurbText.setText(challenge.getChallengeBlurb());
@@ -94,7 +55,46 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
 
     @Override
     public int getItemCount() {
-        return mChallenges.size();
+        return mChallengesFiltered.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            // Perform the search to get filtered results and send to publishResults method
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                // Compare charString to charSequence
+                String charString = charSequence.toString();
+                // if search bar is empty
+                if (charString.isEmpty()){
+                    mChallengesFiltered = mChallenges;
+                } else {
+                    ArrayList<Challenge> filteredList = new ArrayList<>();
+                    // Go through the entire list of destinations
+                    for (Challenge challenge: mChallenges){
+                        // Convert destination name and charString to lower case so the search function is not case sensitive
+                        if(challenge.getChallengeName().toLowerCase().contains(charString.toLowerCase())){
+                            // If destination name contains charString, add the destination to filteredList
+                            filteredList.add(challenge);
+                        }
+                    }
+                    // Set the filtered destination into filtered results
+                    mChallengesFiltered = filteredList;
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = mChallengesFiltered;
+                return filterResults;
+            }
+
+            // Display the filtered results
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                mChallengesFiltered = (ArrayList<Challenge>) filterResults.values;
+                // Notify the adapter about the changes
+                notifyDataSetChanged();
+            }
+        };
     }
 
     //ClickListener interface

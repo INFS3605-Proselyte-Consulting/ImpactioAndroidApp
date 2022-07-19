@@ -90,24 +90,24 @@ public class DiscoverChallengeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_challenge, menu);
-//        // Get the search item from the menu
-//        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                // Call Filterable method from the adapter class to perform filtering
-//                // Pass the string query into the method
-//                mAdapter.getFilter().filter(query);
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                // Call Filterable method from the adapter class to perform filtering
-//                mAdapter.getFilter().filter(newText);
-//                return false;
-//            }
-//        });
+        // Get the search item from the menu
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Call Filterable method from the adapter class to perform filtering
+                // Pass the string query into the method
+                mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Call Filterable method from the adapter class to perform filtering
+                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         return true;
     }
 
