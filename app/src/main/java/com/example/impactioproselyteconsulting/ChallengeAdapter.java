@@ -1,7 +1,5 @@
 package com.example.impactioproselyteconsulting;
 
-import android.content.ClipData;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +23,14 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         mListener = listener;
     }
 
+
+
     @NonNull
     @Override
     public ChallengeAdapter.ChallengeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.challenge_view, parent, false);
         return new ChallengeViewHolder(v, mListener);
+
     }
 
     @Override
@@ -62,9 +63,9 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         // Constructor method for ChallengeViewHolder class
         public ChallengeViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
-            challengeImageView = itemView.findViewById(R.id.ChallengeImgView);
-            challengeNameText = itemView.findViewById(R.id.ChallengeNameTxt);
-            challengeBlurbText = itemView.findViewById(R.id.ChallengeBlurbTxt);
+            challengeImageView = itemView.findViewById(R.id.ChallengeImgViewDetail);
+            challengeNameText = itemView.findViewById(R.id.ChallengeNameTxtDetail);
+            challengeBlurbText = itemView.findViewById(R.id.ChallengeBlurbTxtDetail);
             mListener = listener;
             itemView.setOnClickListener(this);
         }
