@@ -112,9 +112,9 @@ public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.Chal
         // Constructor method for ChallengeViewHolder class
         public ChallengeViewHolder(@NonNull View itemView, RecyclerViewClickListener listener) {
             super(itemView);
-            challengeImageView = itemView.findViewById(R.id.ChallengeImgView);
-            challengeNameText = itemView.findViewById(R.id.ChallengeNameTxt);
-            challengeBlurbText = itemView.findViewById(R.id.ChallengeBlurbTxt);
+            challengeImageView = itemView.findViewById(R.id.ChallengeImgViewDetail);
+            challengeNameText = itemView.findViewById(R.id.ChallengeNameTxtDetail);
+            challengeBlurbText = itemView.findViewById(R.id.ChallengeBlurbTxtDetail);
             mListener = listener;
             itemView.setOnClickListener(this);
         }
