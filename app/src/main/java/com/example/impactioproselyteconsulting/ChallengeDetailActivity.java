@@ -23,6 +23,34 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_challenge);
         setTitle("Challenge Details");
 
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Dashboard selected
+        bottomNavigationView.setSelectedItemId(R.id.menuNav_Dashboard);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.menuNav_Dashboard:
+                        return true;
+                    case R.id.menuNav_Discover:
+                        startActivity(new Intent(getApplicationContext(),DiscoverChallengeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuNav_Profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
         challengeImageViewDtl = findViewById(R.id.ChallengeImgViewDetail);
         challengeNameTextDtl = findViewById(R.id.ChallengeNameTxtDetail);
         challengeBlurbTextDtl = findViewById(R.id.ChallengeBlurbTxtDetail);
@@ -32,14 +60,6 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         Challenge challenge = Challenge.getChallenge(intent.getStringExtra("Name"));
 
         loadChallengeData(challenge);
-
-//        TODO: fix this - gives null object reference
-//        String challengeName = intent.getStringExtra(INTENT_MESSAGE);
-//        Challenge challenge = Challenge.getChallenge(challengeName);
-
-
-        // test
-        //Challenge challenge = Challenge.getChallenge("The Great Fashion Decarbonisation");
     }
 
     private void loadChallengeData(Challenge challenge) {
