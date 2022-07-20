@@ -18,15 +18,6 @@
         <activity
             android:name=".ProfileBiographyActivity"
             android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".DiscoverChallengeActivity" />
         <activity
             android:name=".ChallengeDetailActivity"
@@ -37,12 +28,18 @@
         <activity android:name=".ProfileEditActivity" />
         <activity
             android:name=".MainActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity">
+
         </activity>
     </application>
 

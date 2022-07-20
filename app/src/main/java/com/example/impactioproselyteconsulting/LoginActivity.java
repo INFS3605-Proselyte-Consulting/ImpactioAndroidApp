@@ -1,83 +1,95 @@
 package com.example.impactioproselyteconsulting;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
-import com.firebase.ui.auth.IdpResponse;
-import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
-    private final static String TAG = "LoginActivity";
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle("Login/Register");
-        //Initialise FirebaseAuth
-        mAuth = FirebaseAuth.getInstance();
-        //!!!! This next line literally forces the user to sign out everytime the app is launched
-        //This is because the cached data keeps the user signed in. Hamid can wipe his data but
-        //I can't on my computer so this is just for convenience sake.
-        FirebaseAuth.getInstance().signOut();
-        //Check if user has signed in
-        currentUser = mAuth.getCurrentUser();
-        if(currentUser == null){
-            //Choose Authentication Provider
-            List<AuthUI.IdpConfig> providers = Arrays.asList(
-                    new AuthUI.IdpConfig.EmailBuilder().build());
-            //Create and launch sign-in intent
-            Intent signInIntent = AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .setIsSmartLockEnabled(false)
-                    .build();
-            //Launch the intent
-            signInLauncher.launch(signInIntent);
-        } else {
-            //Launch MainActivity
-            launchMainActivity();
-        }
-    }
 
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
-            new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
+    private static final String TAG = "LoginActivity";
+    //initialise our connection to the firebase authentication
+    private FirebaseAuth mAuth;
+
+    public EditText mEmail,mPassword;
+
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        setTitle("Login");
+
+        mEmail = findViewById(R.id.ptLoginEmail);
+        mPassword = findViewById(R.id.ptLoginPassword);
+
+        // Get handle to the button elements
+        Button btnLogin = findViewById(R.id.bLoginLogin);
+        Button btnRegister = findViewById(R.id.bLoginRegister);
+
+        // Launch Register Activity when Register button is clicked
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: btnRegister clicked launch RegisterActivity");
+                launchRegisterActivity("Message from main activity");
+            }
+        });
+
+        //Fully instantiate the firestore authorization instance.
+        mAuth = FirebaseAuth.getInstance();
+
+        // Implement onClickListener for the login button
+        //On click listener checks if the fields are filled and then authenticates the user before letting them login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = mEmail.getText().toString();
+                String password = mPassword.getText().toString();
+
+                // Check-if-empty conditional statement.
+                if(!TextUtils.isEmpty(email)&&!TextUtils.isEmpty(password)){
+                    mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            // This will either send them to the topic activity screen OR it will display an error on console. This is also the case for any Toasts below.
+                            if(task.isSuccessful()){
+                                Log.d(TAG, "Login button is clicked, launch Topic Activity.");
+                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                finish();
+                            } else {
+                                Toast.makeText(LoginActivity.this, "ERROR! Your details are invalid! Please try again. ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(LoginActivity.this,"You must enter the correct login details!",Toast.LENGTH_SHORT).show();
                 }
             }
-    );
+        });
 
-    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
-        IdpResponse response = result.getIdpResponse();
-        if (result.getResultCode() == RESULT_OK) {
-            // Successfully signed in
-            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-            launchMainActivity();
-        } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            Log.d(TAG, "Authentication failed!");
-        }
     }
 
-    private void launchMainActivity(){
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+    private void launchRegisterActivity(String message) {
+        // Explicit intent
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        intent.putExtra(RegisterActivity.INTENT_MESSAGE, message);
+        // Start the intent
         startActivity(intent);
     }
+
 }
