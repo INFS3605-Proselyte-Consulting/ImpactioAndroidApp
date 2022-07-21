@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -84,6 +85,11 @@ public class DiscoverChallengeActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    // Show message when user clicks to like project
+//    public void onCustomToggleClick (View view) {
+//        Toast.makeText(this, "Favourited!", Toast.LENGTH_SHORT).show();
+//    }
 
     // Instantiate the menu
     @Override

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
@@ -15,6 +16,18 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp" />
+
+    <ToggleButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/toggle_selector"
+        android:textOff=""
+        android:textOn="" />
 
     <TextView
         android:id="@+id/ChallengeNameTxtDetail"
@@ -70,6 +83,5 @@
         android:layout_toLeftOf="@id/ChallengeImgViewDetail"
         android:background="@color/black"
         />
-
 
 </RelativeLayout>
