@@ -31,59 +31,59 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.518" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvRole"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="Curator"
+        android:layout_width="184dp"
+        android:layout_height="44dp"
+        android:hint="Edit Role"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintVertical_bias="0.53" />
 
-    <TextView
-        android:id="@+id/tvTwitter"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="twitter.com/JessicaSmith"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
-
-    <TextView
-        android:id="@+id/tvvLinkdIn"
-        android:layout_width="190dp"
+    <EditText
+        android:id="@+id/tvLinkdIn"
+        android:layout_width="186dp"
         android:layout_height="43dp"
-        android:text="www.linkedin.com/in/JessicaSmith"
+        android:hint="Edit LinkdIn URL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone"
+        app:layout_constraintVertical_bias="0.117" />
+
+    <EditText
+        android:id="@+id/tvTwitter"
+        android:layout_width="186dp"
+        android:layout_height="38dp"
+        android:hint="Edit Twitter URL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.94" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvPhone"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="04040404020"
+        android:layout_width="181dp"
+        android:layout_height="41dp"
+        android:hint="Edit Phone Number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintHorizontal_bias="0.709"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.797" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvEmail"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="JessicaSmith@Oscorp.org"
+        android:layout_width="190dp"
+        android:layout_height="49dp"
+        android:hint="Edit Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.738"
@@ -91,11 +91,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.728" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvCompany"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="Oscorp"
+        android:layout_width="193dp"
+        android:layout_height="41dp"
+        android:hint="Edit Company"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
@@ -103,11 +103,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.594" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvPosition"
-        android:layout_width="189dp"
-        android:layout_height="23dp"
-        android:text="Head Of Media Relations"
+        android:layout_width="190dp"
+        android:layout_height="49dp"
+        android:hint="Edit Position"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.738"
@@ -173,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.925" />
 
     <TextView
         android:id="@+id/tvEmailTitle"
@@ -185,7 +185,7 @@
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="0.73" />
 
     <TextView
         android:id="@+id/tvNameTitle"
@@ -194,34 +194,34 @@
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/tvBiographyTitle"
-        android:layout_width="162dp"
-        android:layout_height="22dp"
+        android:layout_width="304dp"
+        android:layout_height="121dp"
         android:text="Biograpahy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.121" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvBiographyDescription"
-        android:layout_width="208dp"
-        android:layout_height="161dp"
-        android:text=" My name is Jessica. I am very big brain. Working at Oscorp Tower has allowed me to get experience to curate lots of things. I do curator things because I enjoy it."
+        android:layout_width="211dp"
+        android:layout_height="71dp"
+        android:hint="Edit Biography"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.322" />
 
     <Button
         android:id="@+id/btnDone"
@@ -234,4 +234,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/btnBiography"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.362" />
+
+    <Button
+        android:id="@+id/btnPhone"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/btnLinkdIn"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
+
+    <Button
+        android:id="@+id/btnTwitter"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <Button
+        android:id="@+id/btnRole"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <Button
+        android:id="@+id/btnCompany"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <Button
+        android:id="@+id/btnPosition"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
+    <Button
+        android:id="@+id/btnEmail"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726" />
 </androidx.constraintlayout.widget.ConstraintLayout>

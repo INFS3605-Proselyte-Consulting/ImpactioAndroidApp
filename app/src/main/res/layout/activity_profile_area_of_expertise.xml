@@ -50,15 +50,15 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipBusiness"
+            android:id="@+id/chipEngineering"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:text="Enginering"
+            android:text="Engineering"
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipGovernment"
+            android:id="@+id/chipEducation"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"

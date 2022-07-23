@@ -34,7 +34,7 @@
         app:singleSelection="false">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipScience"
+            android:id="@+id/chipEnvironment"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -42,7 +42,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipTechnology"
+            android:id="@+id/chipTechnologyTag"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -50,7 +50,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipBusiness"
+            android:id="@+id/chipGlobalBusiness"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"

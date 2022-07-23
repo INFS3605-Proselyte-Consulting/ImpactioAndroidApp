@@ -26,13 +26,13 @@ public class ProfileEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sdg_edit);
 
-        chipNoPoverty = findViewById(R.id.chipScience);
+        chipNoPoverty = findViewById(R.id.chipNoPoverty);
         chipNoPoverty.setChecked(Update("STATE_ONE"));
 
-        chipZeroHunger = findViewById(R.id.chipTechnology);
+        chipZeroHunger = findViewById(R.id.chipZeroHunger);
         chipZeroHunger.setChecked(Update("STATE_TWO"));
 
-        chipQuality = findViewById(R.id.chipGovernment);
+        chipQuality = findViewById(R.id.chipQuality);
         chipQuality.setChecked(Update("STATE_THREE"));
 
         chipGender = findViewById(R.id.chipGender);
@@ -74,7 +74,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipPartnerShip = findViewById(R.id.chipPartnership);
         chipPartnerShip.setChecked(Update("STATE_SIXTEEN"));
 
-        chipGoodHealth = findViewById(R.id.chipBusiness);
+        chipGoodHealth = findViewById(R.id.chipGoodHealth);
         chipGoodHealth.setChecked(Update("STATE_SEVENTEEN"));
 
         Button btnDone = findViewById(R.id.btnDone);

@@ -34,7 +34,7 @@
         app:singleSelection="false">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipScience"
+            android:id="@+id/chipNoPoverty"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -42,7 +42,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipTechnology"
+            android:id="@+id/chipZeroHunger"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -50,7 +50,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipBusiness"
+            android:id="@+id/chipGoodHealth"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -58,7 +58,7 @@
             android:textSize="10sp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipGovernment"
+            android:id="@+id/chipQuality"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
