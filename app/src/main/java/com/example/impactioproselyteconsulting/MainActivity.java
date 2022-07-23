@@ -49,15 +49,35 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-       /* Button discoverChallengesBtn = (Button) findViewById(R.id.DiscoverChallengesButton);
-        discoverChallengesBtn.setOnClickListener(new View.OnClickListener() {
+        Button inProgressBtn = (Button) findViewById(R.id.bView);
+        inProgressBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
-                Intent intent = new Intent(MainActivity.this, DiscoverChallengeActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChallengesInProgressActivity.class);
                 startActivity(intent);
             }
-        }); */
+        });
+
+        Button toDoBtn = (Button) findViewById(R.id.bView2);
+        toDoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch the Discover Challenges Activity
+                Intent intent = new Intent(MainActivity.this, ChallengesToDoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button completedBtn = (Button) findViewById(R.id.bView3);
+        completedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch the Discover Challenges Activity
+                Intent intent = new Intent(MainActivity.this, ChallengesCompletedActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //        Button profileMainBtn = (Button) findViewById(R.id.bProfileMain);
 //        profileMainBtn.setOnClickListener(new View.OnClickListener() {
