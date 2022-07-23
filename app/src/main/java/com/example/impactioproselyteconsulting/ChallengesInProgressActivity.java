@@ -1,4 +1,7 @@
 package com.example.impactioproselyteconsulting;
 
-public class ChallengesInProgressActivity extends MainActivity{
+import android.os.Bundle;
+
+public class ChallengesInProgressActivity extends MainActivity {
+
 }
