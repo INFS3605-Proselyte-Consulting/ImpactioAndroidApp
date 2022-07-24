@@ -22,16 +22,16 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_area_of_expertise);
 
         chipScience = findViewById(R.id.chipScience);
-        chipScience.setChecked(Update("STATE_ONE"));
+        chipScience.setChecked(Update("AREAOFEXPERTISESTATE_ONE"));
 
         chipTechnology = findViewById(R.id.chipTechnology);
-        chipTechnology.setChecked(Update("STATE_TWO"));
+        chipTechnology.setChecked(Update("AREAOFEXPERTISESTATE_TWO"));
 
         chipEngineering = findViewById(R.id.chipEngineering);
-        chipEngineering.setChecked(Update("STATE_THREE"));
+        chipEngineering.setChecked(Update("AREAOFEXPERTISESTATE_THREE"));
 
         chipEducation = findViewById(R.id.chipEducation);
-        chipEducation.setChecked(Update("STATE_FOUR"));
+        chipEducation.setChecked(Update("AREAOFEXPERTISESTATE_FOUR"));
 
 
         Button btnDone = findViewById(R.id.btnDone);
@@ -48,14 +48,14 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
         chipScience.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean noPovertyChecked) {
-                SaveIntoSharedPrefs("STATE_ONE", noPovertyChecked);
+                SaveIntoSharedPrefs("AREAOFEXPERTISESTATE_ONE", noPovertyChecked);
             }
         });
 
         chipTechnology.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean zeroHungerChecked) {
-                SaveIntoSharedPrefs("STATE_TWO", zeroHungerChecked);
+                SaveIntoSharedPrefs("AREAOFEXPERTISESTATE_TWO", zeroHungerChecked);
 
             }
         });
@@ -63,7 +63,7 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
         chipEngineering.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean qualityChecked) {
-                SaveIntoSharedPrefs("STATE_THREE", qualityChecked);
+                SaveIntoSharedPrefs("AREAOFEXPERTISESTATE_THREE", qualityChecked);
 
             }
         });
@@ -71,7 +71,7 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
         chipEducation.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean genderChecked) {
-                SaveIntoSharedPrefs("STATE_FOUR", genderChecked);
+                SaveIntoSharedPrefs("AREAOFEXPERTISESTATE_FOUR", genderChecked);
 
             }
         });
@@ -81,18 +81,18 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
 
 
         //Save Selected SDGs
-        private void SaveIntoSharedPrefs(String key, boolean value){
+        private void SaveIntoSharedPrefs(String AreaOfExpertiseKey, boolean value){
 
-            SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sp.edit();
-            editor.putBoolean(key, value);
+            SharedPreferences areasp = getSharedPreferences("AREAOFEXPERTISESTATE", MODE_PRIVATE);
+            SharedPreferences.Editor editor = areasp.edit();
+            editor.putBoolean(AreaOfExpertiseKey, value);
             editor.apply();
         }
         ///Update Selected SDGs
-        private boolean Update(String key){
+        private boolean Update(String AreaOfExpertiseKey){
 
-            SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-            return sp.getBoolean(key, false);
+            SharedPreferences areasp = getSharedPreferences("AREAOFEXPERTISESTATE", MODE_PRIVATE);
+            return areasp.getBoolean(AreaOfExpertiseKey, false);
         }
 
 

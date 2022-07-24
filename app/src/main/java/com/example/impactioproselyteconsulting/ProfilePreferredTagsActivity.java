@@ -23,22 +23,22 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_preferred_tags);
 
         chipEnvironment = findViewById(R.id.chipEnvironment);
-        chipEnvironment.setChecked(Update("STATE_ONE"));
+        chipEnvironment.setChecked(Update("TAGSTATE_ONE"));
 
         chipTechnologyTag = findViewById(R.id.chipTechnologyTag);
-        chipTechnologyTag.setChecked(Update("STATE_TWO"));
+        chipTechnologyTag.setChecked(Update("TAGSTATE_TWO"));
 
         chipGlobalBusiness = findViewById(R.id.chipGlobalBusiness);
-        chipGlobalBusiness.setChecked(Update("STATE_THREE"));
+        chipGlobalBusiness.setChecked(Update("TAGSTATE_THREE"));
 
         chipGovernment = findViewById(R.id.chipGovernment);
-        chipGovernment.setChecked(Update("STATE_FOUR"));
+        chipGovernment.setChecked(Update("TAGSTATE_FOUR"));
 
         chipEconomy = findViewById(R.id.chipEconomy);
-        chipEconomy.setChecked(Update("STATE_THREE"));
+        chipEconomy.setChecked(Update("TAGSTATE_THREE"));
 
         chipFamily = findViewById(R.id.chipFamily);
-        chipFamily.setChecked(Update("STATE_FOUR"));
+        chipFamily.setChecked(Update("TAGSTATE_FOUR"));
 
         Button btnDone = findViewById(R.id.btnDone);
         btnDone.setOnClickListener(new View.OnClickListener() {
@@ -53,14 +53,14 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         chipEnvironment.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean noPovertyChecked) {
-                SaveIntoSharedPrefs("STATE_ONE", noPovertyChecked);
+                SaveIntoSharedPrefs("TAGSTATE_ONE", noPovertyChecked);
             }
         });
 
         chipTechnologyTag.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean zeroHungerChecked) {
-                SaveIntoSharedPrefs("STATE_TWO", zeroHungerChecked);
+                SaveIntoSharedPrefs("TAGSTATE_TWO", zeroHungerChecked);
 
             }
         });
@@ -68,7 +68,7 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         chipGlobalBusiness.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean qualityChecked) {
-                SaveIntoSharedPrefs("STATE_THREE", qualityChecked);
+                SaveIntoSharedPrefs("TAGSTATE_THREE", qualityChecked);
 
             }
         });
@@ -76,7 +76,7 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         chipEconomy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean genderChecked) {
-                SaveIntoSharedPrefs("STATE_FOUR", genderChecked);
+                SaveIntoSharedPrefs("TAGSTATE_FOUR", genderChecked);
 
             }
         });
@@ -84,7 +84,7 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         chipFamily.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean genderChecked) {
-                SaveIntoSharedPrefs("STATE_FIVE", genderChecked);
+                SaveIntoSharedPrefs("TAGSTATE_FIVE", genderChecked);
 
             }
         });
@@ -92,24 +92,24 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
         chipGovernment.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean genderChecked) {
-                SaveIntoSharedPrefs("STATE_SIX", genderChecked);
+                SaveIntoSharedPrefs("TAGSTATE_SIX", genderChecked);
 
             }
         });
     }
 
     //Save Selected SDGs
-    private void SaveIntoSharedPrefs(String key, boolean value){
+    private void SaveIntoSharedPrefs(String Tagkey, boolean value){
 
-        SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean(key, value);
+        SharedPreferences Tagsp = getSharedPreferences("TAGSTATE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = Tagsp.edit();
+        editor.putBoolean(Tagkey, value);
         editor.apply();
     }
     ///Update Selected SDGs
-    private boolean Update(String key){
+    private boolean Update(String Tagkey){
 
-        SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-        return sp.getBoolean(key, false);
+        SharedPreferences Tagsp = getSharedPreferences("TAGSTATE", MODE_PRIVATE);
+        return Tagsp.getBoolean(Tagkey, false);
     }
 }

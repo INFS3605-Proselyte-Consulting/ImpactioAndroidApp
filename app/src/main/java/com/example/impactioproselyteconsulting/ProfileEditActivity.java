@@ -27,55 +27,55 @@ public class ProfileEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sdg_edit);
 
         chipNoPoverty = findViewById(R.id.chipNoPoverty);
-        chipNoPoverty.setChecked(Update("STATE_ONE"));
+        chipNoPoverty.setChecked(Update("SDGSTATE_ONE"));
 
         chipZeroHunger = findViewById(R.id.chipZeroHunger);
-        chipZeroHunger.setChecked(Update("STATE_TWO"));
+        chipZeroHunger.setChecked(Update("SDGSTATE_TWO"));
 
         chipQuality = findViewById(R.id.chipQuality);
-        chipQuality.setChecked(Update("STATE_THREE"));
+        chipQuality.setChecked(Update("SDGSTATE_THREE"));
 
         chipGender = findViewById(R.id.chipGender);
-        chipGender.setChecked(Update("STATE_FOUR"));
+        chipGender.setChecked(Update("SDGSTATE_FOUR"));
 
         chipCleanWater = findViewById(R.id.chipCleanWater);
-        chipCleanWater.setChecked(Update("STATE_FIVE"));
+        chipCleanWater.setChecked(Update("SDGSTATE_FIVE"));
 
         chipAffordable = findViewById(R.id.chipAffordable);
-        chipAffordable.setChecked(Update("STATE_SIX"));
+        chipAffordable.setChecked(Update("SDGSTATE_SIX"));
 
         chipDecent = findViewById(R.id.chipDecent);
-        chipDecent.setChecked(Update("STATE_SEVEN"));
+        chipDecent.setChecked(Update("SDGSTATE_SEVEN"));
 
         chipIndustry = findViewById(R.id.chipIndustry);
-        chipIndustry.setChecked(Update("STATE_EIGHT"));
+        chipIndustry.setChecked(Update("SDGSTATE_EIGHT"));
 
         chipReduced = findViewById(R.id.chipReduced);
-        chipReduced.setChecked(Update("STATE_NINE"));
+        chipReduced.setChecked(Update("SDGSTATE_NINE"));
 
         chipSustainable = findViewById(R.id.chipSustainable);
-        chipSustainable.setChecked(Update("STATE_TEN"));
+        chipSustainable.setChecked(Update("SDGSTATE_TEN"));
 
         chipResponsible = findViewById(R.id.chipResponsible);
-        chipResponsible.setChecked(Update("STATE_ELEVEN"));
+        chipResponsible.setChecked(Update("SDGSTATE_ELEVEN"));
 
         chipClimate = findViewById(R.id.chipClimate);
-        chipClimate.setChecked(Update("STATE_TWELVE"));
+        chipClimate.setChecked(Update("SDGSTATE_TWELVE"));
 
         chipLifeBelow = findViewById(R.id.chipLifeBelow);
-        chipLifeBelow.setChecked(Update("STATE_THIRTEEN"));
+        chipLifeBelow.setChecked(Update("SDGSTATE_THIRTEEN"));
 
         chipLifeOn = findViewById(R.id.chipLifeOn);
-        chipLifeOn.setChecked(Update("STATE_FOURTEEN"));
+        chipLifeOn.setChecked(Update("SDGSTATE_FOURTEEN"));
 
         chipPeace = findViewById(R.id.chipPeace);
-        chipPeace.setChecked(Update("STATE_FIFTHTEEN"));
+        chipPeace.setChecked(Update("SDGSTATE_FIFTHTEEN"));
 
         chipPartnerShip = findViewById(R.id.chipPartnership);
-        chipPartnerShip.setChecked(Update("STATE_SIXTEEN"));
+        chipPartnerShip.setChecked(Update("SDGSTATE_SIXTEEN"));
 
         chipGoodHealth = findViewById(R.id.chipGoodHealth);
-        chipGoodHealth.setChecked(Update("STATE_SEVENTEEN"));
+        chipGoodHealth.setChecked(Update("SDGSTATE_SEVENTEEN"));
 
         Button btnDone = findViewById(R.id.btnDone);
             btnDone.setOnClickListener(new View.OnClickListener() {
@@ -91,14 +91,14 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipNoPoverty.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean noPovertyChecked) {
-                SaveIntoSharedPrefs("STATE_ONE", noPovertyChecked);
+                SaveIntoSharedPrefs("SDGSTATE_ONE", noPovertyChecked);
             }
         });
 
         chipZeroHunger.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean zeroHungerChecked) {
-                SaveIntoSharedPrefs("STATE_TWO", zeroHungerChecked);
+                SaveIntoSharedPrefs("SDGSTATE_TWO", zeroHungerChecked);
 
             }
         });
@@ -106,7 +106,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipQuality.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean qualityChecked) {
-                SaveIntoSharedPrefs("STATE_THREE", qualityChecked);
+                SaveIntoSharedPrefs("SDGSTATE_THREE", qualityChecked);
 
             }
         });
@@ -114,7 +114,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipGender.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean genderChecked) {
-                SaveIntoSharedPrefs("STATE_FOUR", genderChecked);
+                SaveIntoSharedPrefs("SDGSTATE_FOUR", genderChecked);
 
             }
         });
@@ -122,7 +122,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipCleanWater.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean cleanWaterChecked) {
-                SaveIntoSharedPrefs("STATE_FIVE", cleanWaterChecked);
+                SaveIntoSharedPrefs("SDGSTATE_FIVE", cleanWaterChecked);
 
             }
         });
@@ -130,7 +130,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipAffordable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean affordableChecked) {
-                SaveIntoSharedPrefs("STATE_SIX", affordableChecked);
+                SaveIntoSharedPrefs("SDGSTATE_SIX", affordableChecked);
 
             }
         });
@@ -138,7 +138,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipDecent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean decentChecked) {
-                SaveIntoSharedPrefs("STATE_SEVEN", decentChecked);
+                SaveIntoSharedPrefs("SDGSTATE_SEVEN", decentChecked);
 
             }
         });
@@ -146,7 +146,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipIndustry.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean industryChecked) {
-                SaveIntoSharedPrefs("STATE_EIGHT", industryChecked);
+                SaveIntoSharedPrefs("SDGSTATE_EIGHT", industryChecked);
 
             }
         });
@@ -154,7 +154,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipReduced.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean reducedChecked) {
-                SaveIntoSharedPrefs("STATE_NINE", reducedChecked);
+                SaveIntoSharedPrefs("SDGSTATE_NINE", reducedChecked);
 
             }
         });
@@ -162,7 +162,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipSustainable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean sustainableChecked) {
-                SaveIntoSharedPrefs("STATE_TEN", sustainableChecked);
+                SaveIntoSharedPrefs("SDGSTATE_TEN", sustainableChecked);
 
             }
         });
@@ -170,7 +170,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipResponsible.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean responsibleChecked) {
-                SaveIntoSharedPrefs("STATE_ELEVEN", responsibleChecked);
+                SaveIntoSharedPrefs("SDGSTATE_ELEVEN", responsibleChecked);
 
             }
         });
@@ -178,7 +178,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipClimate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean climateChecked) {
-                SaveIntoSharedPrefs("STATE_TWELVE", climateChecked);
+                SaveIntoSharedPrefs("SDGSTATE_TWELVE", climateChecked);
 
             }
         });
@@ -186,7 +186,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipLifeBelow.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean lifeBelowChecked) {
-                SaveIntoSharedPrefs("STATE_THIRTEEN", lifeBelowChecked);
+                SaveIntoSharedPrefs("SDGSTATE_THIRTEEN", lifeBelowChecked);
 
             }
         });
@@ -194,7 +194,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipLifeOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean lifeOnChecked) {
-                SaveIntoSharedPrefs("STATE_FOURTEEN", lifeOnChecked);
+                SaveIntoSharedPrefs("SDGSTATE_FOURTEEN", lifeOnChecked);
 
             }
         });
@@ -202,7 +202,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipPeace.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean peaceChecked) {
-                SaveIntoSharedPrefs("STATE_FIFTHTEEN", peaceChecked);
+                SaveIntoSharedPrefs("SDGSTATE_FIFTHTEEN", peaceChecked);
 
             }
         });
@@ -210,7 +210,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipPartnerShip.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean partnerShipChecked) {
-                SaveIntoSharedPrefs("STATE_SIXTEEN", partnerShipChecked);
+                SaveIntoSharedPrefs("SDGSTATE_SIXTEEN", partnerShipChecked);
 
             }
         });
@@ -218,7 +218,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         chipGoodHealth.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean goodHealthChecked) {
-                SaveIntoSharedPrefs("STATE_SEVENTEEN", goodHealthChecked);
+                SaveIntoSharedPrefs("SDGSTATE_SEVENTEEN", goodHealthChecked);
             }
         });
 
@@ -284,18 +284,18 @@ public class ProfileEditActivity extends AppCompatActivity {
 
     }
     //Save Selected SDGs
-    private void SaveIntoSharedPrefs(String key, boolean value){
+    private void SaveIntoSharedPrefs(String SDGkey, boolean value){
 
-        SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean(key, value);
+        SharedPreferences sdgsp = getSharedPreferences("SDGSTATE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sdgsp.edit();
+        editor.putBoolean(SDGkey, value);
         editor.apply();
     }
     ///Update Selected SDGs
-    private boolean Update(String key){
+    private boolean Update(String SDGkey){
 
-        SharedPreferences sp = getSharedPreferences("STATE", MODE_PRIVATE);
-        return sp.getBoolean(key, false);
+        SharedPreferences sdgsp = getSharedPreferences("SDGSTATE", MODE_PRIVATE);
+        return sdgsp.getBoolean(SDGkey, false);
     }
 
 

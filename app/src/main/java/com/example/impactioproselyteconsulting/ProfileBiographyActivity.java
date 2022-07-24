@@ -16,8 +16,8 @@ public class ProfileBiographyActivity extends AppCompatActivity {
     private TextView tvBiographyTitle, tvRoleTitle, tvCompanyTitle, tvPositionTitle, tvEmailTitle, tvPhoneTitle, tvLinkdInTitle, tvTwitterTitle;
     private EditText tvBiographyDescription, tvRole, tvCompany, tvPosition, tvEmail, tvPhone, tvLinkdIn, tvTwitter;
     private String getStringBiography, getStringRole, getStringCompany, getStringPosition, getStringEmail, getStringPhone, getStringLinkdIn, getStringTwitter;
-    private static final String SHARED_PREFBIOGRAPHY = "shared", SHARED_PREFROLE = "shared", SHARED_PREFCOMPANY = "shared", SHARED_PREFPOSITION = "shared", SHARED_PREFEMAIL = "shared", SHARED_PREFPHONE = "shared", SHARED_PREFLINKDIN = "shared", SHARED_PREFTWITTER = "shared";
-    private static final String TEXTBIOGRAPHY = "text", TEXTROLE = "text", TEXTCOMPANY = "text", TEXTPOSITION = "text", TEXTEMAIL = "text", TEXTPHONE = "text", TEXTLINKDIN = "text", TEXTTWITTER = "text";
+    private static final String SHARED_PREFBIOGRAPHY = "sharedBiography", SHARED_PREFROLE = "sharedRole", SHARED_PREFCOMPANY = "sharedCompany", SHARED_PREFPOSITION = "sharedPosition", SHARED_PREFEMAIL = "sharedEmail", SHARED_PREFPHONE = "sharedPhone", SHARED_PREFLINKDIN = "sharedLinkdIn", SHARED_PREFTWITTER = "sharedTwitter";
+    private static final String TEXTBIOGRAPHY = "textBiography", TEXTROLE = "textRole", TEXTCOMPANY = "textCompany", TEXTPOSITION = "textPosition", TEXTEMAIL = "textEmail", TEXTPHONE = "textPhone", TEXTLINKDIN = "textLinkdIn", TEXTTWITTER = "textTwitter";
     private String textBiography, textRole, textCompany, textPostion, textEmail, textPhone, textLinkdIn, textTwitter;
 
 
@@ -76,7 +76,7 @@ public class ProfileBiographyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getStringCompany = tvCompany.getText().toString();
-                tvCompanyTitle.setText(getStringBiography);
+                tvCompanyTitle.setText(getStringCompany);
                 SharedPreferences sharedPreferencesCompany = getSharedPreferences(SHARED_PREFCOMPANY,MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferencesCompany.edit();
                 editor.putString(TEXTCOMPANY,tvCompanyTitle.getText().toString());
@@ -201,7 +201,7 @@ public class ProfileBiographyActivity extends AppCompatActivity {
     }
 
     private void updatePhone() {
-        SharedPreferences sharedPreferencesPhone = getSharedPreferences(SHARED_PREFROLE,MODE_PRIVATE);
+        SharedPreferences sharedPreferencesPhone = getSharedPreferences(SHARED_PREFPHONE,MODE_PRIVATE);
         textPhone = sharedPreferencesPhone.getString(TEXTPHONE, "");
         tvPhoneTitle.setText(textPhone);
     }
