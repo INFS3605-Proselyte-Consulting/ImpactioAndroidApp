@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="#FFFFFF"
     tools:context=".DiscoverChallengeActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ChallengeRV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FAFAFA"
-        />
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp"
+        android:background="#E6E6E6" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
