@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactioProselyteConsulting">
         <activity
+            android:name=".ChallengesInProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChallengesToDoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChallengesCompletedActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfilePreferredTagsActivity"
             android:exported="false" />
         <activity

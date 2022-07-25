@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button inProgressBtn = (Button) findViewById(R.id.bView);
+        Button inProgressBtn = (Button) findViewById(R.id.bViewInProgress);
         inProgressBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button toDoBtn = (Button) findViewById(R.id.bView2);
+        Button toDoBtn = (Button) findViewById(R.id.bViewToDo);
         toDoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button completedBtn = (Button) findViewById(R.id.bView3);
+        Button completedBtn = (Button) findViewById(R.id.bViewCompleted);
         completedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
