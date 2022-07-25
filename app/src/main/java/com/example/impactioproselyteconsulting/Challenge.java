@@ -117,6 +117,7 @@ public class Challenge {
         return null;
     }
 
+
     public static ArrayList<Challenge> getChallengesToDo() {
         // Create a list of challenges here
         ArrayList<Challenge> challenges = new ArrayList<>();
