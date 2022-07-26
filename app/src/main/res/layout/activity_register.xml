@@ -50,6 +50,44 @@
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/ptEmail"
         app:layout_constraintTop_toBottomOf="@+id/ptEmail" />
+
+    <EditText
+        android:id="@+id/ptBiography"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Biography"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/ptPassword"
+        app:layout_constraintTop_toBottomOf="@+id/ptPassword" />
+
+    <EditText
+        android:id="@+id/ptExpertise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Expertise"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/ptBiography"
+        app:layout_constraintTop_toBottomOf="@+id/ptBiography" />
+
+    <EditText
+        android:id="@+id/ptSDGS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="SDG"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/ptExpertise"
+        app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

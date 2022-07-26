@@ -82,12 +82,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-
-
-
-
-
-
 //        btnEdit = findViewById(R.id.btnEdit);
 //        btnEdit.setOnClickListener(new View.OnClickListener() {
 //            @Override
