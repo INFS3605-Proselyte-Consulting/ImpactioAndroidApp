@@ -50,8 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
         // instance of our FIrebase database.
         firebaseDatabase = FirebaseDatabase.getInstance();
 
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         // below line is used to get reference for our database.
-        databaseReference = firebaseDatabase.getReference("CustomerInfo");
+        databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid);
 
         // initializing our object
         // class variable.

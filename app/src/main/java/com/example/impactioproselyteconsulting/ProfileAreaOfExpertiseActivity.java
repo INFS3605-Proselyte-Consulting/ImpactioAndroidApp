@@ -78,8 +78,6 @@ public class ProfileAreaOfExpertiseActivity extends AppCompatActivity {
 
     }
 
-
-
         //Save Selected SDGs
         private void SaveIntoSharedPrefs(String AreaOfExpertiseKey, boolean value){
 

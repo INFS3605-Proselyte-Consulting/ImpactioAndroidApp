@@ -6,6 +6,15 @@ public class CustomerInfo {
     public CustomerInfo() {
     }
 
+    public CustomerInfo(String cusEmail, String cusPass, String cusName, String cusBio, String cusSDG, String cusExpertise) {
+        this.cusEmail = cusEmail;
+        this.cusPass = cusPass;
+        this.cusName = cusName;
+        this.cusBio = cusBio;
+        this.cusSDG = cusSDG;
+        this.cusExpertise = cusExpertise;
+    }
+
     public String getCusEmail() {
         return cusEmail;
     }
