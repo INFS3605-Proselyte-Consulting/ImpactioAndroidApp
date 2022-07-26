@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -60,6 +62,24 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         Challenge challenge = Challenge.getChallenge(intent.getStringExtra("Name"));
 
         loadChallengeData(challenge);
+
+
+        // Button to go to solutions for this challenge
+        Button viewSolutionsBtn = (Button) findViewById(R.id.goToSolutionBtn);
+        viewSolutionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch the Discover Challenges Activity
+                Intent intent = new Intent(ChallengeDetailActivity.this, DiscoverSolutionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
     }
 
     private void loadChallengeData(Challenge challenge) {

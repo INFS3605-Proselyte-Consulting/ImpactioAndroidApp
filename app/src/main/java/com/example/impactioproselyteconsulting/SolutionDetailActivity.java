@@ -1,4 +1,4 @@
-//package com.example.impactioproselyteconsulting;
-//
-//public class SolutionDetailActivity {
-//}
+package com.example.impactioproselyteconsulting;
+
+public class SolutionDetailActivity {
+}

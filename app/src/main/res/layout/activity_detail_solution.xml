@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ChallengeDetailActivity">
+    tools:context=".SolutionDetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/ChallengeImgViewDetail"
+                android:id="@+id/SolutionImgViewDetail"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_marginStart="5dp"
@@ -28,7 +28,7 @@
                 android:layout_marginBottom="5dp" />
 
             <TextView
-                android:id="@+id/ChallengeNameTxtDetail"
+                android:id="@+id/SolutionNameTxtDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -37,7 +37,7 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/black"
                 android:textSize="34sp"
-                tools:text="Challenge Name here" />
+                tools:text="Solution Name here" />
 
             <LinearLayout
                 android:layout_width="2dp"
@@ -51,7 +51,7 @@
                 android:background="@color/black" />
 
             <TextView
-                android:id="@+id/ChallengeBlurbTxtDetail"
+                android:id="@+id/SolutionBlurbTxtDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -60,10 +60,10 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                tools:text="Challenge Blurb here" />
+                tools:text="Solution Blurb here" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/descriptionLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -76,7 +76,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/ChallengeDescTxtDetail"
+                android:id="@+id/SolutionDescTxtDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -85,7 +85,7 @@
                 android:layout_marginBottom="15dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                tools:text="Challenge Description here" />
+                tools:text="Solution Description here" />
 
 
             <LinearLayout
@@ -96,13 +96,13 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/goToSolutionBtn"
+                android:id="@+id/applySolutionBtn"
                 android:layout_width="144dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="267dp"
                 android:layout_weight="1"
-                android:text="See Solutions" />
+                android:text="Apply" />
 
         </LinearLayout>
     </ScrollView>
