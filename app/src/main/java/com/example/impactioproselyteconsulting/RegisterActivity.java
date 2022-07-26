@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,12 +25,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private static final String TAG = "RegisterActivity";
     public static final String INTENT_MESSAGE = "intent_message";
-    private EditText et_Email, et_Password, et_Fullname,et_Biography,et_PrefSDG,et_prefExpertise;
+    private EditText et_Email, et_Password, et_Fullname,et_Biography;
+    private Spinner sp_prefExpertise, sp_prefSDG;
     private Button btn_Register;
+    public String valueFromSpinnerExpertise,valueFromSpinnerSDG;
     // creating a variable for our
     // Firebase Database.
     FirebaseDatabase firebaseDatabase;
@@ -54,12 +59,33 @@ public class RegisterActivity extends AppCompatActivity {
         //Toasts just give a message on the screen
         Toast.makeText(RegisterActivity.this, "You can register now", Toast.LENGTH_LONG).show();
 
+        //Edit Texts
         et_Email = findViewById(R.id.ptEmail);
         et_Password = findViewById(R.id.ptPassword);
         et_Fullname = findViewById(R.id.ptFullname);
         et_Biography = findViewById(R.id.ptBiography);
-        et_PrefSDG = findViewById(R.id.ptSDGS);
-        et_prefExpertise = findViewById(R.id.ptExpertise);
+        //These are for the spinners
+        sp_prefSDG = findViewById(R.id.ptSDGS);
+        sp_prefExpertise = findViewById(R.id.ptExpertise);
+        //This determines something changed
+        sp_prefSDG.setOnItemSelectedListener(this);
+        sp_prefExpertise.setOnItemSelectedListener(this);
+
+        //The Strings for all the spinners are stored in the layout/values/spinner_arrays.xml
+        String[] allExpertise = getResources().getStringArray(R.array.all_expertise);
+        String[] allSDG = getResources().getStringArray(R.array.all_sdg);
+
+        //Gets and sets the spinner values
+        ArrayAdapter adapterExpertise = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item,allExpertise);
+        adapterExpertise.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_prefExpertise.setAdapter(adapterExpertise);
+
+        ArrayAdapter adapterSDG = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item,allSDG);
+        adapterSDG.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_prefSDG.setAdapter(adapterSDG);
+
         btn_Register = findViewById(R.id.bRegister);
 
         btn_Register.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +95,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String textPassword = et_Password.getText().toString();
                 String textName = et_Fullname.getText().toString();
                 String textBio = et_Biography.getText().toString();
-                String textSDG = et_PrefSDG.getText().toString();
-                String textExpertise = et_prefExpertise.getText().toString();
+                String textSDG = valueFromSpinnerSDG;
+                String textExpertise = valueFromSpinnerExpertise;
                 if (TextUtils.isEmpty(textEmail) && TextUtils.isEmpty(textPassword) && TextUtils.isEmpty(textName)) {
                     // if the text fields are empty
                     // then show the below message.
@@ -131,4 +157,22 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch(adapterView.getId()){
+            case R.id.ptExpertise:
+            {
+                valueFromSpinnerExpertise = adapterView.getItemAtPosition(i).toString();
+            }
+            case R.id.ptSDGS:
+            {
+                valueFromSpinnerSDG = adapterView.getItemAtPosition(i).toString();
+            }
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

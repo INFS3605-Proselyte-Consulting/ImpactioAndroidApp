@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="all_expertise">
+        <item>Science</item>
+        <item>Technology</item>
+        <item>Education</item>
+        <item>Engineering</item>
+    </string-array>
+    <string-array name="all_sdg">
+        <item>No Poverty</item>
+        <item>Zero Hunger</item>
+        <item>Good Health And Wellbeing</item>
+        <item>Quality Education</item>
+        <item>Gender Equality</item>
+        <item>Clean Water And Sanitation</item>
+        <item>Affordable And Clean Energy</item>
+        <item>Decent Work And Economic Growth</item>
+        <item>Industry, Innovation And Infrastructure</item>
+        <item>Reduced Inequalities</item>
+        <item>Sustainable Cities And Communities</item>
+        <item>Responsible Consumption And Production</item>
+        <item>Climate Action</item>
+        <item>Life Below Water</item>
+        <item>Life On Land</item>
+        <item>Peace, Justice And Strong Institutions</item>
+        <item>Partnerships For The Goals</item>
+    </string-array>
+</resources>
