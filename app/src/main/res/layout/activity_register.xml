@@ -5,99 +5,142 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/ptEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/ptPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/ptFullname"
-        app:layout_constraintTop_toBottomOf="@+id/ptFullname" />
-
     <Button
         android:id="@+id/bRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/round_border"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/ptFullname"
-        android:layout_width="wrap_content"
+        android:id="@+id/ptPassword"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border"
+        android:drawablePadding="16dp"
+        android:ems="10"
+
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ptFullname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border"
+        android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Full Name"
+
+
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/ptEmail"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/ptPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptEmail" />
 
     <EditText
-        android:id="@+id/ptBiography"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="Biography"
+        android:id="@+id/ptEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="512dp"
+        android:background="@drawable/round_border"
+        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Biography"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/ptPassword"
-        app:layout_constraintTop_toBottomOf="@+id/ptPassword" />
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
-    <Spinner
-        android:id="@+id/ptExpertise"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="Expertise"
-        android:ems="10"
-        android:hint="Expertise"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/ptBiography"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegExp" />
+
+        app:layout_constraintVertical_bias="0.481" />
 
     <Spinner
         android:id="@+id/ptSDGS"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
         android:contentDescription="SDG"
         android:ems="10"
         android:hint="SDG"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/ptExpertise"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegSDG" />
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegSDG"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/ptBiography"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Biography"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ptPassword"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/ptExpertise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="Expertise"
+        android:ems="10"
+        android:hint="Expertise"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegExp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvRegExp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:text="Expertise"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptBiography"
@@ -107,7 +150,8 @@
         android:id="@+id/tvRegSDG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:text="SDG"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptExpertise"
