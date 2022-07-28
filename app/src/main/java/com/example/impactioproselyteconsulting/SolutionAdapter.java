@@ -48,7 +48,7 @@ public class SolutionAdapter extends RecyclerView.Adapter<SolutionAdapter.Soluti
         Solution solution = mSolutionsFiltered.get(position);
 
         holder.solutionNameText.setText(solution.getSolutionName());
-        //holder.solutionBlurbText.setText(solution.getSolutionBlurb());
+        holder.solutionBlurbText.setText(solution.getSolutionBlurb());
         holder.solutionImageView.setImageResource(solution.getSolutionImage());
         holder.itemView.setTag(solution.getSolutionName());
     }

@@ -72,7 +72,10 @@ public class ChallengeDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Launch the Discover Solutions Activity
                 Intent intent = new Intent(ChallengeDetailActivity.this, DiscoverSolutionActivity.class);
+                // Toast message to test and for info
                 Toast.makeText(ChallengeDetailActivity.this, "Loading Solutions for this Challenge", Toast.LENGTH_LONG).show();
+                // Add an extra intent to pass in the Challenge Name to get the correct Solutions to Discover
+                intent.putExtra("Name", challenge.getChallengeName());
                 startActivity(intent);
             }
         });

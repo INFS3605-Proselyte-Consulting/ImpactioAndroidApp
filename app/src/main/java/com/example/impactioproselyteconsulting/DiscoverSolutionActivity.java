@@ -59,17 +59,17 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
             }
         });
 
+        // This gets the challenge object based on the challenge name passed in
+        // from the Intent passed in from the Challenge Detail Activity
+        // Then gets the list of Solutions based on the Challenge later
         Intent intent = getIntent();
-        Solution solution = Solution.getSolution(intent.getStringExtra("Name"));
+        Challenge challenge = Challenge.getChallenge(intent.getStringExtra("Name"));
+
 
         RecyclerView solutionRecyclerView = findViewById(R.id.SolutionRV);
         solutionRecyclerView.setHasFixedSize(true);
 
         solutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        // Testing list
-        List<Solution> solutionsTestList = new ArrayList<Solution>();
-        solutionsTestList.add(new Solution());
 
         // Pass in the solutions list created, into the recycler view
         SolutionAdapter.RecyclerViewClickListener listener = new SolutionAdapter.RecyclerViewClickListener() {
@@ -79,9 +79,13 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
             }
         };
 
-        // Create an adapter instance and supply the solution data to be displayed
-        mAdapter = new SolutionAdapter(Solution.getSolutions(), listener);
-        solutionRecyclerView.setAdapter(mAdapter);
+        // Supply the solution data to be displayed on this page
+        loadSolutions(challenge, solutionRecyclerView, listener);
+
+
+//        // Create an adapter instance and supply the solution data to be displayed
+//        mAdapter = new SolutionAdapter(Solution.getSolutions(), listener);
+//        solutionRecyclerView.setAdapter(mAdapter);
 
         //solutionRecyclerView.setAdapter(new SolutionAdapter(getApplicationContext(), solutions));
     }
@@ -144,5 +148,12 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         }
     }
 
+    private void loadSolutions(Challenge challenge, RecyclerView recyclerView, SolutionAdapter.RecyclerViewClickListener listener) {
+
+        // Create an adapter instance and supply the solution data to be displayed
+        // Pass in the challenge name from the challenge object and get the list
+        mAdapter = new SolutionAdapter(Solution.getSolutionList(challenge.challengeName), listener);
+        recyclerView.setAdapter(mAdapter);
+    }
 
 }

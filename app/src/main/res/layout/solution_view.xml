@@ -50,7 +50,7 @@
             tools:text="Solution Name here" />
 
         <TextView
-            android:id="@+id/ChallengeBlurbTxtDetail"
+            android:id="@+id/SolutionBlurbTxtDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/SolutionNameTxtDetail"

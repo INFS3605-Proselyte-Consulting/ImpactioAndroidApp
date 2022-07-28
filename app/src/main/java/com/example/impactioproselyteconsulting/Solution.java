@@ -153,7 +153,7 @@ public class Solution {
         return solutions;
     }
 
-    // To-do: Create a method to return the correct challenge from the test data ArrayList based on a received String value
+    // To-do: Create a method to return the correct solution from the test data ArrayList based on a received String value
     public static Solution getSolution(String name) {
         for (Solution solution : getSolutions()) {
             if (solution.getSolutionName().equals(name)) {
@@ -161,6 +161,23 @@ public class Solution {
             }
         }
         return null;
+    }
+
+
+    // TODO Create a method to return an array list of Solutions from the test data on a received String value (the challenge name)
+    public static ArrayList<Solution> getSolutionList(String name) {
+        // Create a new solution list
+        ArrayList<Solution> solutionList= new ArrayList<>();
+
+        // Loop through all the test solution data and if it matches then add it to the list
+        for (Solution solution : getSolutions()) {
+            if (solution.getSolutionChallengeOrigin().equals(name)) {
+                solutionList.add(solution);
+            }
+        }
+
+        // Return the solution list
+        return solutionList;
     }
 
 
