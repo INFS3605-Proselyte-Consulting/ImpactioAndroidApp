@@ -48,7 +48,7 @@ public class SolutionAdapter extends RecyclerView.Adapter<SolutionAdapter.Soluti
         Solution solution = mSolutionsFiltered.get(position);
 
         holder.solutionNameText.setText(solution.getSolutionName());
-        holder.solutionBlurbText.setText(solution.getSolutionBlurb());
+        //holder.solutionBlurbText.setText(solution.getSolutionBlurb());
         holder.solutionImageView.setImageResource(solution.getSolutionImage());
         holder.itemView.setTag(solution.getSolutionName());
     }
@@ -138,7 +138,7 @@ public class SolutionAdapter extends RecyclerView.Adapter<SolutionAdapter.Soluti
                         // Compare s1 with s2
                         return s1.getSolutionName().compareTo(s2.getSolutionName());
                     } else if(sortMethod == SORT_DESTINATION_NAME_DESCENDING) {
-                        // Sort the list by Challenge name in descending order (from Z to A)
+                        // Sort the list by Solution name in descending order (from Z to A)
                         // Compare s2 with s1
                         return s2.getSolutionName().compareTo(s1.getSolutionName());
                     }

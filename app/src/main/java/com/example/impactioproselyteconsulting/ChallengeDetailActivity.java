@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,8 +70,9 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         viewSolutionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Launch the Discover Challenges Activity
+                // Launch the Discover Solutions Activity
                 Intent intent = new Intent(ChallengeDetailActivity.this, DiscoverSolutionActivity.class);
+                Toast.makeText(ChallengeDetailActivity.this, "Loading Solutions for this Challenge", Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });

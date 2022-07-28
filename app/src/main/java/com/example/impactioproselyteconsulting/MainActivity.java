@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
-                Intent intent = new Intent(MainActivity.this, ChallengesInProgressActivity.class);
+                Intent intent = new Intent(MainActivity.this, SolutionsInProgressActivity.class);
                 startActivity(intent);
             }
         });
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
-                Intent intent = new Intent(MainActivity.this, ChallengesToDoActivity.class);
+                Intent intent = new Intent(MainActivity.this, SolutionsToDoActivity.class);
                 startActivity(intent);
             }
         });
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
-                Intent intent = new Intent(MainActivity.this, ChallengesCompletedActivity.class);
+                Intent intent = new Intent(MainActivity.this, SolutionsCompletedActivity.class);
                 startActivity(intent);
             }
         });
