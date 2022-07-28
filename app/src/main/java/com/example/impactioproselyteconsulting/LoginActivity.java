@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     public EditText mEmail,mPassword;
+    public ImageView mLogo;
 
 
     @Override
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mEmail = findViewById(R.id.ptLoginEmail);
         mPassword = findViewById(R.id.ptLoginPassword);
+        mLogo = findViewById(R.id.ptLoginImg);
 
         // Get handle to the button elements
         Button btnLogin = findViewById(R.id.bLoginLogin);
