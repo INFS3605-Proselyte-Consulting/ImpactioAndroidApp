@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactioProselyteConsulting">
         <activity
-            android:name=".ChallengesInProgressActivity"
+            android:name=".SolutionsInProgressActivity"
             android:exported="false" />
         <activity
-            android:name=".ChallengesToDoActivity"
+            android:name=".SolutionsToDoActivity"
             android:exported="false" />
         <activity
-            android:name=".ChallengesCompletedActivity"
+            android:name=".SolutionsCompletedActivity"
             android:exported="false" />
         <activity
             android:name=".ProfilePreferredTagsActivity"
@@ -33,6 +33,12 @@
         <activity android:name=".DiscoverChallengeActivity" />
         <activity
             android:name=".ChallengeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SolutionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DiscoverSolutionActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"

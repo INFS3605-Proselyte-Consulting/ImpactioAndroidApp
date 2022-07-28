@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ChallengesCompletedActivity extends MainActivity {
-    private static final String TAG = "ChallengesCompletedActivity";
-    private ChallengeAdapter mAdapter;
+public class SolutionsCompletedActivity extends MainActivity {
+    private static final String TAG = "SolutionsCompletedActivity";
+    private SolutionAdapter mAdapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_challenges_dashboard);
-        setTitle("Challenges Completed");
+        setContentView(R.layout.activity_solutions_dashboard);
+        setTitle("Solutions Completed");
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -53,29 +53,29 @@ public class ChallengesCompletedActivity extends MainActivity {
             }
         });
 
-        RecyclerView challengeRecyclerView = findViewById(R.id.ChallengeRV);
-        challengeRecyclerView.setHasFixedSize(true);
+        RecyclerView solutionRecyclerView = findViewById(R.id.SolutionRV);
+        solutionRecyclerView.setHasFixedSize(true);
 
-        challengeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        solutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Pass in the challenges list created, into the recycler view
-        ChallengeAdapter.RecyclerViewClickListener listener = new ChallengeAdapter.RecyclerViewClickListener() {
+        // Pass in the solutions list created, into the recycler view
+        SolutionAdapter.RecyclerViewClickListener listener = new SolutionAdapter.RecyclerViewClickListener() {
             @Override
-            public void onClick(View view, String challengeName) {
-                launchDetailActivity(challengeName);
+            public void onClick(View view, String solutionName) {
+                launchDetailActivity(solutionName);
             }
         };
 
-        // Create an adapter instance and supply the challenges data to be displayed
-        mAdapter = new ChallengeAdapter(Challenge.getChallengesCompleted(), listener);
-        challengeRecyclerView.setAdapter(mAdapter);
+        // Create an adapter instance and supply the solutions data to be displayed
+        mAdapter = new SolutionAdapter(Solution.getSolutionsCompleted(), listener);
+        solutionRecyclerView.setAdapter(mAdapter);
 
-        //challengeRecyclerView.setAdapter(new ChallengeAdapter(getApplicationContext(), challenges));
+        //solutionRecyclerView.setAdapter(new SolutionAdapter(getApplicationContext(), solutions));
     }
 
-    protected void launchDetailActivity(String challengeName) {
-        Intent intent = new Intent(this, ChallengeDetailActivity.class);
-        intent.putExtra("Name", challengeName);
+    protected void launchDetailActivity(String solutionName) {
+        Intent intent = new Intent(this, SolutionDetailActivity.class);
+        intent.putExtra("Name", solutionName);
         startActivity(intent);
 
     }
@@ -89,7 +89,7 @@ public class ChallengesCompletedActivity extends MainActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_challenge, menu);
+        inflater.inflate(R.menu.menu_solution, menu);
         // Get the search item from the menu
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -119,12 +119,12 @@ public class ChallengesCompletedActivity extends MainActivity {
             case R.id.sortNameAscending:
                 // Sort the list by name from A to Z
                 Log.d(TAG, "Sort by destination name ascending was selected");
-                mAdapter.sort(ChallengeAdapter.SORT_DESTINATION_NAME_ASCENDING);
+                mAdapter.sort(SolutionAdapter.SORT_DESTINATION_NAME_ASCENDING);
                 return true;
             case R.id.sortNameDescending:
                 // Sort the list by name from Z to A
                 Log.d(TAG, "Sort by destination name descending was selected");
-                mAdapter.sort(ChallengeAdapter.SORT_DESTINATION_NAME_DESCENDING);
+                mAdapter.sort(SolutionAdapter.SORT_DESTINATION_NAME_DESCENDING);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -76,6 +76,7 @@ public class DiscoverChallengeActivity extends AppCompatActivity {
         mAdapter = new ChallengeAdapter(Challenge.getChallenges(), listener);
         challengeRecyclerView.setAdapter(mAdapter);
 
+
         //challengeRecyclerView.setAdapter(new ChallengeAdapter(getApplicationContext(), challenges));
     }
 

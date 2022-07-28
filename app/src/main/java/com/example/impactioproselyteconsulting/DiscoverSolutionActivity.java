@@ -59,12 +59,19 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
             }
         });
 
-        RecyclerView solutionRecyclerView = findViewById(R.id.ChallengeRV);
+        Intent intent = getIntent();
+        Solution solution = Solution.getSolution(intent.getStringExtra("Name"));
+
+        RecyclerView solutionRecyclerView = findViewById(R.id.SolutionRV);
         solutionRecyclerView.setHasFixedSize(true);
 
         solutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Pass in the challenges list created, into the recycler view
+        // Testing list
+        List<Solution> solutionsTestList = new ArrayList<Solution>();
+        solutionsTestList.add(new Solution());
+
+        // Pass in the solutions list created, into the recycler view
         SolutionAdapter.RecyclerViewClickListener listener = new SolutionAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View view, String solutionName) {
@@ -136,4 +143,6 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }

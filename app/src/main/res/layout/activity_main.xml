@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="5dp"
-                        android:text="2\nChallenges"
+                        android:text="2\nSolutions"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -119,7 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="5dp"
-                        android:text="3\nChallenges"
+                        android:text="3\nSolutions"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -181,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="5dp"
-                        android:text="1\nChallenge"
+                        android:text="1\nSolution"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
