@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public EditText mEmail,mPassword;
     public ImageView mLogo;
+    Animation animSlideIn;
 
 
     @Override
@@ -36,9 +38,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         setTitle("Login");
 
+
+        //Animations for login elements
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
         mEmail = findViewById(R.id.ptLoginEmail);
+        mEmail.startAnimation(animSlideIn);
         mPassword = findViewById(R.id.ptLoginPassword);
+        mPassword.startAnimation(animSlideIn);
         mLogo = findViewById(R.id.ptLoginImg);
+        mLogo.startAnimation(animSlideIn);
 
         // Get handle to the button elements
         Button btnLogin = findViewById(R.id.bLoginLogin);
