@@ -152,14 +152,18 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 
         // Create an adapter instance and supply the solution data to be displayed
         // Pass in the challenge name from the challenge object and get the list
-        mAdapter = new SolutionAdapter(Solution.getAllSolutionsFromChallenge(challenge.challengeName), listener);
+        //mAdapter = new SolutionAdapter(Solution.getAllSolutionsFromChallenge(challenge.challengeName), listener);
         // Test data for Tags
-//        ArrayList<String> testTagList = new ArrayList<>();
-//        testTagList.add("A");
-//        testTagList.add("Yes");
-//        testTagList.add("No");
-//        testTagList.add("None");
-        //mAdapter = new SolutionAdapter(Solution.getSolutionListFromTagList(testTagList), listener);
+        ArrayList<String> testTagList = new ArrayList<>();
+        testTagList.add("Health");
+        testTagList.add("Science");
+        testTagList.add("Maths");
+        testTagList.add("Astrology");
+        // Should give me in this exact order
+        // Wayfairer, Pining For You, Sweater Wearer, Up-Rooted, New Life,
+//        SolutionTagMatchValue matchingSolutions = SolutionTagMatchValue.getSolutionTagMatchValue(testTagList);
+//        mAdapter = new SolutionAdapter(matchingSolutions.getSolutionList(), listener);
+        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
         recyclerView.setAdapter(mAdapter);
     }
 

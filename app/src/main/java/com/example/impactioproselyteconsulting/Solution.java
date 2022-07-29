@@ -2,6 +2,7 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.recyclerview.widget.SortedList;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Solution {
@@ -118,20 +119,43 @@ public class Solution {
         ArrayList<String> testTagListNo = new ArrayList<>();
         testTagListNo.add("No");
 
+        // Create more proper test Data Tags Lists here
+        ArrayList<String> testTagListHSMA = new ArrayList<>();
+        testTagListHSMA.add("Health");
+        testTagListHSMA.add("Science");
+        testTagListHSMA.add("Maths");
+        testTagListHSMA.add("Astrology");
+        ArrayList<String> testTagListHSM = new ArrayList<>();
+        testTagListHSM.add("Health");
+        testTagListHSM.add("Science");
+        testTagListHSM.add("Maths");
+        ArrayList<String> testTagListWrong = new ArrayList<>();
+        testTagListWrong.add("Not");
+        testTagListWrong.add("Yes");
+        ArrayList<String> testTagListAstrology = new ArrayList<>();
+        testTagListAstrology.add("Not");
+        testTagListAstrology.add("Astrology");
+        testTagListAstrology.add("No");
+        ArrayList<String> testTagListEMS = new ArrayList<>();
+        testTagListEMS.add("English");
+        testTagListEMS.add("Maths");
+        testTagListEMS.add("Science");
+
+
         // Add the test data Solutions to the list
         solutions.add(new Solution("Contemporary Clothing",
                 "Made by contemporaries for our changing times",
                 "Second-hand clothing shops help reduce textiles waste to landfill. Australia has 3,000 charity and social enterprise retailers that support 5,000 jobs, 33,000 volunteers, and 10,000 charity collection bins. A range of innovative products were displayed revealing the latest developments in clothing textile waste recycling and highlighting both the challenges and opportunities of addressing textile waste here in Australia.\n",
                 "To-Do",
                 "The Great Fashion Decarbonisation",
-                testTagListYesTwo,
+                testTagListWrong,
                 R.drawable.contemporary));
         solutions.add(new Solution("Decarbonated Style",
                 "A holistic overview of decarbonisation actioning",
                 "Despite efforts to reduce emissions, the industry is on a trajectory that will exceed the 1.5-degree pathway to mitigate climate change set out by the Intergovernmental Panel on Climate Change (IPCC) and ratified in the 2015 Paris agreement. By 2023, 20% of major apparel companies by revenue committed to net zero through membership in the Fashion Charter\n",
                 "To-Do",
                 "The Great Fashion Decarbonisation",
-                testTagListYesOne,
+                testTagListWrong,
                 R.drawable.decarbstyle));
         solutions.add(new Solution("Sweater Wearer",
                 "A change of wardrobe for the fashion industry",
@@ -140,7 +164,7 @@ public class Solution {
                         "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
                 "In Progress",
                 "The Great Fashion Decarbonisation",
-                testTagListNone,
+                testTagListEMS,
                 R.drawable.sweater));
         solutions.add(new Solution("Faster Fashion",
                 "Agile as they come, our solution is speed",
@@ -149,7 +173,7 @@ public class Solution {
                         "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
                 "Done",
                 "The Great Fashion Decarbonisation",
-                testTagListYesTwo,
+                testTagListWrong,
                 R.drawable.fasterfashion));
         solutions.add(new Solution("Wayfairer",
                 "Building community wealth through tourism",
@@ -162,14 +186,14 @@ public class Solution {
                         "For this project, the funding contribution from WWF would enable the piloting of the Wayfairer model in the Ballarat region, specifically to support the accommodation needs of delegates attending the 2022 Australian Regional Tourism Convention.\n",
                 "To-Do",
                 "Innovate to Regenerate",
-                testTagListYesTwo,
+                testTagListHSMA,
                 R.drawable.wayfairer));
         solutions.add(new Solution("New Life",
                 "Pushing the boundaries of possible plant life in the public eye",
                 "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic.\n",
                 "To-Do",
                 "Innovate to Regenerate",
-                testTagListNo,
+                testTagListAstrology,
                 R.drawable.newlife));
         solutions.add(new Solution("Pining for You",
                 "Redfining the public's perception for the environment",
@@ -178,7 +202,7 @@ public class Solution {
                         "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
                 "In Progress",
                 "Innovate to Regenerate",
-                testTagListNone,
+                testTagListHSM,
                 R.drawable.piningforyou));
         solutions.add(new Solution("Up-Rooted",
                 "Speaking for the trees, in the name of all that is good",
@@ -187,7 +211,7 @@ public class Solution {
                         "Together we can make a greater positive impact on the conservation. Small, local actions can also make a huge difference.",
                 "In Progress",
                 "Innovate to Regenerate",
-                testTagListYesTwo,
+                testTagListEMS,
                 R.drawable.uprooted));
         return solutions;
     }
@@ -223,17 +247,112 @@ public class Solution {
     // DONE: Method that takes in a string and looks for it in the list of tags
     // if it can be found, then return True
     public boolean doesTagMatch(String inputTag) {
-        boolean match = false;
 
         // Loop through the Solution Tags list
         // and check if the inputTag matches it
         for (String tags : solutionTagsList) {
             if (tags.equals(inputTag)) {
-                match = true;
+                return true;
             }
         }
 
-        return match;
+        return false;
+    }
+
+    // DONE: Method that finds the number of matches between tags of solution vs user
+    public int howManyTagsMatch(ArrayList<String> userTagsList) {
+        int matches = 0;
+
+        // Loop through the Solution Tags list
+        for (String solutionTag : solutionTagsList) {
+            // Loop through the UserTags list
+            for (String userTag : userTagsList) {
+                // Check if match
+                if (solutionTag.equals(userTag)) {
+                    // if they match then, iterate counter
+                    matches++;
+                }
+            }
+        }
+
+        return matches;
+    }
+
+    // DONE: Method that returns a list of ALL Solutions with those with more matches at the top
+    // This is THE Algorithm
+    // This can be used later in the To Do Solutions from the dashboard
+    // Should in theory, call howManyTagsMatch method
+    public static ArrayList<Solution> getPrioritizedSolutionListFromTagList(ArrayList<String> userTagList) {
+
+        // Create a new empty Solution list
+        ArrayList<Solution> solutionList = new ArrayList<>();
+
+        // Make a separate loop for each number to check
+        // to ensure right order
+
+        // TODO: Not that important but if can, make this a loop so that it looks nicer
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) >= 10) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 9) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 8) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 7) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 6) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 5) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 4) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 3) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 2) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 1) {
+                solutionList.add(solution);
+            }
+        }
+
+        return solutionList;
     }
 
     // DONE: Method that makes a new list of Solutions with the matching Tag
@@ -244,10 +363,11 @@ public class Solution {
     // and then it goes through all the Solution data and if the Tag matches something in the list
     // then add that Solution to the list
     // and finally return the list
+    // The resulting solution list is Unsorted / not in any order or priority, thus unused
     public static ArrayList<Solution> getSolutionListFromTag(String inputTag) {
 
         // Create a new Solution array list
-        ArrayList<Solution> solutionList= new ArrayList<>();
+        ArrayList<Solution> solutionList = new ArrayList<>();
 
         // Loop through all the Solution data
         for (Solution solution : getSolutions()) {
@@ -260,9 +380,10 @@ public class Solution {
         return solutionList;
     }
 
-    // TODO Write a method that returns a list of Solutions given a list of Tags (not just one Tag string)
+    // DONE: Method that returns a list of Solutions given a list of Tags (not just one Tag string)
     // Iterate through the input Tag list and call the doesTagMatch for each tag
     // If any of them match then add that Solution to the list
+    // The resulting solution list is Unsorted / not in any order or priority, thus unused
     public static ArrayList<Solution> getSolutionListFromTagList(ArrayList<String> inputTagList) {
 
         // Create a new Solution array list
@@ -282,14 +403,9 @@ public class Solution {
         return solutionList;
     }
 
-    // TODO Write a method that returns a list of Solutions given a list of Tags and counts the number of matches too
-    // Since I plan on returning the solution and the Number of matches too, then I should make a new class
 
-
-    // TODO: Write a method that combines the lists of Solutions so that the ones with more than THREE matches appear at the top
-
-
-    // TODO: Write a method that returns a list of Solutions given a challenge name AND given a Tags list
+    // TODO: Write a method that returns a list of Solutions given a challenge name AND given a Prioritized Solutions List
+    // This should work on the basis of comparing the co
 
 
     // For each Challenge, there will be corresponding Solutions
