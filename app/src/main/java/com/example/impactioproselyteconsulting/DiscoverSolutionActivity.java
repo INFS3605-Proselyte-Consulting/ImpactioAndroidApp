@@ -160,10 +160,17 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         testTagList.add("Maths");
         testTagList.add("Astrology");
         // Should give me in this exact order
-        // Wayfairer, Pining For You, Sweater Wearer, Up-Rooted, New Life,
+        // Wayfairer, Pining For You, Sweater Wearer, Up-Rooted, New Life
+
+        // For the Fashion Challenge it should have: Sweater Wearer
+        // For the Innovate to Regenerate it should have: Wayfairer, Pining For You, Up-Rooted, New Life
 //        SolutionTagMatchValue matchingSolutions = SolutionTagMatchValue.getSolutionTagMatchValue(testTagList);
 //        mAdapter = new SolutionAdapter(matchingSolutions.getSolutionList(), listener);
-        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
+        //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
+        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
+
+        // TODO: Instead of passing in testTagList, pass in the user's specific tags from a database
+
         recyclerView.setAdapter(mAdapter);
     }
 

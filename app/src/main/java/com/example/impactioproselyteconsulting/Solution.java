@@ -108,16 +108,16 @@ public class Solution {
         // Create a list of solutions here
         ArrayList<Solution> solutions = new ArrayList<>();
 
-        // Create the test Data Tags Lists here
-        ArrayList<String> testTagListYesOne = new ArrayList<>();
-        testTagListYesOne.add("Yes");
-        ArrayList<String> testTagListYesTwo = new ArrayList<>();
-        testTagListYesTwo.add("Not");
-        testTagListYesTwo.add("Yes");
-        ArrayList<String> testTagListNone = new ArrayList<>();
-        testTagListNone.add("None");
-        ArrayList<String> testTagListNo = new ArrayList<>();
-        testTagListNo.add("No");
+//        // Create the test Data Tags Lists here
+//        ArrayList<String> testTagListYesOne = new ArrayList<>();
+//        testTagListYesOne.add("Yes");
+//        ArrayList<String> testTagListYesTwo = new ArrayList<>();
+//        testTagListYesTwo.add("Not");
+//        testTagListYesTwo.add("Yes");
+//        ArrayList<String> testTagListNone = new ArrayList<>();
+//        testTagListNone.add("None");
+//        ArrayList<String> testTagListNo = new ArrayList<>();
+//        testTagListNo.add("No");
 
         // Create more proper test Data Tags Lists here
         ArrayList<String> testTagListHSMA = new ArrayList<>();
@@ -140,6 +140,9 @@ public class Solution {
         testTagListEMS.add("English");
         testTagListEMS.add("Maths");
         testTagListEMS.add("Science");
+
+        // TODO: Create new test data of Tags list for each Solution (data that makes more sense)
+        // TODO: Also related, make the tags visible on the Discover Solutions and Solution Detail screen
 
 
         // Add the test data Solutions to the list
@@ -354,6 +357,84 @@ public class Solution {
 
         return solutionList;
     }
+
+    // DONE: Method that returns a list of Solutions specific to the input Challenge name
+    // with those with more matches at the top
+    // This uses THE Algorithm
+    // This can be used later in the Discover page from Challenge Detail Activity
+    public static ArrayList<Solution> getPrioritizedSolutionListFromTagListAndChallengeName(ArrayList<String> userTagList, String challengeName) {
+
+        // Create a new empty Solution list
+        ArrayList<Solution> solutionList = new ArrayList<>();
+
+        // Make a separate loop for each number to check
+        // to ensure right order
+
+        // TODO: Not that important but if can, make this a loop so that it looks nicer
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) >= 10 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 9 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 8 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 7 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 6 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 5 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 4 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 3 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 2 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 1 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        return solutionList;
+    }
+
 
     // DONE: Method that makes a new list of Solutions with the matching Tag
     // (New list of Solutions that have the Tag in the solutionsTagList
