@@ -153,6 +153,13 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         // Create an adapter instance and supply the solution data to be displayed
         // Pass in the challenge name from the challenge object and get the list
         mAdapter = new SolutionAdapter(Solution.getAllSolutionsFromChallenge(challenge.challengeName), listener);
+        // Test data for Tags
+//        ArrayList<String> testTagList = new ArrayList<>();
+//        testTagList.add("A");
+//        testTagList.add("Yes");
+//        testTagList.add("No");
+//        testTagList.add("None");
+        //mAdapter = new SolutionAdapter(Solution.getSolutionListFromTagList(testTagList), listener);
         recyclerView.setAdapter(mAdapter);
     }
 

@@ -114,7 +114,9 @@ public class Solution {
         testTagListYesTwo.add("Not");
         testTagListYesTwo.add("Yes");
         ArrayList<String> testTagListNone = new ArrayList<>();
-        testTagListYesOne.add("None");
+        testTagListNone.add("None");
+        ArrayList<String> testTagListNo = new ArrayList<>();
+        testTagListNo.add("No");
 
         // Add the test data Solutions to the list
         solutions.add(new Solution("Contemporary Clothing",
@@ -167,7 +169,7 @@ public class Solution {
                 "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic.\n",
                 "To-Do",
                 "Innovate to Regenerate",
-                testTagListYesTwo,
+                testTagListNo,
                 R.drawable.newlife));
         solutions.add(new Solution("Pining for You",
                 "Redfining the public's perception for the environment",
@@ -259,6 +261,32 @@ public class Solution {
     }
 
     // TODO Write a method that returns a list of Solutions given a list of Tags (not just one Tag string)
+    // Iterate through the input Tag list and call the doesTagMatch for each tag
+    // If any of them match then add that Solution to the list
+    public static ArrayList<Solution> getSolutionListFromTagList(ArrayList<String> inputTagList) {
+
+        // Create a new Solution array list
+        ArrayList<Solution> solutionList= new ArrayList<>();
+
+        // Loop through all the Solution data
+        for (Solution solution : getSolutions()) {
+            // Loop through all the Tags in the TagList
+            for (String inputTag : inputTagList) {
+                // Check if the Tag matches
+                if (solution.doesTagMatch(inputTag)) {
+                    solutionList.add(solution);
+                }
+            }
+        }
+
+        return solutionList;
+    }
+
+    // TODO Write a method that returns a list of Solutions given a list of Tags and counts the number of matches too
+    // Since I plan on returning the solution and the Number of matches too, then I should make a new class
+
+
+    // TODO: Write a method that combines the lists of Solutions so that the ones with more than THREE matches appear at the top
 
 
     // TODO: Write a method that returns a list of Solutions given a challenge name AND given a Tags list
