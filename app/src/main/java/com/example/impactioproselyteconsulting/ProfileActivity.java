@@ -72,9 +72,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 tvAOE.setText(aoe);
                 String sdg = dataSnapshot.child("cusSDG").getValue().toString();
                 tvSDGDisplay.setText(sdg);
-                String userTag = dataSnapshot.child("cusUserGeneratedTags").getValue().toString();
-                tvUserTag.setText(userTag);
+                if (dataSnapshot.hasChild("cusUserGeneratedTags")) {
+                    String userTag = dataSnapshot.child("cusUserGeneratedTags").getValue().toString();
+                    tvUserTag.setText(userTag);
+                }else{
+                    tvUserTag.setText("");
+                }
+
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
