@@ -25,7 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.airbnb.lottie.LottieAnimationView;
+
 
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -147,7 +147,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
                     // below line is used to get reference for our database.
                     databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid);
-
                     Toast.makeText(RegisterActivity.this,"User Registered",Toast.LENGTH_LONG).show();
 
                     databaseReference.addValueEventListener(new ValueEventListener() {

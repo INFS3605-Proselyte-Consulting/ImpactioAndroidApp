@@ -9,16 +9,45 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+//    //FireBase Database
+//    FirebaseDatabase firebaseDatabase;
+//
+//    //Reference for firebase
+//
+//    DatabaseReference databaseReferenceUserGeneratedTags;
+//
+//
+//    //Create variable customerInfo
+//
+//    CustomerInfo customerInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Dashboard");
+
+//        firebaseDatabase = FirebaseDatabase.getInstance();
+//
+//        // initializing our object class variable.
+//        customerInfo = new CustomerInfo();
+//
+//        //This is for authentication
+//
+//        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//
+//        //Create button to submit Custom Tag
+//
+//        databaseReferenceUserGeneratedTags = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
+//        databaseReferenceUserGeneratedTags.setValue("");
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
