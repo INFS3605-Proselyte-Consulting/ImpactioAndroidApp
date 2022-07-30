@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
         android:drawableStart="@drawable/ic_login_mail_icon"
@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptLoginEmail"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <EditText
         android:id="@+id/ptPassword"
@@ -92,7 +92,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <Spinner
         android:id="@+id/ptSDGS"
@@ -111,7 +111,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegSDG"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintVertical_bias="0.437" />
 
     <Spinner
         android:id="@+id/ptExpertise"
@@ -139,7 +139,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="Expertise"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptBiography"
@@ -156,7 +156,6 @@
         app:layout_constraintStart_toStartOf="@+id/ptExpertise"
         app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
 
-
     <Button
         android:id="@+id/bRegister"
         android:layout_width="0dp"
@@ -171,7 +170,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintVertical_bias="0.825" />
+
 
     <ImageView
         android:id="@+id/ptRegisterImage"
