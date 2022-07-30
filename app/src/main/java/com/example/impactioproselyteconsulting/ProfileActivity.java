@@ -16,6 +16,8 @@ import android.widget.TextView;
 //import com.example.impactioproselyteconsulting.ui.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "ProfileActivity";
@@ -25,11 +27,46 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private Button btnEdit, btnLogOut;
     private CardView cardBiography, cardAreaOfExpertise, cardSustainable, cardPreferredTags;
 
+//    //FireBase Database
+//    FirebaseDatabase firebaseDatabase;
+//
+//    //CustomerInfo Instance
+//
+//    CustomerInfo customerInfo;
+//
+//    //DataBase Reference
+//
+//    DatabaseReference referenceGetName;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         setTitle("Your Profile");
+
+//        //Reference Database
+//
+//        firebaseDatabase = FirebaseDatabase.getInstance();
+//
+//        // initializing our object class variable.
+//        customerInfo = new CustomerInfo();
+//
+////        //This is for authentication
+////        FirebaseAuth auth = FirebaseAuth.getInstance();
+//
+//        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//
+//
+//        //Reference Name
+//
+//        referenceGetName = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusName");
+//        tvName.setText(referenceGetName);
+
+
+
+
+
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -101,7 +138,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         switch (view.getId()){
             case R.id.cardBiography:
-                i = new Intent(this,ProfileBiographyActivity.class);
+                i = new Intent(this,DatabaseEditProfile.class);
                 startActivity(i);
                 break;
 
