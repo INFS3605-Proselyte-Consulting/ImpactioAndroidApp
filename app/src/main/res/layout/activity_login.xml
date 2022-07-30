@@ -88,16 +88,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_blue_inner_shadow"
+        android:drawablePadding="16dp"
         android:text="Login"
         android:textColor="#000000"
-        android:drawablePadding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731"
-        />
+        app:layout_constraintVertical_bias="0.679" />
 
     <Button
         android:id="@+id/bLoginRegister"
@@ -108,14 +107,14 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/round_border_blue_inner_shadow"
-        android:text="Register"
         android:drawablePadding="16dp"
+        android:text="Register"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLoginLogin"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintVertical_bias="0.071" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

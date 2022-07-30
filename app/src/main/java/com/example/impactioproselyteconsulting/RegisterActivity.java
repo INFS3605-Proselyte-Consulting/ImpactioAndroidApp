@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     private Spinner sp_prefExpertise, sp_prefSDG;
     private Button btn_Register;
     public String valueFromSpinnerExpertise,valueFromSpinnerSDG;
+    Animation animSlideIn, animFloatUp;
     // creating a variable for our
     // Firebase Database.
     FirebaseDatabase firebaseDatabase;
@@ -59,14 +61,27 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         //Toasts just give a message on the screen
         Toast.makeText(RegisterActivity.this, "You can register now", Toast.LENGTH_LONG).show();
 
+
+        //Animations
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+        animFloatUp = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.floating_up);
+
         //Edit Texts
         et_Email = findViewById(R.id.ptEmail);
+        et_Email.startAnimation(animSlideIn);
         et_Password = findViewById(R.id.ptPassword);
+        et_Password.startAnimation(animSlideIn);
         et_Fullname = findViewById(R.id.ptFullname);
+        et_Fullname.startAnimation(animSlideIn);
         et_Biography = findViewById(R.id.ptBiography);
+        et_Biography.startAnimation(animSlideIn);
         //These are for the spinners
         sp_prefSDG = findViewById(R.id.ptSDGS);
+        sp_prefSDG.startAnimation(animSlideIn);
         sp_prefExpertise = findViewById(R.id.ptExpertise);
+        sp_prefExpertise.startAnimation(animSlideIn);
         //This determines something changed
         sp_prefSDG.setOnItemSelectedListener(this);
         sp_prefExpertise.setOnItemSelectedListener(this);

@@ -22,7 +22,7 @@
         android:id="@+id/bRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/round_border_blue"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,6 +146,7 @@
         android:contentDescription="Expertise"
         android:ems="10"
         android:hint="Expertise"
+        android:background="@drawable/round_border_teal"
         android:inputType="textPersonName"
         android:minHeight="48dp"
 

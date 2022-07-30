@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public EditText mEmail,mPassword;
     public ImageView mLogo;
-    Animation animSlideIn;
+    Animation animSlideIn, animFloatUp;
 
 
     @Override
@@ -42,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         //Animations for login elements
         animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.slide_in_bottom);
+        animFloatUp = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.floating_up);
         mEmail = findViewById(R.id.ptLoginEmail);
         mEmail.startAnimation(animSlideIn);
         mPassword = findViewById(R.id.ptLoginPassword);
@@ -51,7 +53,10 @@ public class LoginActivity extends AppCompatActivity {
 
         // Get handle to the button elements
         Button btnLogin = findViewById(R.id.bLoginLogin);
+        btnLogin.startAnimation(animSlideIn);
         Button btnRegister = findViewById(R.id.bLoginRegister);
+        btnRegister.startAnimation(animSlideIn);
+
 
         // Launch Register Activity when Register button is clicked
         btnRegister.setOnClickListener(new View.OnClickListener() {
