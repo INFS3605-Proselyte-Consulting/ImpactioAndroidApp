@@ -84,18 +84,25 @@
                     android:layout_marginLeft="80dp"
                     android:text="Biography"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvBio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="294dp"
+                    android:layout_height="54dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="80dp"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="6dp"
                     android:text="Biography"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="10sp" />
 
             </RelativeLayout>
 
@@ -144,13 +151,20 @@
 
                 <TextView
                     android:id="@+id/tvAOE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="292dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="80dp"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="9dp"
                     android:text="AreaOfExpertise"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 
@@ -198,14 +212,21 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvResult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvSDGDisplay"
+                    android:layout_width="294dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="80dp"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="9dp"
                     android:text="Sustainable Development Goals"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 
@@ -247,20 +268,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
-                    android:text="Preferred Tags"
+                    android:text="Custom Tags"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvTag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvUserTag"
+                    android:layout_width="284dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="80dp"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Preferred Tags"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Custom User Tags"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 

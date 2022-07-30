@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactioProselyteConsulting">
         <activity
+            android:name=".DatabaseEditUserGeneratedTags"
+            android:exported="false" />
+        <activity
+            android:name=".DatabaseEditSDG"
+            android:exported="false" />
+        <activity
+            android:name=".DatabaseEditExpertise"
+            android:exported="false" />
+        <activity
             android:name=".DatabaseEditProfile"
             android:exported="false" />
         <activity
@@ -49,7 +58,7 @@
         <activity android:name=".ProfileEditActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -59,7 +68,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

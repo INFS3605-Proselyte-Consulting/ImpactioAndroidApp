@@ -16,27 +16,30 @@ import android.widget.TextView;
 //import com.example.impactioproselyteconsulting.ui.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "ProfileActivity";
     public static final String INTENT_MESSAGE = "intent_message";
-    private TextView tvName, tvBiography;
+    private TextView tvName, tvBiography, tvBio, tvAOE, tvSDGDisplay, tvUserTag;
     private ImageView ivProfilePic;
     private Button btnEdit, btnLogOut;
     private CardView cardBiography, cardAreaOfExpertise, cardSustainable, cardPreferredTags;
 
-//    //FireBase Database
-//    FirebaseDatabase firebaseDatabase;
-//
-//    //CustomerInfo Instance
-//
-//    CustomerInfo customerInfo;
-//
-//    //DataBase Reference
-//
-//    DatabaseReference referenceGetName;
+    //FireBase Database
+    FirebaseDatabase firebaseDatabase;
+
+    //CustomerInfo Instance
+
+    CustomerInfo customerInfo;
+
+    //DataBase Reference
+
+    DatabaseReference referenceGetName;
 
 
     @Override
@@ -45,23 +48,41 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
         setTitle("Your Profile");
 
-//        //Reference Database
-//
-//        firebaseDatabase = FirebaseDatabase.getInstance();
-//
-//        // initializing our object class variable.
-//        customerInfo = new CustomerInfo();
-//
-////        //This is for authentication
-////        FirebaseAuth auth = FirebaseAuth.getInstance();
-//
-//        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//
-//
-//        //Reference Name
-//
-//        referenceGetName = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusName");
-//        tvName.setText(referenceGetName);
+        //Recognise the firebase database user
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // initializing our object class variable.
+        customerInfo = new CustomerInfo();
+
+
+        //Reference Database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        referenceGetName =  firebaseDatabase.getReference().child("CustomerInfo").child(uid);
+
+
+        //Reference Name and Profile Details
+        referenceGetName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.child("cusName").getValue().toString();
+                tvName.setText(name);
+                String bio = dataSnapshot.child("cusBio").getValue().toString();
+                tvBio.setText(bio);
+                String aoe = dataSnapshot.child("cusExpertise").getValue().toString();
+                tvAOE.setText(aoe);
+                String sdg = dataSnapshot.child("cusSDG").getValue().toString();
+                tvSDGDisplay.setText(sdg);
+                String userTag = dataSnapshot.child("cusUserGeneratedTags").getValue().toString();
+                tvUserTag.setText(userTag);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
 
 
@@ -98,6 +119,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         ivProfilePic = findViewById(R.id.ivProfilePic);
         tvName = findViewById(R.id.tvName);
         tvBiography = findViewById(R.id.tvBiography);
+        tvBio = findViewById(R.id.tvBio);
+        tvAOE = findViewById(R.id.tvAOE);
+        tvSDGDisplay = findViewById(R.id.tvSDGDisplay);
+        tvUserTag = findViewById(R.id.tvUserTag);
         btnLogOut = findViewById(R.id.btnLogOut);
         cardBiography = (CardView) findViewById(R.id.cardBiography);
         cardAreaOfExpertise = (CardView) findViewById(R.id.cardAreaOfExpertise);
@@ -143,17 +168,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.cardAreaOfExpertise:
-                i = new Intent(this, ProfileAreaOfExpertiseActivity.class);
+                i = new Intent(this, DatabaseEditExpertise.class);
                 startActivity(i);
                 break;
 
             case R.id.cardSustainable:
-                i = new Intent(this, ProfileEditActivity.class);
+                i = new Intent(this, DatabaseEditSDG.class);
                 startActivity(i);
                 break;
 
             case R.id.cardPreferredTags:
-                i = new Intent(this, ProfilePreferredTagsActivity.class);
+                i = new Intent(this, DatabaseEditUserGeneratedTags.class);
                 startActivity(i);
                 break;
 

@@ -37,7 +37,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_edit_profile);
 
-        tvUid = findViewById(R.id.tvUid);
+
 
         tvChangeName = findViewById(R.id.tvChangeName);;
         btnChangeName = findViewById(R.id.btnChangeName);
@@ -58,7 +58,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
 //        FirebaseAuth auth = FirebaseAuth.getInstance();
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        tvUid.setText(uid);
+
 
 
         //Create button to submit Bio Change
