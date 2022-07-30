@@ -7,17 +7,30 @@
 
 
     <ImageView
+        android:id="@+id/ptLoginImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/activity_login_bg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTintMode="src_over"
+        android:alpha="0.4"/>
+
+    <ImageView
         android:id="@+id/ptLoginImg"
         android:layout_width="362dp"
         android:layout_height="198dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:src="@drawable/impactio_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -94,4 +107,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLoginLogin"
         app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
