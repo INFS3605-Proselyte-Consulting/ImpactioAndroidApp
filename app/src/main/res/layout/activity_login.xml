@@ -10,73 +10,146 @@
         android:id="@+id/ptLoginImage"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:alpha="0.4"
         android:background="@drawable/activity_login_bg"
+        android:backgroundTintMode="src_over"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTintMode="src_over"
-        android:alpha="0.4"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ptLoginImg"
-        android:layout_width="362dp"
-        android:layout_height="198dp"
+        android:layout_width="304dp"
+        android:layout_height="188dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:src="@drawable/impactio_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
 
-        android:id="@+id/ptLoginEmail"
+    <Button
+        android:id="@+id/bLoginRegister"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/round_border_blue_inner_shadow"
         android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/ptLoginPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
-
-    <EditText
-
-        android:id="@+id/ptLoginPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="16dp"
+        android:text="Register"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bLoginLogin"
+        app:layout_constraintVertical_bias="0.0" />
 
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.599">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="189dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ptLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_gravity="center_horizontal"
+                android:drawableStart="@drawable/ic_login_mail_icon"
+                android:drawablePadding="16dp"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/impactioTeal"
+
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="479dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/LoginTextInputLayoutStyle"
+                android:drawableStart="@drawable/ic_login_pass_icon"
+                android:drawablePadding="16dp"
+                android:id="@+id/ptLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_gravity="center_horizontal"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/impactioTeal"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loginanimation"
+        android:layout_width="146dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ptLoginImage"
+        app:layout_constraintVertical_bias="0.92"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/forest_animation" />
 
     <Button
         android:id="@+id/bLoginLogin"
@@ -84,28 +157,15 @@
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
+        android:background="@drawable/round_border_blue_inner_shadow"
+        android:drawablePadding="16dp"
         android:text="Login"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
-
-    <Button
-        android:id="@+id/bLoginRegister"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:background="@drawable/round_border"
-        android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bLoginLogin"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.838" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
