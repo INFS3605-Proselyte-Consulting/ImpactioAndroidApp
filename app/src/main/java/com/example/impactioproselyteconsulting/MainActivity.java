@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Launch the Discover Challenges Activity
                 Intent intent = new Intent(MainActivity.this, SolutionsCompletedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goRating = (Button) findViewById(R.id.bGoToRating);
+        goRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,RatingActivity.class);
                 startActivity(intent);
             }
         });

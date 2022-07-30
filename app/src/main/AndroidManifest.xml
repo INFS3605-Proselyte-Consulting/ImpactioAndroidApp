@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".RatingActivity">
+
+        </activity>
+
         <activity
             android:name=".DatabaseEditUserGeneratedTags"
             android:exported="false" />

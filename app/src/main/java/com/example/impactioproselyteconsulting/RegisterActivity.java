@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.airbnb.lottie.LottieAnimationView;
 
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
