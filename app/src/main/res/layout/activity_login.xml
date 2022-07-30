@@ -77,17 +77,17 @@
             tools:layout_editor_absoluteY="189dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:drawableStart="@drawable/ic_login_mail_icon"
-                android:drawablePadding="16dp"
                 android:id="@+id/ptLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_gravity="center_horizontal"
+                android:drawableStart="@drawable/ic_login_mail_icon"
+                android:drawablePadding="16dp"
                 android:imeOptions="actionNext"
                 android:maxLines="1"
                 android:padding="10dp"
-                app:boxStrokeColor="@color/impactioTeal"
                 android:singleLine="true"
+                app:boxStrokeColor="@color/impactioTeal"
 
                 tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
