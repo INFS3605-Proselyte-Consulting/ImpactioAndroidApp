@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:color="@color/impactioBlue"
+        android:width="2dp"/>
+    <corners android:radius="100dp"/>
+    <solid android:color="@color/impactioBlue" />
+    <gradient
+        android:type="linear"
+        android:startColor="#19000000"
+        android:endColor="#00000000" />
+
+
+    <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+    <corners android:radius="8dp" />
+</shape>

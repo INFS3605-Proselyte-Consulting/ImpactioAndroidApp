@@ -5,15 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ptRegisterImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.4"
+        android:backgroundTintMode="src_over"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/bRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/round_border"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/round_border_blue"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -23,7 +36,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="240dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_login_pass_icon"
+
+        android:background="@drawable/round_border_teal"
         android:drawablePadding="16dp"
         android:ems="10"
 
@@ -40,7 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/ic_user"
+        android:background="@drawable/round_border_teal"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Full Name"
@@ -60,10 +76,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="512dp"
-        android:background="@drawable/round_border"
+        android:background="@drawable/round_border_teal"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Email"
+        android:drawableStart="@drawable/ic_login_mail_icon"
         android:inputType="textEmailAddress"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/bRegister"
@@ -101,13 +118,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border"
+        android:background="@drawable/round_border_teal"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Biography"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="16dp"
+        android:drawableStart="@drawable/ic_biography"
+
         app:layout_constraintBottom_toTopOf="@+id/bRegister"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,6 +147,7 @@
         android:hint="Expertise"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+
         app:layout_constraintBottom_toTopOf="@+id/bRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

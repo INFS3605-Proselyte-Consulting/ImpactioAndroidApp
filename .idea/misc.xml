@@ -22,17 +22,14 @@
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_sdg_edit.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/challenge_view.xml" value="0.4" />
-        <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_database_edit_profile.xml" value="0.28804347826086957" />
-        <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_login.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_area_of_expertise.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_biography.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.26811594202898553" />
-        <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_sdg_edit.xml" value="0.35104166666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
