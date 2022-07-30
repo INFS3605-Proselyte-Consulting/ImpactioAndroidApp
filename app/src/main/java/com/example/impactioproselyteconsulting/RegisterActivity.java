@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.airbnb.lottie.LottieAnimationView;
+
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -69,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 R.anim.floating_up);
 
         //Edit Texts
-        et_Email = findViewById(R.id.ptEmail);
+        et_Email = findViewById(R.id.ptLoginEmail);
         et_Email.startAnimation(animSlideIn);
         et_Password = findViewById(R.id.ptPassword);
         et_Password.startAnimation(animSlideIn);

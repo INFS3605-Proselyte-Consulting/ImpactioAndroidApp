@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- customize your theme here -->
-        <item name="colorPrimary">@color/impactioBlue</item>
-        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+        <item name="colorPrimary">@color/impactioTeal</item>
+        <item name="colorPrimaryDark">@color/impactioBlue</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -12,5 +12,10 @@
             <item name="android:textColor">@color/chip_text_color</item>
             <item name="checkedIconTint">@color/white</item>
             <item name="rippleColor">@color/whiteAplha</item>
+    </style>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/impactioTeal</item>
+        <item name="boxStrokeWidth">2dp</item>
     </style>
 </resources>

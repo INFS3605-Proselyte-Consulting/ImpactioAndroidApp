@@ -5,30 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/ptRegisterImage"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:alpha="0.4"
-        android:backgroundTintMode="src_over"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/activity_register_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/bRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_blue"
         android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ptRegisterImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881" />
 
     <EditText
         android:id="@+id/ptPassword"
@@ -37,9 +28,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="240dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_login_pass_icon"
-
         android:background="@drawable/round_border_teal"
+
+        android:drawableStart="@drawable/ic_login_pass_icon"
         android:drawablePadding="16dp"
         android:ems="10"
 
@@ -56,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_user"
         android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_user"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Full Name"
@@ -68,30 +59,26 @@
         app:layout_constraintBottom_toTopOf="@+id/ptPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/ptLoginEmail" />
 
     <EditText
-        android:id="@+id/ptEmail"
+        android:id="@+id/ptLoginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="512dp"
         android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_login_mail_icon"
         android:drawablePadding="16dp"
+
+
         android:ems="10"
         android:hint="Email"
-        android:drawableStart="@drawable/ic_login_mail_icon"
         android:inputType="textEmailAddress"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/bRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintTop_toTopOf="@+id/ptRegisterImage" />
 
     <Spinner
         android:id="@+id/ptSDGS"
@@ -120,13 +107,13 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_biography"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Biography"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="16dp"
-        android:drawableStart="@drawable/ic_biography"
 
         app:layout_constraintBottom_toTopOf="@+id/bRegister"
 
@@ -143,10 +130,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border_teal"
         android:contentDescription="Expertise"
         android:ems="10"
         android:hint="Expertise"
-        android:background="@drawable/round_border_teal"
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
@@ -159,7 +146,7 @@
 
     <TextView
         android:id="@+id/tvRegExp"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
@@ -170,7 +157,7 @@
 
     <TextView
         android:id="@+id/tvRegSDG"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
@@ -178,5 +165,21 @@
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptExpertise"
         app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
+
+
+
+    <ImageView
+        android:id="@+id/ptRegisterImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.4"
+        android:background="@drawable/activity_register_bg"
+        android:backgroundTintMode="src_over"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
