@@ -5,41 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/bRegister"
+
+    <EditText
+        android:id="@+id/ptLoginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border_blue"
-        android:text="Register"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ptRegisterImage"
+        android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_login_mail_icon"
+
+
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.881" />
-
-    <EditText
-        android:id="@+id/ptPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border_teal"
-
-        android:drawableStart="@drawable/ic_login_pass_icon"
-        android:drawablePadding="16dp"
-        android:ems="10"
-
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/ptRegisterImage" />
 
     <EditText
         android:id="@+id/ptFullname"
@@ -58,46 +44,31 @@
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/ptPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptLoginEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/ptLoginEmail"
+        app:layout_constraintVertical_bias="0.416" />
 
     <EditText
-        android:id="@+id/ptLoginEmail"
+        android:id="@+id/ptPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="212dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
-        android:drawableStart="@drawable/ic_login_mail_icon"
+
+        android:drawableStart="@drawable/ic_login_pass_icon"
         android:drawablePadding="16dp"
-
-
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+
+        android:hint="Password"
+        android:inputType="textPassword"
         android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ptRegisterImage" />
-
-    <Spinner
-        android:id="@+id/ptSDGS"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:contentDescription="SDG"
-        android:ems="10"
-        android:hint="SDG"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/bRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegSDG"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/ptBiography"
@@ -124,6 +95,25 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
+        android:id="@+id/ptSDGS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="SDG"
+        android:ems="10"
+        android:hint="SDG"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegSDG"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <Spinner
         android:id="@+id/ptExpertise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -142,14 +132,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegExp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/tvRegExp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="Expertise"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptBiography"
@@ -159,14 +149,29 @@
         android:id="@+id/tvRegSDG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="SDG"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/ptExpertise"
         app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
 
 
+    <Button
+        android:id="@+id/bRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border_blue_inner_shadow"
+        android:text="Register"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
 
     <ImageView
         android:id="@+id/ptRegisterImage"
@@ -180,6 +185,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
