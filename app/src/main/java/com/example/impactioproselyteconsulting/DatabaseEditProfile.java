@@ -19,7 +19,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
     private Button btnChangeBio, btnChangeName;
 
     //FireBase Database
-    FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabaseBio;
 
     //Reference for firebase
 
@@ -29,7 +29,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
 
     //Create variable customerInfo
 
-    CustomerInfo customerInfo;
+    CustomerInfo customerInfoBio;
 
 
     @Override
@@ -49,10 +49,10 @@ public class DatabaseEditProfile extends AppCompatActivity {
 
 
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabaseBio = FirebaseDatabase.getInstance();
 
         // initializing our object class variable.
-        customerInfo = new CustomerInfo();
+        customerInfoBio = new CustomerInfo();
 
 //        //This is for authentication
 //        FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -67,7 +67,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     //      Create string for bio change
-                    databaseReferenceBio = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusBio");
+                    databaseReferenceBio = firebaseDatabaseBio.getReference("CustomerInfo/" + uid + "/cusBio");
                     String bioChange = tvChangeBio.getText().toString();;
                     databaseReferenceBio.setValue(bioChange);
 
@@ -80,7 +80,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //      Create string for bio change
-                databaseReferenceName = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusName");
+                databaseReferenceName = firebaseDatabaseBio.getReference("CustomerInfo/" + uid + "/cusName");
                 String nameChange = tvChangeName.getText().toString();;
                 databaseReferenceName.setValue(nameChange);
 

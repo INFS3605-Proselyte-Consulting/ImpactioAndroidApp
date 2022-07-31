@@ -21,13 +21,13 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
 
 
     // Firebase Database.
-    FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabaseSDG;
 
     // Reference for Firebase.
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReferenceSDG;
 
     // Our object class
-    CustomerInfo customerInfo;
+    CustomerInfo customerInfoSDG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,10 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         // below line is used to get the instance of our FIrebase database.
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabaseSDG = FirebaseDatabase.getInstance();
 
         // initializing our object class variable.
-        customerInfo = new CustomerInfo();
+        customerInfoSDG = new CustomerInfo();
 
         //button
         btnEditSDG = findViewById(R.id.btnEditSDG);
@@ -67,9 +67,9 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View view) {
                 //      Create string for expertise change
-                databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusSDG");
+                databaseReferenceSDG = firebaseDatabaseSDG.getReference("CustomerInfo/" + uid + "/cusSDG");
                 String sdgChange = valueFromSpinnerSDG;
-                databaseReference.setValue(sdgChange);
+                databaseReferenceSDG.setValue(sdgChange);
 
             }
         });
