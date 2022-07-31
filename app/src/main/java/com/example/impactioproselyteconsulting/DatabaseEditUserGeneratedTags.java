@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,8 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
 
     private EditText tvEditUserGeneratedTags;
- private TextView tvTag;
-    private Button btnUserGeneratedTags, btnRemove;
+    private TextView tvTag;
+    private Button btnUserGeneratedTags, btnRemove, btnBackUserGeneratedTags;
 
     //FireBase Database
     FirebaseDatabase firebaseDatabaseUserGeneratedTags;
@@ -46,6 +47,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
         tvTag = findViewById(R.id.tvTag);
         btnUserGeneratedTags = findViewById(R.id.btnUserGeneratedTags);
         btnRemove = findViewById(R.id.btnRemove);
+        btnBackUserGeneratedTags = findViewById(R.id.btnBackUserTag);
 
 
 
@@ -63,14 +65,15 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
         btnUserGeneratedTags.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //      Create string for bio change
+                //      Create string for tag change
                 databaseReferenceUserGeneratedTags = firebaseDatabaseUserGeneratedTags.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
-                String UserGeneratedTag = tvEditUserGeneratedTags.getText().toString();;
-                databaseReferenceUserGeneratedTags.setValue(UserGeneratedTag);
-
+                String UserGeneratedTag = tvEditUserGeneratedTags.getText().toString();
                 //Someone please put an if statement here if a user creates an empty tag it does nothing pls
-//                Intent intent = new Intent(DatabaseEditUserGeneratedTags.this,ProfileActivity.class);
-//                startActivity(intent);
+                if(UserGeneratedTag != null && !UserGeneratedTag.trim().isEmpty()){
+                    databaseReferenceUserGeneratedTags.setValue(UserGeneratedTag);
+                    Toast.makeText(DatabaseEditUserGeneratedTags.this,"Tag Created Successfully",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -80,6 +83,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
                 //Remove the child node and custom tag from firebase
                 databaseReferenceUserGeneratedTags = firebaseDatabaseUserGeneratedTags.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
                 databaseReferenceUserGeneratedTags.setValue("");
+                Toast.makeText(DatabaseEditUserGeneratedTags.this,"Tag Removed Successfully",Toast.LENGTH_SHORT).show();
 
 
             }
@@ -99,6 +103,17 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        //Create button to go back to Profile page
+
+        btnBackUserGeneratedTags.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseEditUserGeneratedTags.this,ProfileActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

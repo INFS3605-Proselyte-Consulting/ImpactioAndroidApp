@@ -218,7 +218,7 @@ public class RatingActivity extends AppCompatActivity {
 
                         databaseReferenceRatingTotal = firebaseDatabaseRating.getReference("Solution/" + intention + "/" + "customerRating/" + rating + "/" + "/totalRating");
                         databaseReferenceRatingTotal.setValue(myRating1 + myRating2);
-                Toast.makeText(RatingActivity.this,"Saved successful",Toast.LENGTH_SHORT).show();
+                Toast.makeText(RatingActivity.this,"Saved successfully",Toast.LENGTH_SHORT).show();
                     }
         });
 

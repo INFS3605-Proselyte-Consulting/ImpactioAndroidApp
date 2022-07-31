@@ -2,12 +2,14 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -16,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Spinner ptEditSDG;
-    private Button btnEditSDG;
+    private Button btnEditSDG, btnBackSDG;
     public String valueFromSpinnerSDG;
 
 
@@ -45,6 +47,7 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
 
         //button
         btnEditSDG = findViewById(R.id.btnEditSDG);
+        btnBackSDG = findViewById(R.id.btnBackSDG);
 
         //spinner
         ptEditSDG = findViewById(R.id.ptEditSDG);
@@ -70,9 +73,21 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
                 databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusSDG");
                 String sdgChange = valueFromSpinnerSDG;
                 databaseReference.setValue(sdgChange);
+                Toast.makeText(DatabaseEditSDG.this,"SDG Changed Successfully",Toast.LENGTH_SHORT).show();
+
 
             }
         });
+
+        btnBackSDG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseEditSDG.this,ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     @Override

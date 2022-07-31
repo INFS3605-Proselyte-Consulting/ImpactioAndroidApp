@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:numStars="5"
-        android:rating="1"
+        android:rating="0"
         android:stepSize="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvRatingCriteria1"
         app:layout_constraintTop_toBottomOf="@+id/tvRatingCriteria1" />
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="5"
-        android:rating="1"
+        android:rating="0"
         android:stepSize="1.0"
         app:layout_constraintStart_toStartOf="@+id/tvRatingCriteria2"
         app:layout_constraintTop_toBottomOf="@+id/tvRatingCriteria2" />

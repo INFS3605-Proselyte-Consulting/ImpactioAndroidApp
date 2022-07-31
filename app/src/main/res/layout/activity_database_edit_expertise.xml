@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".DatabaseEditExpertise">
 
+    <Button
+        android:id="@+id/btnBackExpertise"
+        android:layout_width="96dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="636dp"
+        android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="@+id/editDetailsBG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
     <ImageView
         android:id="@+id/ptRegisterImage"
         android:layout_width="fill_parent"
@@ -16,8 +29,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
@@ -61,6 +76,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.683" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

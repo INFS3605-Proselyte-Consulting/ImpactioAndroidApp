@@ -2,12 +2,14 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -16,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DatabaseEditExpertise extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Spinner ptEditExpertise;
-    private Button btnEditExpertise;
+    private Button btnEditExpertise, btnBackExpertise;
     public String valueFromSpinnerExpertise;
 
 
@@ -45,6 +47,7 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
 
         //button
         btnEditExpertise = findViewById(R.id.btnEditExpertise);
+        btnBackExpertise = findViewById(R.id.btnBackExpertise);
 
         //spinner
         ptEditExpertise = findViewById(R.id.ptEditExpertise);
@@ -70,10 +73,21 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
                 databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusExpertise");
                 String expertiseChange = valueFromSpinnerExpertise;
                 databaseReference.setValue(expertiseChange);
+                Toast.makeText(DatabaseEditExpertise.this,"Expertise Changed Successfully",Toast.LENGTH_SHORT).show();
 
             }
         });
 
+        //Create button to go back to Profile page
+
+        btnBackExpertise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseEditExpertise.this,ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
     }
