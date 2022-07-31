@@ -13,6 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="192dp">
 
+        <ImageView
+            android:id="@+id/ptLoginImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.4"
+            android:background="@drawable/profile_screen"
+            android:backgroundTintMode="src_over"
+            android:orientation="vertical"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
@@ -26,15 +40,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivProfilePic"
-            android:layout_width="117dp"
-            android:layout_height="107dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="36dp"
+            android:elevation="@dimen/_1sdp"
+            android:src="@drawable/profile_pic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_pic" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/btnLogOut"
@@ -42,8 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Log Out"
             android:background="@drawable/round_border_blue"
+            android:text="Log Out"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,8 +78,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -103,7 +118,7 @@
                     android:layout_marginBottom="6dp"
                     android:text="Biography"
                     android:textColor="#000000"
-                    android:textSize="10sp" />
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 
@@ -124,8 +139,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -147,7 +161,7 @@
                     android:layout_marginLeft="80dp"
                     android:text="AreaOfExpertise"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -186,8 +200,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -209,7 +222,7 @@
                     android:layout_marginLeft="80dp"
                     android:text="Sustainable Development Goals"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -235,6 +248,7 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="118dp"
@@ -248,7 +262,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
+            app:cardElevation="5dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -311,7 +325,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/menu_navigation" />
+            app:menu="@menu/menu_navigation" >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
