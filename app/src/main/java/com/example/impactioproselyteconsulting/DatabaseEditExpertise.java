@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,7 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
     private Spinner ptEditExpertise;
     private Button btnEditExpertise;
     public String valueFromSpinnerExpertise;
+    Animation animSlideIn;
 
 
     // Firebase Database.
@@ -43,11 +45,19 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
         // initializing our object class variable.
         customerInfo = new CustomerInfo();
 
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
+
         //button
         btnEditExpertise = findViewById(R.id.btnEditExpertise);
+        btnEditExpertise.startAnimation(animSlideIn);
 
         //spinner
         ptEditExpertise = findViewById(R.id.ptEditExpertise);
+        ptEditExpertise.startAnimation(animSlideIn);
 
         //on click spinner
         ptEditExpertise.setOnItemSelectedListener(this);
