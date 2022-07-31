@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -32,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
     public EditText mEmail,mPassword;
     public ImageView mLogo;
     Animation animSlideIn, animFloatUp;
+    TextInputEditText ptLoginEmail, ptLoginPassword;
+    TextInputLayout textInputLayoutE, textInputLayoutP;
 
 
     @Override
@@ -46,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
                 R.anim.slide_in_bottom);
         animFloatUp = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.floating_up);
+
+        textInputLayoutE = findViewById(R.id.textInputLayoutE);
+        textInputLayoutE.startAnimation(animSlideIn);
+        textInputLayoutP = findViewById(R.id.textInputLayoutP);
+        textInputLayoutP.startAnimation(animSlideIn);
+        ptLoginEmail = findViewById(R.id.ptLoginEmail);
+        ptLoginEmail.startAnimation(animSlideIn);
+        ptLoginPassword = findViewById(R.id.ptLoginPassword);
+        ptLoginPassword.startAnimation(animSlideIn);
         mEmail = findViewById(R.id.ptLoginEmail);
         mEmail.startAnimation(animSlideIn);
         mPassword = findViewById(R.id.ptLoginPassword);
