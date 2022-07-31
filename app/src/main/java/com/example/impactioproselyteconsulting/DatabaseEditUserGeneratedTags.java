@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +26,8 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
     private TextView tvTag;
     private Button btnUserGeneratedTags, btnRemove, btnBackUserGeneratedTags;
     Animation animSlideIn;
+    LottieAnimationView loginanimation;
+
 
     //FireBase Database
     FirebaseDatabase firebaseDatabaseUserGeneratedTags;
@@ -41,15 +44,27 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_edit_user_generated_tags);
 
 
         tvEditUserGeneratedTags = findViewById(R.id.tvEditUserGeneratedTags);
+        tvEditUserGeneratedTags.startAnimation(animSlideIn);
         tvTag = findViewById(R.id.tvTag);
+        tvTag.startAnimation(animSlideIn);
         btnUserGeneratedTags = findViewById(R.id.btnUserGeneratedTags);
+        btnUserGeneratedTags.startAnimation(animSlideIn);
         btnRemove = findViewById(R.id.btnRemove);
+        btnRemove.startAnimation(animSlideIn);
         btnBackUserGeneratedTags = findViewById(R.id.btnBackUserTag);
+        btnBackUserGeneratedTags.startAnimation(animSlideIn);
+        loginanimation = findViewById(R.id.loginanimation);
+        loginanimation.startAnimation(animSlideIn);
 
 
 

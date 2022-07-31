@@ -38,6 +38,10 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_edit_sdg);
 
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
         //Get the uId of user login in
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -49,10 +53,14 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
 
         //button
         btnEditSDG = findViewById(R.id.btnEditSDG);
+        btnEditSDG.startAnimation(animSlideIn);
         btnBackSDG = findViewById(R.id.btnBackSDG);
+        btnBackSDG.startAnimation(animSlideIn);
 
         //spinner
         ptEditSDG = findViewById(R.id.ptEditSDG);
+        ptEditSDG.startAnimation(animSlideIn);
+
 
         //on click spinner
         ptEditSDG.setOnItemSelectedListener(this);

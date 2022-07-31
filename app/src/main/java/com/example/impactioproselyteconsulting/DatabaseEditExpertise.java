@@ -38,6 +38,11 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_edit_expertise);
 
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
         //Get the uId of user login in
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -49,10 +54,14 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
 
         //button
         btnEditExpertise = findViewById(R.id.btnEditExpertise);
+        btnEditExpertise.startAnimation(animSlideIn);
         btnBackExpertise = findViewById(R.id.btnBackExpertise);
+        btnBackExpertise.startAnimation(animSlideIn);
 
         //spinner
         ptEditExpertise = findViewById(R.id.ptEditExpertise);
+        ptEditExpertise.startAnimation(animSlideIn);
+
 
         //on click spinner
         ptEditExpertise.setOnItemSelectedListener(this);
