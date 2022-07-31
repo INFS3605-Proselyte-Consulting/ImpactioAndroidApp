@@ -80,6 +80,17 @@ public class ChallengeDetailActivity extends AppCompatActivity {
             }
         });
 
+        //Button to go back
+        Button btnBack = (Button) findViewById(R.id.btnChallengeBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backIntent = new Intent(ChallengeDetailActivity.this, DiscoverChallengeActivity.class);
+                startActivity(backIntent);
+                finish();
+            }
+        });
+
 
 
 
