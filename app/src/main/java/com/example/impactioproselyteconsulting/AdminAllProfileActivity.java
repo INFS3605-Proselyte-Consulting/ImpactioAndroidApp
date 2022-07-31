@@ -2,6 +2,7 @@ package com.example.impactioproselyteconsulting;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -21,12 +22,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class AdminAllProfileActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ListView listView;
     ArrayList<String> arrayList = new ArrayList<>();
     ArrayAdapter<String> arrayAdapter;
     public String cusName, cusPass, cusEmail, cusBio, cusExpertise, cusSDG;
+    Animation animSlideIn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

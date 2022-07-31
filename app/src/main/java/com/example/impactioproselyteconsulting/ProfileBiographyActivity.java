@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class ProfileBiographyActivity extends AppCompatActivity {
+
+    Animation animSlideIn;
 
     private Button btnDone, btnBiography, btnRole, btnCompany, btnPosition, btnEmail, btnPhone, btnLinkdIn, btnTwitter;
     private TextView tvBiographyTitle, tvRoleTitle, tvCompanyTitle, tvPositionTitle, tvEmailTitle, tvPhoneTitle, tvLinkdInTitle, tvTwitterTitle;

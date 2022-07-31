@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class ChallengeDetailActivity extends AppCompatActivity {
 
     private ImageView challengeImageViewDtl;
     private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl;
+    Animation animSlideIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

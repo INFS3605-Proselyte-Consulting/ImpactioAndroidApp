@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 
@@ -19,6 +20,8 @@ public class ProfileEditActivity extends AppCompatActivity {
             chipClimate, chipLifeBelow, chipLifeOn, chipPeace, chipPartnerShip;
     private Button btnDone;
 //    private ArrayList<String> selectedChipDate;
+
+    Animation animSlideIn;
 
 
     @Override

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
     private Spinner ptEditExpertise;
     private Button btnEditExpertise, btnBackExpertise;
     public String valueFromSpinnerExpertise;
+    Animation animSlideIn;
 
 
     // Firebase Database.

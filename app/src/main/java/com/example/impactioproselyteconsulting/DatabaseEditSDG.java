@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
     private Spinner ptEditSDG;
     private Button btnEditSDG, btnBackSDG;
     public String valueFromSpinnerSDG;
+    Animation animSlideIn;
 
 
     // Firebase Database.

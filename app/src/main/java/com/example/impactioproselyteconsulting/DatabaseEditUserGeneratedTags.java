@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
     private EditText tvEditUserGeneratedTags;
     private TextView tvTag;
     private Button btnUserGeneratedTags, btnRemove, btnBackUserGeneratedTags;
+    Animation animSlideIn;
 
     //FireBase Database
     FirebaseDatabase firebaseDatabaseUserGeneratedTags;

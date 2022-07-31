@@ -3,6 +3,7 @@ package com.example.impactioproselyteconsulting;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -27,6 +28,7 @@ public class RatingActivity extends AppCompatActivity {
     private EditText tvComment;
     int myRating1;
     int myRating2;
+    Animation animSlideIn;
 
     //FireBase Database
     FirebaseDatabase firebaseDatabaseRating;
