@@ -6,6 +6,21 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/ptMainImg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.4"
+        android:background="@drawable/activity_main_screen"
+        android:backgroundTintMode="src_over"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,12 +50,14 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:cardBackgroundColor="#BDD6D4"
+                app:cardBackgroundColor="#E2F5D4"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="3dp"
                 app:cardMaxElevation="4dp"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
+                app:cardUseCompatPadding="true"
+
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -49,7 +66,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#BDD6D4">
+                    android:background="#E2F5D4"
+                    android:backgroundTint="@android:color/transparent">
 
                     <TextView
                         android:id="@+id/textView5"
@@ -97,7 +115,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:cardBackgroundColor="#BDD6D4"
+                app:cardBackgroundColor="#85bda6"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="3dp"
                 app:cardMaxElevation="4dp"
@@ -111,7 +129,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#BDD6D4">
+                    android:background="#85bda6">
 
                     <TextView
                         android:id="@+id/tvRegBio"
@@ -159,7 +177,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:cardBackgroundColor="#BDD6D4"
+                app:cardBackgroundColor="#E9F6FE"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="3dp"
                 app:cardMaxElevation="4dp"
@@ -173,7 +191,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#BDD6D4">
+                    android:background="#E9F6FE">
 
                     <TextView
                         android:id="@+id/textView1"
@@ -219,6 +237,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+
         app:itemBackground="@color/teal_700"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@color/chip_text_color"

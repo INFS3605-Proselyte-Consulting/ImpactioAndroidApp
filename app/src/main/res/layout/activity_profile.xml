@@ -117,7 +117,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="6dp"
-                    android:text="Biography"
+                    android:text="Write a few lines about yourself!"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -160,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
-                    android:text="AreaOfExpertise"
+                    android:text="Area Of Expertise"
                     android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -178,7 +178,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="9dp"
-                    android:text="AreaOfExpertise"
+                    android:text="Your Areas of Expertise!"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -239,7 +239,7 @@
                     android:layout_marginTop="34dp"
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="9dp"
-                    android:text="Sustainable Development Goals"
+                    android:text="What are you passionate about?"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -286,7 +286,7 @@
                     android:layout_marginLeft="80dp"
                     android:text="Custom Tags"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -302,7 +302,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="23dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Custom User Tags"
+                    android:text="Any particular interests you're into?"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
