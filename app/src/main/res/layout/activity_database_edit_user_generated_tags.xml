@@ -89,8 +89,7 @@
     <Button
         android:id="@+id/btnUserGeneratedTags"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_border_blue"
+        android:layout_height="60dp"
         android:text="Create"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +118,7 @@
     <Button
         android:id="@+id/btnRemove"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_border_blue"
+        android:layout_height="60dp"
         android:text="Remove Tag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

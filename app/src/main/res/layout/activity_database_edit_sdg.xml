@@ -11,25 +11,26 @@
         android:layout_width="96dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditSDG"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.529" />
 
     <Button
         android:id="@+id/btnEditSDG"
         android:layout_width="129dp"
-        android:layout_height="48dp"
-        android:background="@drawable/round_border_blue_inner_shadow"
+        android:layout_height="60dp"
         android:text="Save"
-        android:textColor="#000000"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.891" />
 
     <ImageView
         android:id="@+id/imageView3"
