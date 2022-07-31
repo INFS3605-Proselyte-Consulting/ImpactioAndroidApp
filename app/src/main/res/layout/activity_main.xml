@@ -115,7 +115,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:cardBackgroundColor="#85bda6"
+                app:cardBackgroundColor="#4DFFE9"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="3dp"
                 app:cardMaxElevation="4dp"
@@ -129,7 +129,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="#85bda6">
+                    android:background="#4DFFE9">
 
                     <TextView
                         android:id="@+id/tvRegBio"
