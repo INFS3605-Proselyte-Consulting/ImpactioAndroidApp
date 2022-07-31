@@ -6,6 +6,11 @@ public class CustomerInfo {
     public CustomerInfo() {
     }
 
+    @Override
+    public String toString() {
+        return cusName + "," + cusEmail + "," + cusPass + "," + cusBio + "," + cusExpertise + "," + cusSDG;
+    }
+
     public CustomerInfo(String cusEmail, String cusPass, String cusName, String cusBio, String cusSDG, String cusExpertise, String cusGeneratedTags) {
         this.cusEmail = cusEmail;
         this.cusPass = cusPass;

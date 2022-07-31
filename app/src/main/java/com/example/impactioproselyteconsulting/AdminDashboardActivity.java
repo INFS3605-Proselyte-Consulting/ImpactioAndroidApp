@@ -9,11 +9,32 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminDashboardActivity extends AppCompatActivity {
+    public Button viewProjects,viewCurators;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
+
+        viewProjects = findViewById(R.id.bAdminViewProjects);
+        viewCurators = findViewById(R.id.bAdminViewCurators);
+
+        viewProjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboardActivity.this,AdminChallengeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewCurators.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminDashboardActivity.this,AdminAllProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button adminLogout = (Button) findViewById(R.id.bAdminLogout);
         adminLogout.setOnClickListener(new View.OnClickListener() {

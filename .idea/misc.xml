@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_admin_all_profile.xml" value="0.25" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_admin_challenge.xml" value="0.2740036231884058" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.2740036231884058" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_database_edit_expertise.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_database_edit_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_database_edit_sdg.xml" value="0.36666666666666664" />
@@ -11,65 +14,37 @@
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_discover_challenge.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_discover_solution.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.2740036231884058" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_rating.xml" value="0.33" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_sdg_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_solutions_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/all_profiles_view.xml" value="0.33" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/challenge_view.xml" value="0.2740036231884058" />
+        <entry key="..\:/AA_githubclone/ImpactioAndroidApp/app/src/main/res/layout/solution_view.xml" value="0.2740036231884058" />
         <entry key="..\:/INFS3634/GitRepos/ImpactioActual/app/src/main/res/layout/activity_detail_challenge.xml" value="0.1671875" />
         <entry key="..\:/INFS3634/GitRepos/ImpactioActual/app/src/main/res/layout/activity_discover_challenge.xml" value="0.264" />
         <entry key="..\:/INFS3634/GitRepos/ImpactioActual/app/src/main/res/layout/activity_main.xml" value="0.2210144927536232" />
         <entry key="..\:/INFS3634/GitRepos/ImpactioActual/app/src/main/res/layout/activity_profile.xml" value="0.2210144927536232" />
         <entry key="..\:/INFS3634/GitRepos/ImpactioActual/app/src/main/res/layout/challenge_view.xml" value="0.1" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/gradient_spinner.xml" value="0.3985" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/ic_baseline_favorite_red_24.xml" value="0.1" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/ic_biography.xml" value="0.351" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/ic_change_name_icon.xml" value="0.3995" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/ic_edit_expertise_background_screen.xml" value="0.3995" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/round_border.xml" value="0.1445" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/round_border_teal.xml" value="0.3605" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/round_border_teal_inner_shadow.xml" value="0.3605" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/spinner_border.xml" value="0.3605" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/drawable/toggle_selector.xml" value="0.1" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_challenges_to_do.xml" value="0.4" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_database_edit_expertise.xml" value="0.25" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_database_edit_profile.xml" value="0.36938110749185665" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_database_edit_user_generated_tags.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_detail_challenge.xml" value="0.264" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_profile.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_profile_area_of_expertise.xml" value="0.2223731884057971" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_profile_biography.xml" value="0.2223731884057971" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.4" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_rating.xml" value="0.4" />
-        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/activity_sdg_edit.xml" value="0.4" />
         <entry key="..\:/Users/Ben/Documents/School/INFS3605/Android/app/src/main/res/layout/challenge_view.xml" value="0.4" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_area_of_expertise.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_biography.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_sdg_edit.xml" value="0.35104166666666664" />
-        <entry key="app/src/main/res/layout/activity_admin_dashboard.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_database_edit_expertise.xml" value="0.2271852281358507" />
-        <entry key="app/src/main/res/layout/activity_database_edit_profile.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_database_edit_sdg.xml" value="0.18980577256944448" />
-        <entry key="app/src/main/res/layout/activity_database_edit_user_generated_tags.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_detail_challenge.xml" value="0.25393218994140626" />
-        <entry key="app/src/main/res/layout/activity_discover_solution.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17257690429687506" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2524032608233204" />
-        <entry key="app/src/main/res/layout/activity_profile_area_of_expertise.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_profile_biography.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_rating.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2227590468323346" />
-        <entry key="app/src/main/res/layout/activity_sdg_edit.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/activity_solutions_dashboard.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/challenge_view.xml" value="0.12487335359675786" />
-        <entry key="app/src/main/res/layout/solution_view.xml" value="0.11944444444444445" />
       </map>
     </option>
   </component>
