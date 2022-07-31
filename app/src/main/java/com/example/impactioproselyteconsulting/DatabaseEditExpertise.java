@@ -21,13 +21,13 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
 
 
     // Firebase Database.
-    FirebaseDatabase firebaseDatabaseExpertise;
+    FirebaseDatabase firebaseDatabase;
 
     // Reference for Firebase.
-    DatabaseReference databaseReferenceExpertise;
+    DatabaseReference databaseReference;
 
     // Our object class
-    CustomerInfo customerInfoExpertise;
+    CustomerInfo customerInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,10 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         // below line is used to get the instance of our FIrebase database.
-        firebaseDatabaseExpertise = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
         // initializing our object class variable.
-        customerInfoExpertise = new CustomerInfo();
+        customerInfo = new CustomerInfo();
 
         //button
         btnEditExpertise = findViewById(R.id.btnEditExpertise);
@@ -67,9 +67,9 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
             @Override
             public void onClick(View view) {
                 //      Create string for expertise change
-                databaseReferenceExpertise = firebaseDatabaseExpertise.getReference("CustomerInfo/" + uid + "/cusExpertise");
+                databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusExpertise");
                 String expertiseChange = valueFromSpinnerExpertise;
-                databaseReferenceExpertise.setValue(expertiseChange);
+                databaseReference.setValue(expertiseChange);
 
             }
         });

@@ -80,13 +80,22 @@ public class LoginActivity extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
 
+                //create auth connection
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+
                 // Check-if-empty conditional statement.
                 if(!TextUtils.isEmpty(email)&&!TextUtils.isEmpty(password)){
                     mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            if(uid.equals("TuoPYIxWW7XhqWB6HHWaj4nOoUM2")){
+                                Log.d(TAG, "Admin login processed. Welcome administrator.");
+                                startActivity(new Intent(LoginActivity.this,AdminDashboardActivity.class));
+                                finish();
+                            }
                             // This will either send them to the topic activity screen OR it will display an error on console. This is also the case for any Toasts below.
-                            if(task.isSuccessful()){
+                            else if(task.isSuccessful()){
                                 Log.d(TAG, "Login button is clicked, launch Topic Activity.");
                                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
                                 finish();

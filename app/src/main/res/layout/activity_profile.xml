@@ -13,6 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="192dp">
 
+        <ImageView
+            android:id="@+id/ptLoginImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.4"
+            android:background="@drawable/profile_screen"
+            android:backgroundTintMode="src_over"
+            android:orientation="vertical"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
@@ -26,15 +40,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivProfilePic" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivProfilePic"
-            android:layout_width="117dp"
-            android:layout_height="107dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="36dp"
+            android:elevation="@dimen/_1sdp"
+            android:src="@drawable/profile_pic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_pic" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
             android:id="@+id/btnLogOut"
@@ -42,7 +58,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/round_border_blue_inner_shadow"
             android:text="Log Out"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,8 +79,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -100,9 +117,9 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="6dp"
-                    android:text="Biography"
+                    android:text="Write a few lines about yourself!"
                     android:textColor="#000000"
-                    android:textSize="10sp" />
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 
@@ -123,8 +140,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -144,9 +160,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
-                    android:text="AreaOfExpertise"
+                    android:text="Area Of Expertise"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -162,7 +178,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="9dp"
-                    android:text="AreaOfExpertise"
+                    android:text="Your Areas of Expertise!"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -185,8 +201,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
-
+            app:cardElevation="5dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -208,7 +223,7 @@
                     android:layout_marginLeft="80dp"
                     android:text="Sustainable Development Goals"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -224,7 +239,7 @@
                     android:layout_marginTop="34dp"
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="9dp"
-                    android:text="Sustainable Development Goals"
+                    android:text="What are you passionate about?"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -233,6 +248,7 @@
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -247,7 +263,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardElevation="30dp">>
+            app:cardElevation="5dp">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -270,7 +286,7 @@
                     android:layout_marginLeft="80dp"
                     android:text="Custom Tags"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -286,7 +302,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginEnd="23dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Custom User Tags"
+                    android:text="Any particular interests you're into?"
                     android:textColor="#000000"
                     android:textSize="15sp" />
 
@@ -310,7 +326,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/menu_navigation" />
+            app:menu="@menu/menu_navigation" >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
