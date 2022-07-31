@@ -15,7 +15,6 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
 
-
         android:drawableStart="@drawable/ic_login_mail_icon"
         android:drawablePadding="16dp"
         android:ems="10"
@@ -91,6 +90,7 @@
 
     <Spinner
         android:id="@+id/ptSDGS"
+        android:background="@drawable/spinner_border"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -116,7 +116,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border_teal"
+        android:background="@drawable/spinner_border"
         android:contentDescription="Expertise"
         android:ems="10"
         android:hint="Expertise"
