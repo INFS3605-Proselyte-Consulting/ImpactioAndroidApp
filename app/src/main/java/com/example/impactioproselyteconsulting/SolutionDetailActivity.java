@@ -92,16 +92,16 @@ public class SolutionDetailActivity extends AppCompatActivity {
             }
         });
 
-        //Button to go back
-        Button btnBackDashboard = (Button) findViewById(R.id.btnBackDashboard);
-        btnBackDashboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backdIntent = new Intent(SolutionDetailActivity.this, MainActivity.class);
-                startActivity(backdIntent);
-                finish();
-            }
-        });
+//        //Button to go back
+//        Button btnBackDashboard = (Button) findViewById(R.id.btnBackDashboard);
+//        btnBackDashboard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent backdIntent = new Intent(SolutionDetailActivity.this, MainActivity.class);
+//                startActivity(backdIntent);
+//                finish();
+//            }
+//        });
 
 
 

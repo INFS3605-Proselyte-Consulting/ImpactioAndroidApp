@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ChallengeDetailActivity extends AppCompatActivity {
 
     private ImageView challengeImageViewDtl;
+    ToggleButton tglBtn;
     private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl;
+    ImageView ChallengeImgViewDetail;
     Animation animSlideIn;
 
     @Override
@@ -56,10 +59,23 @@ public class ChallengeDetailActivity extends AppCompatActivity {
             }
         });
 
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
         challengeImageViewDtl = findViewById(R.id.ChallengeImgViewDetail);
+        challengeImageViewDtl.startAnimation(animSlideIn);
         challengeNameTextDtl = findViewById(R.id.ChallengeNameTxtDetail);
+        challengeNameTextDtl.startAnimation(animSlideIn);
         challengeBlurbTextDtl = findViewById(R.id.ChallengeBlurbTxtDetail);
+        challengeBlurbTextDtl.startAnimation(animSlideIn);
         challengeDescTextDtl = findViewById(R.id.ChallengeDescTxtDetail);
+        challengeDescTextDtl.startAnimation(animSlideIn);
+        tglBtn = findViewById(R.id.tglBtn);
+        tglBtn.startAnimation(animSlideIn);
+        ChallengeImgViewDetail = findViewById(R.id.ChallengeImgViewDetail);
+        ChallengeImgViewDetail.startAnimation(animSlideIn);
+
 
         Intent intent = getIntent();
         Challenge challenge = Challenge.getChallenge(intent.getStringExtra("Name"));

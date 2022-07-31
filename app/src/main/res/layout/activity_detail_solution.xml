@@ -97,7 +97,7 @@
 
             <Button
                 android:id="@+id/applySolutionBtn"
-                android:layout_width="144dp"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="135dp"
                 android:layout_marginEnd="267dp"
@@ -107,15 +107,14 @@
 
             <Button
                 android:id="@+id/btnBackSolution"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:text="BACK TO DISCOVER" />
+                android:layout_width="150dp"
+                android:layout_height="50dp"
 
-            <Button
-                android:id="@+id/btnBackDashboard"
-                android:layout_width="184dp"
-                android:layout_height="wrap_content"
-                android:text="BACK TO DASHBOARD" />
+                android:layout_marginStart="135dp"
+                android:layout_marginEnd="267dp"
+                android:layout_marginBottom="32dp"
+                android:text="BACK"
+                android:textAlignment="center" />
 
         </LinearLayout>
     </ScrollView>
