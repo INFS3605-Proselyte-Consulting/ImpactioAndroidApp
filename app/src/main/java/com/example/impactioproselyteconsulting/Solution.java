@@ -1,41 +1,85 @@
 package com.example.impactioproselyteconsulting;
 
+import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.SortedList;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Solution {
 
     String solutionName;
     String solutionBlurb;
     String solutionDesc;
-    String solutionStatus;
     String solutionChallengeOrigin;
-    // TODO
-    // Add tags and SDGs
-    ArrayList<String> solutionTagsList = new ArrayList<String>();
+
     int solutionImage;
+
+    // Add tags and SDGs
+    // Because from the database Tags are in one long string
+    // So here is that one long string variable
+    String solutionTagsString;
+    // And here is the tags Array list of Strings that it will be separated into
+    ArrayList<String> solutionTagsList = new ArrayList<String>();
+
+    // Rating of Solutions - only 3 allowed
+    String rating1UID;
+    int rating1Rating;
+    String rating1Comment;
+    String rating2UID;
+    int rating2Rating;
+    String rating2Comment;
+    String rating3UID;
+    int rating3Rating;
+    String rating3Comment;
+
+    int overallRating;
+
+    int ratingCount;
+    // If Solution has 3 curator ratings then solutionFull is true, if less than 3 then false
+    Boolean solutionFull;
+
+
 
     public Solution() {
         // Empty constructor
         solutionName = "solutionName";
         solutionBlurb = "solutionBlurb";
         solutionDesc = "solutionDesc";
-        solutionStatus = "solutionStatus";
         solutionChallengeOrigin = "solutionChallengeOrigin";
-        solutionTagsList.add("solution Tag 1");
-        solutionTagsList.add("solution Tag 2");
-        solutionTagsList.add("solution Tag 3");
         solutionImage = R.drawable.sweater;
 
+        solutionTagsString = "";
+        solutionTagsList = convertLongStringToList(solutionTagsString);
+
+        rating1UID = "";
+        rating1Rating = 5;
+        rating1Comment = "";
+        rating2UID = "";
+        rating2Rating = 5;
+        rating2Comment = "";
+        rating3UID = "";
+        rating3Rating = 5;
+        rating3Comment = "";
+        overallRating = 5;
+        ratingCount = 0;
+        solutionFull = false;
     }
 
-    public Solution(String solutionName, String solutionBlurb, String solutionDesc, String solutionStatus,String solutionChallengeOrigin, ArrayList<String> solutionTagsList, int solutionImage) {
+    public Solution(String solutionName, String solutionBlurb, String solutionDesc,String solutionChallengeOrigin, ArrayList<String> solutionTagsList, int solutionImage) {
         this.solutionName = solutionName;
         this.solutionBlurb = solutionBlurb;
         this.solutionDesc = solutionDesc;
-        this.solutionStatus = solutionStatus;
         this.solutionChallengeOrigin = solutionChallengeOrigin;
         this.solutionTagsList = solutionTagsList;
         this.solutionImage = solutionImage;
@@ -74,13 +118,13 @@ public class Solution {
         this.solutionImage = solutionImage;
     }
 
-    public String getSolutionStatus() {
-        return solutionStatus;
-    }
-
-    public void setSolutionStatus(String solutionStatus) {
-        this.solutionStatus = solutionStatus;
-    }
+//    public String getSolutionStatus() {
+//        return solutionStatus;
+//    }
+//
+//    public void setSolutionStatus(String solutionStatus) {
+//        this.solutionStatus = solutionStatus;
+//    }
 
     public String getSolutionChallengeOrigin() {
         return solutionChallengeOrigin;
@@ -103,10 +147,131 @@ public class Solution {
         this.solutionTagsList.add(solutionTag);
     }
 
+    public String getSolutionTagsString() {
+        return solutionTagsString;
+    }
+
+    public void setSolutionTagsString(String solutionTagsString) {
+        this.solutionTagsString = solutionTagsString;
+    }
+
+    public String getRating1UID() {
+        return rating1UID;
+    }
+
+    public void setRating1UID(String rating1UID) {
+        this.rating1UID = rating1UID;
+    }
+
+    public int getRating1Rating() {
+        return rating1Rating;
+    }
+
+    public void setRating1Rating(int rating1Rating) {
+        this.rating1Rating = rating1Rating;
+    }
+
+    public String getRating1Comment() {
+        return rating1Comment;
+    }
+
+    public void setRating1Comment(String rating1Comment) {
+        this.rating1Comment = rating1Comment;
+    }
+
+    public String getRating2UID() {
+        return rating2UID;
+    }
+
+    public void setRating2UID(String rating2UID) {
+        this.rating2UID = rating2UID;
+    }
+
+    public int getRating2Rating() {
+        return rating2Rating;
+    }
+
+    public void setRating2Rating(int rating2Rating) {
+        this.rating2Rating = rating2Rating;
+    }
+
+    public String getRating2Comment() {
+        return rating2Comment;
+    }
+
+    public void setRating2Comment(String rating2Comment) {
+        this.rating2Comment = rating2Comment;
+    }
+
+    public String getRating3UID() {
+        return rating3UID;
+    }
+
+    public void setRating3UID(String rating3UID) {
+        this.rating3UID = rating3UID;
+    }
+
+    public int getRating3Rating() {
+        return rating3Rating;
+    }
+
+    public void setRating3Rating(int rating3Rating) {
+        this.rating3Rating = rating3Rating;
+    }
+
+    public String getRating3Comment() {
+        return rating3Comment;
+    }
+
+    public void setRating3Comment(String rating3Comment) {
+        this.rating3Comment = rating3Comment;
+    }
+
+    public int getOverallRating() {
+        return overallRating;
+    }
+
+    public void setOverallRating(int overallRating) {
+        this.overallRating = overallRating;
+    }
+
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
+    }
+
+    public Boolean getSolutionFull() {
+        return solutionFull;
+    }
+
+    public void setSolutionFull(Boolean solutionFull) {
+        this.solutionFull = solutionFull;
+    }
+
+
+
+
+    // TODO: Write a method that takes in a really long string of something separated by '%' symbols
+    // and put them into an ArrayList of Strings and return that list
+    public static ArrayList<String> convertLongStringToList(String longString) {
+        // Make a new empty Array List of strings
+        ArrayList<String> resultingStringList;
+
+        String[] list = longString.split("%");
+
+        resultingStringList = new ArrayList<>(Arrays.asList(list));
+
+        return resultingStringList;
+    }
+
     // This is the default function to get ALL the Solutions
     public static ArrayList<Solution> getSolutions() {
         // Create a list of solutions here
         ArrayList<Solution> solutions = new ArrayList<>();
+        /*
 
 //        // Create the test Data Tags Lists here
 //        ArrayList<String> testTagListYesOne = new ArrayList<>();
@@ -216,6 +381,8 @@ public class Solution {
                 "Innovate to Regenerate",
                 testTagListEMS,
                 R.drawable.uprooted));
+        */
+
         return solutions;
     }
 
@@ -227,6 +394,150 @@ public class Solution {
             }
         }
         return null;
+    }
+
+
+
+
+    // TODO: Write a method that returns ALL the solutions in the database in an Array List of Solutions
+    public static ArrayList<Solution> getAllSolutionsFromDB() {
+        // First
+        //FireBase Database
+        FirebaseDatabase firebaseDatabase;
+
+        // Make an instance of Solution??
+        //Solution solutionInstance;
+
+        // Database Reference
+        DatabaseReference referenceGetSolutionName;
+
+        //Recognise the firebase database user
+        // May not be needed in this method
+        //String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // initializing our object class variable.
+        //solutionInstance = new Solution();
+
+        // Initialize the array list of solutions
+        ArrayList<Solution> solutionsArrayListInstance = new ArrayList<>();
+
+        //Reference Database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        referenceGetSolutionName =  firebaseDatabase.getReference().child("Solution");
+
+        referenceGetSolutionName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                // Write a for loop for the keys under Solution
+                int counter = 0;
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    //
+                    // Reset the solution instance
+                    Solution solutionInstance = new Solution();
+
+                    // Fill in the data
+                    solutionInstance.setSolutionName(snapshot.child("solutionName").getValue().toString());
+                    solutionInstance.setSolutionBlurb(snapshot.child("solutionBlurb").getValue().toString());
+                    solutionInstance.setSolutionDesc(snapshot.child("solutionDesc").getValue().toString());
+                    solutionInstance.setSolutionChallengeOrigin(snapshot.child("solutionChallengeOrigin").getValue().toString());
+
+
+                    // Comment this out and use a default image if this breaks
+//                    String imgFileName = snapshot.child("solutionImage").getValue().toString();
+//                    int resID = solutionInstance.context.getResources().getIdentifier(imgFileName , "drawable", solutionInstance.context.getPackageName());
+//                    solutionInstance.setSolutionImage(resID);
+                    solutionInstance.setSolutionImage(R.drawable.sweater);
+
+                    // Now get tags by passing in the string and getting an array list out of it with the method made previously
+                    String tempString = snapshot.child("Tags").getValue().toString();
+                    solutionInstance.setSolutionTagsList(convertLongStringToList(tempString));
+
+                    // Ratings
+//                    // Must check if the ratings work or not
+                    //TODO: Fix ratings to match the database layout and aslo check if empty
+//                    solutionInstance.setRating1UID(snapshot.child("customerRating/rating1/uid").getValue().toString());
+//                    solutionInstance.setRating1Rating(snapshot.child("customerRating/rating1/rating").getValue(Integer.class));
+//                    solutionInstance.setRating1Comment(snapshot.child("customerRating/rating1/comment").getValue().toString());
+//                    solutionInstance.setRating2UID(snapshot.child("customerRating/rating2/uid").getValue().toString());
+//                    solutionInstance.setRating2Rating(snapshot.child("customerRating/rating2/rating").getValue(Integer.class));
+//                    solutionInstance.setRating2Comment(snapshot.child("customerRating/rating2/comment").getValue().toString());
+//                    solutionInstance.setRating3UID(snapshot.child("customerRating/rating3/uid").getValue().toString());
+//                    solutionInstance.setRating3Rating(snapshot.child("customerRating/rating3/rating").getValue(Integer.class));
+//                    solutionInstance.setRating3Comment(snapshot.child("customerRating/rating3/comment").getValue().toString());
+//
+//                    // Rating Count and Check if Full
+//                    solutionInstance.setRatingCount(snapshot.child("customerRating/ratingCount").getValue(Integer.class));
+//                    solutionInstance.setSolutionFull(snapshot.child("solutionFull").getValue(Boolean.class));
+
+                    // Now that all the data is set then add it to the Array List
+                    solutionsArrayListInstance.add(solutionInstance);
+                }
+                // Now iterate the for loop for the next Child
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        return solutionsArrayListInstance;
+
+    }
+
+    public static ArrayList<Solution> solutionsAllDBList = getAllSolutionsFromDB();
+
+    // TODO: Write a method that returns a Solution (using the data from the database)
+    // taking in a solution name
+    public static Solution getSolutionFromDB(String solutionName) {
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.getSolutionName().equals(solutionName)) {
+                System.out.println("Successfully found: " + solution.getSolutionName());
+                return solution;
+            }
+        }
+        System.out.println("Failed to find a solution");
+        return null;
+    }
+
+    // TODO: Write a method that returns an Array List of Solutions from DB by taking in an Array List of Strings of Solution names
+    // This in theory could be used for the Dashboard redirects to Solutions
+    public static ArrayList<Solution> getSolutionsFromSolutionNames(ArrayList<String> solutionNamesList) {
+        ArrayList<Solution> outputSolutions = new ArrayList<>();
+
+        // Loop through the Solution Names list
+        for (String name : solutionNamesList) {
+            // Loop through all the Solutions list
+            for (Solution solution : solutionsAllDBList) {
+                // Check if match
+                if (solution.getSolutionName().equals(name)) {
+                    // if they match then, append to the output list
+                    outputSolutions.add(solution);
+                }
+            }
+        }
+
+        return outputSolutions;
+    }
+
+
+
+    // TODO: Write a method that returns an array list of Solutions from Database based on the challenge name string
+    public static ArrayList<Solution> getAllDBSolutionsFromChallenge(String challengeName) {
+        // Create a new solution list
+        ArrayList<Solution> solutionList= new ArrayList<>();
+
+        // Loop through all the test solution data and if it matches then add it to the list
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        // Return the solution list
+        return solutionList;
     }
 
 
@@ -249,6 +560,7 @@ public class Solution {
 
     // DONE: Method that takes in a string and looks for it in the list of tags
     // if it can be found, then return True
+    // Should still work with DB
     public boolean doesTagMatch(String inputTag) {
 
         // Loop through the Solution Tags list
@@ -355,8 +667,98 @@ public class Solution {
             }
         }
 
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 0) {
+                solutionList.add(solution);
+            }
+        }
+
         return solutionList;
     }
+
+    // TODO: Write a method that returns a list of ALL DB Solutions with those with more matches at the top
+    // This is THE Algorithm
+    // This can be used later in the To Do Solutions from the dashboard
+    // Should in theory, call howManyTagsMatch method
+    public static ArrayList<Solution> getPrioritizedSolutionDBListFromTagList(ArrayList<String> userTagList) {
+
+        // Create a new empty Solution list
+        ArrayList<Solution> solutionList = new ArrayList<>();
+
+        // Make a separate loop for each number to check
+        // to ensure right order
+
+        // TODO: Not that important but if can, make this a loop so that it looks nicer
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) >= 10) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 9) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 8) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 7) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 6) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 5) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 4) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 3) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 2) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 1) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 0) {
+                solutionList.add(solution);
+            }
+        }
+
+        return solutionList;
+    }
+
 
     // DONE: Method that returns a list of Solutions specific to the input Challenge name
     // with those with more matches at the top
@@ -432,8 +834,99 @@ public class Solution {
             }
         }
 
+        for (Solution solution : getSolutions()) {
+            if (solution.howManyTagsMatch(userTagList) == 0 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
         return solutionList;
     }
+
+
+    // TODO: Write a method that returns a list of DB Solutions specific to the input Challenge name
+    // with those with more matches at the top
+    // This uses THE Algorithm
+    // This can be used later in the Discover page from Challenge Detail Activity
+    public static ArrayList<Solution> getPrioritizedDBSolutionListFromTagListAndChallengeName(ArrayList<String> userTagList, String challengeName) {
+
+        // Create a new empty Solution list
+        ArrayList<Solution> solutionList = new ArrayList<>();
+
+        // Make a separate loop for each number to check
+        // to ensure right order
+
+        // TODO: Not that important but if can, make this a loop so that it looks nicer
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) >= 10 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 9 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 8 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 7 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 6 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 5 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 4 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 3 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 2 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 1 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsAllDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 0 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        return solutionList;
+    }
+
 
 
     // DONE: Method that makes a new list of Solutions with the matching Tag
@@ -485,10 +978,6 @@ public class Solution {
     }
 
 
-    // TODO: Write a method that returns a list of Solutions given a challenge name AND given a Prioritized Solutions List
-    // This should work on the basis of comparing the co
-
-
     // For each Challenge, there will be corresponding Solutions
     // Solutions will be viewed based on Challenge, Status, Tag
 
@@ -496,6 +985,7 @@ public class Solution {
         public static ArrayList<Solution> getSolutionsToDo() {
             // Create a list of challenges here
             ArrayList<Solution> solutions = new ArrayList<>();
+            /*
             ArrayList<String> testTagListYesOne = new ArrayList<>();
             testTagListYesOne.add("Yes");
             ArrayList<String> testTagListYesTwo = new ArrayList<>();
@@ -535,6 +1025,10 @@ public class Solution {
                     "Innovate to Regenerate",
                     testTagListYesTwo,
                     R.drawable.newlife));
+
+
+             */
+
             return solutions;
     }
 
@@ -542,6 +1036,7 @@ public class Solution {
     public static ArrayList<Solution> getSolutionsInProgress() {
         // Create a list of challenges here
         ArrayList<Solution> solutions = new ArrayList<>();
+        /*
         ArrayList<String> testTagListYesOne = new ArrayList<>();
         testTagListYesOne.add("Yes");
         ArrayList<String> testTagListYesTwo = new ArrayList<>();
@@ -574,6 +1069,9 @@ public class Solution {
                 "Innovate to Regenerate",
                 testTagListYesTwo,
                 R.drawable.uprooted));
+
+         */
+
         return solutions;
     }
 
@@ -581,6 +1079,7 @@ public class Solution {
     public static ArrayList<Solution> getSolutionsCompleted() {
         // Create a list of challenges here
         ArrayList<Solution> solutions = new ArrayList<>();
+        /*
         ArrayList<String> testTagListYesOne = new ArrayList<>();
         testTagListYesOne.add("Yes");
         ArrayList<String> testTagListYesTwo = new ArrayList<>();
@@ -595,6 +1094,9 @@ public class Solution {
                 "The Great Fashion Decarbonisation",
                 testTagListYesTwo,
                 R.drawable.fasterfashion));
+
+         */
+
         return solutions;
     }
 }

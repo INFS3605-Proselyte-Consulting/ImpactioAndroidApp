@@ -2,6 +2,8 @@ package com.example.impactioproselyteconsulting;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -100,10 +102,20 @@ public class ChallengeDetailActivity extends AppCompatActivity {
                 // Launch the Discover Solutions Activity
                 Intent intent = new Intent(ChallengeDetailActivity.this, DiscoverSolutionActivity.class);
                 // Toast message to test and for info
-                Toast.makeText(ChallengeDetailActivity.this, "Loading Solutions for this Challenge", Toast.LENGTH_LONG).show();
+                Toast.makeText(ChallengeDetailActivity.this, "Loading Solutions For Challenge...", Toast.LENGTH_LONG).show();
                 // Add an extra intent to pass in the Challenge Name to get the correct Solutions to Discover
                 intent.putExtra("Name", challenge.getChallengeName());
                 startActivity(intent);
+                // Delay to fix bug where data wont display unless lock and unlock screen
+                // So just restart the activity after the delay
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(intent);;
+                    }
+                }, 2500);
+
             }
         });
 

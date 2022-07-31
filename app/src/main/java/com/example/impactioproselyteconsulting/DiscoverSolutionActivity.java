@@ -3,6 +3,7 @@ package com.example.impactioproselyteconsulting;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +19,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +34,34 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
     private SolutionAdapter mAdapter;
     Animation animSlideIn;
 
+    //FireBase Database
+    FirebaseDatabase firebaseDatabase;
+
+    //CustomerInfo Instance
+
+    CustomerInfo customerInfo;
+
+    //DataBase Reference
+
+    DatabaseReference referenceGetName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover_solution);
         setTitle("Discover Solutions");
+
+
+        //Recognise the firebase database user
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // initializing our object class variable.
+        customerInfo = new CustomerInfo();
+
+        //Reference Database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        referenceGetName =  firebaseDatabase.getReference().child("CustomerInfo").child(uid);
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -96,6 +126,15 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SolutionDetailActivity.class);
         intent.putExtra("Name", solutionName);
         startActivity(intent);
+        // Delay to fix bug where data wont display unless lock and unlock screen
+        // So just restart the activity after the delay
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(intent);;
+            }
+        }, 2000);
 
     }
 
@@ -152,12 +191,13 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 
     private void loadSolutions(Challenge challenge, RecyclerView recyclerView, SolutionAdapter.RecyclerViewClickListener listener) {
 
+
         // Create an adapter instance and supply the solution data to be displayed
         // Pass in the challenge name from the challenge object and get the list
         //mAdapter = new SolutionAdapter(Solution.getAllSolutionsFromChallenge(challenge.challengeName), listener);
         // Test data for Tags
         ArrayList<String> testTagList = new ArrayList<>();
-        testTagList.add("Health");
+        testTagList.add("Climate Change");
         testTagList.add("Science");
         testTagList.add("Maths");
         testTagList.add("Astrology");
@@ -169,9 +209,36 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 //        SolutionTagMatchValue matchingSolutions = SolutionTagMatchValue.getSolutionTagMatchValue(testTagList);
 //        mAdapter = new SolutionAdapter(matchingSolutions.getSolutionList(), listener);
         //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
-        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
+        //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
+
+        // This will test the database:
+
+
 
         // TODO: Instead of passing in testTagList, pass in the user's specific tags from a database
+        // Initialize the Firebase stuff again to get the UID and get the aggregated tags
+
+        referenceGetName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Get the Expertise string, the SDG string and the User Custom Tag string from the database
+                // and append them to an ArrayList<String>
+                // Then set that to be the ArrayList<String> cusCombinedTagList
+                ArrayList<String> userTagsList = new ArrayList<>();
+                userTagsList.add(snapshot.child("cusExpertise").getValue().toString());
+                userTagsList.add(snapshot.child("cusSDG").getValue().toString());
+                userTagsList.add(snapshot.child("cusUserGeneratedTags").getValue().toString());
+                customerInfo.setCusCombinedTagList(userTagsList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        mAdapter = new SolutionAdapter(Solution.getPrioritizedDBSolutionListFromTagListAndChallengeName(customerInfo.getCusCombinedTagList(), challenge.getChallengeName()), listener);
+
 
         recyclerView.setAdapter(mAdapter);
     }

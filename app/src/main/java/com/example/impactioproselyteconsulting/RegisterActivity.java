@@ -26,6 +26,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -43,6 +45,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     // creating a variable for our Database
     // Reference for Firebase.
     DatabaseReference databaseReferenceRegister;
+    DatabaseReference databaseReferenceUserSolutionsOne;
+    DatabaseReference databaseReferenceUserSolutionsTwo;
+    DatabaseReference databaseReferenceUserSolutionsThree;
 
     // creating a variable for
     // our object class
@@ -121,20 +126,39 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 } else {
                     // else call the method to add
                     // data to our database.
-                    registerUser(textName,textEmail,textPassword,textBio,textExpertise,textSDG);
+
+                    // Sean: When the user registers for a new account, an initial combined Tag will be
+                    // created based on the Expertise and SDG
+                    // This should go in the database
+
+                    // Sean: but first, append the strings to make a combined tag string
+                    ArrayList<String> combinedTagsList = new ArrayList<>();
+                    combinedTagsList.add(textSDG);
+                    combinedTagsList.add(textExpertise);
+                    String userCombinedTagsString = getCombinedString(combinedTagsList);
+
+                    // Write a method to return a string of words separated by a % symbol
+
+
+                    // Now add the data to the db
+                    registerUser(textName,textEmail,textPassword,textBio,textExpertise,textSDG, userCombinedTagsString);
                 }
+
+
+
             }
         });
 
     }
     private void registerUser(String textName, String textEmail, String textPassword,
-                              String textBio, String textExpertise, String textSDG){
+                              String textBio, String textExpertise, String textSDG, String userCombinedTagsString){
         customerInfoRegister.setCusName(textName);
         customerInfoRegister.setCusEmail(textEmail);
         customerInfoRegister.setCusPass(textPassword);
         customerInfoRegister.setCusBio(textBio);
         customerInfoRegister.setCusExpertise(textExpertise);
         customerInfoRegister.setCusSDG(textSDG);
+        customerInfoRegister.setCusCombinedTagsString(userCombinedTagsString);
         //This is for authentication
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -148,18 +172,153 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     // below line is used to get reference for our database.
                     databaseReferenceRegister = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
 
+
                     Toast.makeText(RegisterActivity.this,"User Registered",Toast.LENGTH_LONG).show();
 
                     databaseReferenceRegister.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReferenceRegister.setValue(customerInfoRegister);
+                            // Sean: Try to add all the Solutions here:
+                            // Loop through all the solutions in solution db
+//                            for (Solution solution : Solution.solutionsAllDBList) {
+//                                // and get the names
+//                                // And add them as nodes
+//                                databaseReferenceRegister.child("cusSolutions").child(solution.getSolutionName()).setValue(solution.getSolutionName());
+//                            }
+
                             Toast.makeText(RegisterActivity.this,"data added",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
                             Toast.makeText(RegisterActivity.this,"Fail to add data " + error,Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                    databaseReferenceUserSolutionsOne = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
+
+                    databaseReferenceUserSolutionsOne.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            // Sean: Try to add all the Solutions here:
+                            // Loop through all the solutions in solution db // doesnt seem to work
+                            // so just hardcode it in
+                            // Make an array list
+//                            ArrayList<String> allSolutions = new ArrayList<>();
+//                            allSolutions.add("Bewildered");
+//                            allSolutions.add("Blazing Beauty");
+//                            allSolutions.add("Contemporary Clothing");
+//                            allSolutions.add("Decarbonated Style");
+//                            allSolutions.add("Faster Fashion");
+//                            allSolutions.add("Foundation");
+//                            allSolutions.add("Metropolitic");
+//                            allSolutions.add("New Life");
+//                            allSolutions.add("Pining For You");
+//                            allSolutions.add("Regrowth");
+//                            allSolutions.add("Sweater Wearer");
+//                            allSolutions.add("United Future");
+//                            allSolutions.add("Up-Rooted");
+//                            allSolutions.add("Voice Of Nature");
+//                            allSolutions.add("Wayfairer");
+//                            allSolutions.add("Wildlife First");
+//
+//                            // Now loop through
+//                            for (String name : allSolutions) {
+//                                databaseReferenceUserSolutions.child("cusSolutions").child(name).child("solutionName").setValue(name);
+//                                databaseReferenceUserSolutions.child("cusSolutions").child(name).child("solutionStatus").setValue("discover");
+//                            }
+//                            databaseReferenceUserSolutions.child("cusSolutions").child("solnName1").child("solutionName").setValue("solnName1");
+//                            databaseReferenceUserSolutions.child("cusSolutions").child("solnName1").child("solutionStatus").setValue("discover");
+//                            for (Solution solution : Solution.solutionsAllDBList) {
+//                                // and get the names
+//                                // And add them as nodes
+//                                databaseReferenceUserSolutions.child("cusSolutions").child(solution.getSolutionName()).setValue(solution.getSolutionName());
+//                            }
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Bewildered").child("solutionName").setValue("Bewildered");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Bewildered").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Blazing Beauty").child("solutionName").setValue("Blazing Beauty");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Blazing Beauty").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Contemporary Clothing").child("solutionName").setValue("Contemporary Clothing");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Contemporary Clothing").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Decarbonated Style").child("solutionName").setValue("Decarbonated Style");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Decarbonated Style").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Faster Fashion").child("solutionName").setValue("Faster Fashion");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Faster Fashion").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Foundation").child("solutionName").setValue("Foundation");
+                            databaseReferenceUserSolutionsOne.child("cusSolutions").child("Foundation").child("solutionStatus").setValue("discover");
+
+                            Toast.makeText(RegisterActivity.this,"Solutions generated 1",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    databaseReferenceUserSolutionsTwo = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
+
+                    databaseReferenceUserSolutionsTwo.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Metropolitic").child("solutionName").setValue("Metropolitic");
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Metropolitic").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("New Life").child("solutionName").setValue("New Life");
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("New Life").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Pining For You").child("solutionName").setValue("Pining For You");
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Pining For You").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Regrowth").child("solutionName").setValue("Regrowth");
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Regrowth").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Sweater Wearer").child("solutionName").setValue("Sweater Wearer");
+                            databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Sweater Wearer").child("solutionStatus").setValue("discover");
+
+                            Toast.makeText(RegisterActivity.this,"Solutions generated 2",Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    databaseReferenceUserSolutionsThree = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
+
+                    databaseReferenceUserSolutionsThree.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("United Future").child("solutionName").setValue("United Future");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Contemporary Clothing").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionName").setValue("Up-Rooted");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Voice Of Nature").child("solutionName").setValue("Voice Of Nature");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Voice Of Nature").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wayfairer").child("solutionName").setValue("Wayfairer");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wayfairer").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wildlife First").child("solutionName").setValue("Wildlife First");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wildlife First").child("solutionStatus").setValue("discover");
+
+                            Toast.makeText(RegisterActivity.this,"Solutions generated 3",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
                         }
                     });
 
@@ -191,5 +350,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    // Sean: Write a method to return a string of words separated by a % symbol
+
+    public static String getCombinedString(ArrayList<String> inputList) {
+        return TextUtils.join("%", inputList);
     }
 }

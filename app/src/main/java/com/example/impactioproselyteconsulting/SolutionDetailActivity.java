@@ -85,7 +85,7 @@ public class SolutionDetailActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        Solution solution = Solution.getSolution(intent.getStringExtra("Name"));
+        Solution solution = Solution.getSolutionFromDB(intent.getStringExtra("Name"));
 
         loadSolutionData(solution);
 
@@ -93,15 +93,20 @@ public class SolutionDetailActivity extends AppCompatActivity {
         // Button to apply for this solution
         //TODO
         // Implement apply functionality
-//        Button viewSolutionsBtn = (Button) findViewById(R.id.applySolutionBtn);
-//        viewSolutionsBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // Apply for the solution
-//                Intent intent = new Intent(SolutionDetailActivity.this, .class);
-//                startActivity(intent);
-//            }
-//        });
+        Button viewSolutionsBtn = (Button) findViewById(R.id.applySolutionBtn);
+        viewSolutionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Apply for the solution
+                // Backend wise: The solution name should be added to the database
+                // via the path Customer Info / UserId / To-do
+                // The solution should also be removed from
+                // Frontend wise: The user is taken to Main Activity aka the Dashboard
+                // They should see a Toast that says Successfully Applied
+                Intent intent = new Intent(SolutionDetailActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         //Button to go back
