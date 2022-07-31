@@ -12,15 +12,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SolutionDetailActivity extends AppCompatActivity {
 
-    private ImageView solutionImageViewDtl;
-    private TextView solutionNameTextDtl, solutionBlurbTextDtl, solutionDescTextDtl;
+    private ImageView SolutionImgViewDetail;
+    private TextView SolutionNameTxtDetail, SolutionBlurbTxtDetail, descriptionLabel, SolutionDescTxtDetail;
+    private Button applySolutionBtn, btnBackSolution;
+    private CardView SolCV;
+
 
     Animation animSlideIn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +62,27 @@ public class SolutionDetailActivity extends AppCompatActivity {
             }
         });
 
-        solutionImageViewDtl = findViewById(R.id.SolutionImgViewDetail);
-        solutionNameTextDtl = findViewById(R.id.SolutionNameTxtDetail);
-        solutionBlurbTextDtl = findViewById(R.id.SolutionBlurbTxtDetail);
-        solutionDescTextDtl = findViewById(R.id.SolutionDescTxtDetail);
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
+        SolutionImgViewDetail = findViewById(R.id.SolutionImgViewDetail);
+        SolutionImgViewDetail.startAnimation(animSlideIn);
+        SolutionNameTxtDetail = findViewById(R.id.SolutionNameTxtDetail);
+        SolutionNameTxtDetail.startAnimation(animSlideIn);
+        SolutionBlurbTxtDetail = findViewById(R.id.SolutionBlurbTxtDetail);
+        SolutionBlurbTxtDetail.startAnimation(animSlideIn);
+        descriptionLabel = findViewById(R.id.descriptionLabel);
+        descriptionLabel.startAnimation(animSlideIn);
+        SolutionDescTxtDetail = findViewById(R.id.SolutionDescTxtDetail);
+        SolutionDescTxtDetail.startAnimation(animSlideIn);
+        applySolutionBtn = findViewById(R.id.applySolutionBtn);
+        applySolutionBtn.startAnimation(animSlideIn);
+        btnBackSolution = findViewById(R.id.btnBackSolution);
+        btnBackSolution.startAnimation(animSlideIn);
+        SolCV = findViewById(R.id.SolCV);
+        SolCV.startAnimation(animSlideIn);
+
 
         Intent intent = getIntent();
         Solution solution = Solution.getSolution(intent.getStringExtra("Name"));
@@ -112,10 +135,10 @@ public class SolutionDetailActivity extends AppCompatActivity {
     }
 
     private void loadSolutionData(Solution solution) {
-        solutionImageViewDtl.setImageResource(solution.getSolutionImage());
-        solutionNameTextDtl.setText(solution.getSolutionName());
-        solutionBlurbTextDtl.setText(solution.getSolutionBlurb());
-        solutionDescTextDtl.setText(solution.getSolutionDesc());
+        SolutionImgViewDetail.setImageResource(solution.getSolutionImage());
+        SolutionNameTxtDetail.setText(solution.getSolutionName());
+        SolutionBlurbTxtDetail.setText(solution.getSolutionBlurb());
+        SolutionDescTxtDetail.setText(solution.getSolutionDesc());
     }
 
 }

@@ -2,7 +2,6 @@ package com.example.impactioproselyteconsulting;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -10,20 +9,22 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ChallengeDetailActivity extends AppCompatActivity {
 
     private ImageView challengeImageViewDtl;
-    ToggleButton tglBtn;
-    private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl;
+//    ToggleButton tglBtn;
+    private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl, descriptionTV;
     ImageView ChallengeImgViewDetail;
     Animation animSlideIn;
+    CardView ChallengeCV;
+    Button btnChallengeBack, goToSolutionBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,11 @@ public class ChallengeDetailActivity extends AppCompatActivity {
                 R.anim.slide_in_bottom);
 
 
-        challengeImageViewDtl = findViewById(R.id.ChallengeImgViewDetail);
+        ChallengeCV = findViewById(R.id.SolCV);
+        ChallengeCV.startAnimation(animSlideIn);
+        descriptionTV = findViewById(R.id.descriptionTV);
+        descriptionTV.startAnimation(animSlideIn);
+        challengeImageViewDtl = findViewById(R.id.SolutionImgViewDetail);
         challengeImageViewDtl.startAnimation(animSlideIn);
         challengeNameTextDtl = findViewById(R.id.ChallengeNameTxtDetail);
         challengeNameTextDtl.startAnimation(animSlideIn);
@@ -71,10 +76,14 @@ public class ChallengeDetailActivity extends AppCompatActivity {
         challengeBlurbTextDtl.startAnimation(animSlideIn);
         challengeDescTextDtl = findViewById(R.id.ChallengeDescTxtDetail);
         challengeDescTextDtl.startAnimation(animSlideIn);
-        tglBtn = findViewById(R.id.tglBtn);
-        tglBtn.startAnimation(animSlideIn);
-        ChallengeImgViewDetail = findViewById(R.id.ChallengeImgViewDetail);
+//        tglBtn = findViewById(R.id.tglBtn);
+//        tglBtn.startAnimation(animSlideIn);
+        ChallengeImgViewDetail = findViewById(R.id.SolutionImgViewDetail);
         ChallengeImgViewDetail.startAnimation(animSlideIn);
+        btnChallengeBack = findViewById(R.id.btnChallengeBack);
+        btnChallengeBack.startAnimation(animSlideIn);
+        goToSolutionBtn = findViewById(R.id.goToSolutionBtn);
+        goToSolutionBtn.startAnimation(animSlideIn);
 
 
         Intent intent = getIntent();

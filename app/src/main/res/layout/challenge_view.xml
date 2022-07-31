@@ -18,7 +18,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/ChallengeImgViewDetail"
+            android:id="@+id/SolutionImgViewDetail"
             android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -43,7 +43,7 @@
             android:id="@+id/ChallengeNameTxtDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ChallengeImgViewDetail"
+            android:layout_below="@id/SolutionImgViewDetail"
             android:layout_marginStart="10dp"
             android:textColor="@color/black"
             android:textSize="24sp"

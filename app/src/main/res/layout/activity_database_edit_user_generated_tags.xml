@@ -12,7 +12,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="664dp"
         android:text="BACK"
-        app:layout_constraintBottom_toBottomOf="@+id/editDetailsBG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

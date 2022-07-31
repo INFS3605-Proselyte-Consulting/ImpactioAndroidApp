@@ -58,7 +58,7 @@ public class AdminChallengeDetailActivity extends AppCompatActivity {
             }
         });
 
-        challengeImageViewDtl = findViewById(R.id.ChallengeImgViewDetail);
+        challengeImageViewDtl = findViewById(R.id.SolutionImgViewDetail);
         challengeNameTextDtl = findViewById(R.id.ChallengeNameTxtDetail);
         challengeBlurbTextDtl = findViewById(R.id.ChallengeBlurbTxtDetail);
         challengeDescTextDtl = findViewById(R.id.ChallengeDescTxtDetail);
