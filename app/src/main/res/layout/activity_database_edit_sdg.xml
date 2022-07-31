@@ -10,13 +10,12 @@
         android:id="@+id/btnBackSDG"
         android:layout_width="96dp"
         android:layout_height="50dp"
-        android:layout_marginTop="664dp"
+        android:layout_marginTop="16dp"
         android:text="BACK"
-        app:layout_constraintBottom_toBottomOf="@+id/editDetailsBG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditSDG"
         app:layout_constraintVertical_bias="0.97" />
 
     <Button
@@ -30,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -41,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvSDG"
         app:layout_constraintTop_toBottomOf="@+id/tvSDG"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.045"
         app:srcCompat="@drawable/sdgs" />
 
     <Spinner
@@ -57,37 +56,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.775" />
 
     <TextView
         android:id="@+id/tvSDG"
-        android:layout_width="328dp"
-        android:layout_height="39dp"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Sustainable Development Goals"
+        android:text="Edit Your SDGs"
         android:textColor="#000000"
+        android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Select your SDG:"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.049" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
