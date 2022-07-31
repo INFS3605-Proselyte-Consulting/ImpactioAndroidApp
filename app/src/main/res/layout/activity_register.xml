@@ -14,24 +14,24 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
+
+
         android:drawableStart="@drawable/ic_login_mail_icon"
-
-
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ptRegisterImage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/ptFullname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
         android:drawableStart="@drawable/ic_user"
@@ -45,19 +45,17 @@
         app:layout_constraintBottom_toTopOf="@+id/ptPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ptLoginEmail"
         app:layout_constraintTop_toBottomOf="@+id/ptLoginEmail"
-        app:layout_constraintVertical_bias="0.805" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <EditText
         android:id="@+id/ptPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
-
         android:drawableStart="@drawable/ic_login_pass_icon"
         android:drawablePadding="16dp"
         android:ems="10"
@@ -67,15 +65,15 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/ptFullname"
+        app:layout_constraintTop_toBottomOf="@id/ptFullname" />
 
     <EditText
         android:id="@+id/ptBiography"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border_teal"
         android:drawableStart="@drawable/ic_biography"
@@ -86,21 +84,19 @@
         android:minHeight="48dp"
         android:padding="16dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/bRegister"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptPassword"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintTop_toBottomOf="@+id/ptPassword" />
 
     <Spinner
         android:id="@+id/ptSDGS"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/round_border_teal"
         android:contentDescription="SDG"
         android:ems="10"
         android:hint="SDG"
@@ -111,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegSDG"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <Spinner
         android:id="@+id/ptExpertise"
@@ -127,41 +123,46 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/bRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegExp"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegExp" />
 
     <TextView
         android:id="@+id/tvRegExp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
         android:text="Expertise"
+        android:textColor="#000000"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="@+id/ptBiography"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptBiography" />
 
     <TextView
         android:id="@+id/tvRegSDG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
         android:text="SDG"
+        android:textColor="#000000"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="@+id/ptExpertise"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
+
 
     <Button
         android:id="@+id/bRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/round_border_blue_inner_shadow"
         android:text="Register"
         android:textStyle="bold"
@@ -169,9 +170,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
-
+        app:layout_constraintTop_toBottomOf="@id/ptSDGS"
+        app:layout_constraintVertical_bias="0.943" />
 
     <ImageView
         android:id="@+id/ptRegisterImage"
