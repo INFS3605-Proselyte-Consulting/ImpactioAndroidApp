@@ -45,7 +45,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/InProgressTV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="15dp"
@@ -78,7 +78,7 @@
                     android:background="#FFCBE8EC">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/solutionstv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -107,7 +107,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/ToDoTV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="15dp"
@@ -140,7 +140,7 @@
                     android:background="#FFB1D3ED">
 
                     <TextView
-                        android:id="@+id/tvRegBio"
+                        android:id="@+id/solutionstv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
