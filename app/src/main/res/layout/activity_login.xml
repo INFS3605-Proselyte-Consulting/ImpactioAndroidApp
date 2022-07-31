@@ -36,22 +36,26 @@
 
     <Button
         android:id="@+id/bLoginRegister"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
-        android:background="@drawable/round_border_blue_inner_shadow"
         android:drawablePadding="16dp"
+        android:shadowColor="@color/impactioTeal"
         android:text="Register"
         android:textColor="#000000"
+        app:cornerRadius="@dimen/_4ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLoginLogin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="@color/impactioTeal"
+        app:strokeWidth="3dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -153,19 +157,23 @@
 
     <Button
         android:id="@+id/bLoginLogin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_border_blue_inner_shadow"
         android:drawablePadding="16dp"
+        android:shadowColor="@color/impactioTeal"
         android:text="Login"
         android:textColor="#000000"
+        app:cornerRadius="@dimen/_4ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.838"
+        app:strokeColor="@color/impactioTeal"
+        app:strokeWidth="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

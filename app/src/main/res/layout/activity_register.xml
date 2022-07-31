@@ -102,12 +102,12 @@
 
     <Spinner
         android:id="@+id/ptSDGS"
-        android:background="@drawable/spinner_border"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/spinner_border"
         android:contentDescription="SDG"
         android:ems="10"
         android:hint="SDG"
@@ -126,7 +126,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/spinner_border"
         android:contentDescription="Expertise"
@@ -140,12 +140,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegExp" />
 
+
     <TextView
         android:id="@+id/tvRegExp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:text="Expertise"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -157,8 +158,8 @@
         android:id="@+id/tvRegSDG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="SDG"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -166,23 +167,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ptExpertise" />
 
-
     <Button
         android:id="@+id/bRegister"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
-        android:background="@drawable/round_border_blue_inner_shadow"
+        android:shadowColor="@color/impactioBlue"
         android:text="Register"
+        android:textColor="#000000"
         android:textStyle="bold"
+        app:cornerRadius="@dimen/_4ssp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ptSDGS"
-        app:layout_constraintVertical_bias="0.943" />
+        app:layout_constraintVertical_bias="0.943"
+        app:strokeColor="@color/impactioBlue"
+        app:strokeWidth="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
