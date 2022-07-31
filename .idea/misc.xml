@@ -38,15 +38,18 @@
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_biography.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_profile_preferred_tags.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/Darren/Documents/GitHub/ImpactioAndroidApp/app/src/main/res/layout/activity_sdg_edit.xml" value="0.35104166666666664" />
-        <entry key="app/src/main/res/layout/activity_admin_dashboard.xml" value="0.11944444444444445" />
+        <entry key="app/src/main/res/layout/activity_admin_all_profile.xml" value="0.2106262222491016" />
+        <entry key="app/src/main/res/layout/activity_admin_dashboard.xml" value="0.18732945591352562" />
         <entry key="app/src/main/res/layout/activity_database_edit_expertise.xml" value="0.16342027452256946" />
         <entry key="app/src/main/res/layout/activity_database_edit_profile.xml" value="0.20299852159288195" />
         <entry key="app/src/main/res/layout/activity_database_edit_sdg.xml" value="0.18980577256944448" />
         <entry key="app/src/main/res/layout/activity_database_edit_user_generated_tags.xml" value="0.11944444444444445" />
-        <entry key="app/src/main/res/layout/activity_detail_challenge.xml" value="0.25393218994140626" />
+        <entry key="app/src/main/res/layout/activity_detail_challenge.xml" value="0.16863905325443787" />
+        <entry key="app/src/main/res/layout/activity_detail_solution.xml" value="0.24003623188405798" />
+        <entry key="app/src/main/res/layout/activity_discover_challenge.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/activity_discover_solution.xml" value="0.12487335359675786" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.17257690429687506" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2963790909014454" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16816253662109376" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2524032608233204" />
         <entry key="app/src/main/res/layout/activity_profile_area_of_expertise.xml" value="0.11944444444444445" />
         <entry key="app/src/main/res/layout/activity_profile_biography.xml" value="0.12487335359675786" />
@@ -56,6 +59,7 @@
         <entry key="app/src/main/res/layout/activity_sdg_edit.xml" value="0.12487335359675786" />
         <entry key="app/src/main/res/layout/activity_solutions_dashboard.xml" value="0.12487335359675786" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.11944444444444445" />
+        <entry key="app/src/main/res/layout/all_profiles_view.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/challenge_view.xml" value="0.12487335359675786" />
         <entry key="app/src/main/res/layout/solution_view.xml" value="0.11944444444444445" />
       </map>
