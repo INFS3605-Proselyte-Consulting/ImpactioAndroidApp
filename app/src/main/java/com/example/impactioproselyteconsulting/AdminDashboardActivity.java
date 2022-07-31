@@ -3,6 +3,7 @@ package com.example.impactioproselyteconsulting;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminDashboardActivity extends AppCompatActivity {
     public Button viewProjects,viewCurators;
+    Animation animSlideIn;
 
 
     @Override
@@ -18,7 +20,9 @@ public class AdminDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_dashboard);
 
         viewProjects = findViewById(R.id.bAdminViewProjects);
+        viewProjects.startAnimation(animSlideIn);
         viewCurators = findViewById(R.id.bAdminViewCurators);
+        viewCurators.startAnimation(animSlideIn);
 
         viewProjects.setOnClickListener(new View.OnClickListener() {
             @Override

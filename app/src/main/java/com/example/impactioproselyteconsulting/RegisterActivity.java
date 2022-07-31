@@ -103,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         sp_prefSDG.setAdapter(adapterSDG);
 
         btn_Register = findViewById(R.id.bRegister);
+        btn_Register.startAnimation(animSlideIn);
 
         btn_Register.setOnClickListener(new View.OnClickListener() {
             @Override

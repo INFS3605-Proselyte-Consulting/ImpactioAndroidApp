@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ public class SolutionsInProgressActivity extends MainActivity {
 
     private static final String TAG = "SolutionsInProgressActivity";
     private SolutionAdapter mAdapter;
+    Animation animSlideIn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

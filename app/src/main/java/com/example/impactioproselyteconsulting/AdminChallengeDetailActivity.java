@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,11 +19,16 @@ public class AdminChallengeDetailActivity extends AppCompatActivity {
     private ImageView challengeImageViewDtl;
     private TextView challengeNameTextDtl, challengeBlurbTextDtl, challengeDescTextDtl;
 
+    Animation animSlideIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_challenge);
         setTitle("Challenge Details");
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);

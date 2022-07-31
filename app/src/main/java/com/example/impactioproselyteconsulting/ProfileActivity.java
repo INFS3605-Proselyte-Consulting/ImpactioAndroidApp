@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private ImageView ivProfilePic;
     private Button btnEdit, btnLogOut;
     private CardView cardBiography, cardAreaOfExpertise, cardSustainable, cardPreferredTags;
+    Animation animSlideIn;
 
     //FireBase Database
     FirebaseDatabase firebaseDatabase;
@@ -47,6 +49,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         setTitle("Your Profile");
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
 
         //Recognise the firebase database user
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -124,17 +131,29 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         // Get handle for view elements
         ivProfilePic = findViewById(R.id.ivProfilePic);
+        ivProfilePic.startAnimation(animSlideIn);
         tvName = findViewById(R.id.tvName);
+        tvName.startAnimation(animSlideIn);
         tvBiography = findViewById(R.id.tvBiography);
+        tvBiography.startAnimation(animSlideIn);
         tvBio = findViewById(R.id.tvBio);
+        tvBio.startAnimation(animSlideIn);
         tvAOE = findViewById(R.id.tvAOE);
+        tvAOE.startAnimation(animSlideIn);
         tvSDGDisplay = findViewById(R.id.tvSDGDisplay);
+        tvSDGDisplay.startAnimation(animSlideIn);
         tvUserTag = findViewById(R.id.tvUserTag);
+        tvUserTag.startAnimation(animSlideIn);
         btnLogOut = findViewById(R.id.btnLogOut);
+        btnLogOut.startAnimation(animSlideIn);
         cardBiography = (CardView) findViewById(R.id.cardBiography);
+        cardBiography.startAnimation(animSlideIn);
         cardAreaOfExpertise = (CardView) findViewById(R.id.cardAreaOfExpertise);
+        cardAreaOfExpertise.startAnimation(animSlideIn);
         cardSustainable = (CardView) findViewById(R.id.cardSustainable);
+        cardSustainable.startAnimation(animSlideIn);
         cardPreferredTags = (CardView) findViewById(R.id.cardPreferredTags);
+        cardPreferredTags.startAnimation(animSlideIn);
 
         cardBiography.setOnClickListener(this);
         cardAreaOfExpertise.setOnClickListener(this);

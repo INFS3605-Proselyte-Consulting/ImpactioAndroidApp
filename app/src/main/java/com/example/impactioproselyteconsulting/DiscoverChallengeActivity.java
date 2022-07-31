@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class DiscoverChallengeActivity extends AppCompatActivity {
     private static final String TAG = "DiscoverChallengeActivity";
     private ChallengeAdapter mAdapter;
+    Animation animSlideIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

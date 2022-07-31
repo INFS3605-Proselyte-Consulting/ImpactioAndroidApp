@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,18 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AdminChallengeActivity extends AppCompatActivity {
     private static final String TAG = "AdminChallengeActivity";
     private ChallengeAdapter mAdapter;
+    Animation animSlideIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_challenge);
         setTitle("All Challenges");
+
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
 
         RecyclerView challengeRecyclerView = findViewById(R.id.adminChallengeRV);
         challengeRecyclerView.setHasFixedSize(true);

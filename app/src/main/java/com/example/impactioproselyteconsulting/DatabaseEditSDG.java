@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
     private Spinner ptEditSDG;
     private Button btnEditSDG, btnBackSDG;
     public String valueFromSpinnerSDG;
+    Animation animSlideIn;
 
 
     // Firebase Database.
@@ -36,6 +38,10 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_edit_sdg);
 
+        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.slide_in_bottom);
+
+
         //Get the uId of user login in
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -47,10 +53,14 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
 
         //button
         btnEditSDG = findViewById(R.id.btnEditSDG);
+        btnEditSDG.startAnimation(animSlideIn);
         btnBackSDG = findViewById(R.id.btnBackSDG);
+        btnBackSDG.startAnimation(animSlideIn);
 
         //spinner
         ptEditSDG = findViewById(R.id.ptEditSDG);
+        ptEditSDG.startAnimation(animSlideIn);
+
 
         //on click spinner
         ptEditSDG.setOnItemSelectedListener(this);

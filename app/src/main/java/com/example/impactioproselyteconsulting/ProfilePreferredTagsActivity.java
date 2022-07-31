@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 
@@ -16,6 +17,7 @@ public class ProfilePreferredTagsActivity extends AppCompatActivity {
     private Chip chipEnvironment, chipTechnologyTag, chipGlobalBusiness, chipGovernment, chipEconomy, chipFamily;
 
     private Button btnDone;
+    Animation animSlideIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -37,6 +37,7 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/black"
                 android:textSize="34sp"
+                android:textStyle="bold"
                 tools:text="Challenge Name here" />
 
             <LinearLayout
@@ -101,6 +102,7 @@
                 android:layout_height="52dp"
                 android:layout_marginStart="95dp"
                 android:layout_marginEnd="267dp"
+                android:layout_marginBottom="32dp"
                 android:layout_weight="1"
                 android:text="See Solutions" />
 

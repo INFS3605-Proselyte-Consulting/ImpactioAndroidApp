@@ -22,7 +22,7 @@
 
     <EditText
         android:id="@+id/tvChangeName"
-        android:layout_width="250dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_border_teal"
         android:drawableStart="@drawable/ic_change_name_icon"
@@ -36,16 +36,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.334" />
 
     <Button
         android:id="@+id/btnChangeBio"
+        style="@style/FirebaseUI.Button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:background="@drawable/round_border_teal"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,16 +77,15 @@
         android:id="@+id/btnChangeName"
         style="@style/FirebaseUI.Button"
         android:layout_width="104dp"
-        android:layout_height="56dp"
-        android:background="@drawable/round_border_blue"
+        android:layout_height="57dp"
 
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toEndOf="@+id/tvChangeName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/editDetailsTV"
