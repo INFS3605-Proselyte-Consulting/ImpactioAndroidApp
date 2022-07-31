@@ -2,6 +2,7 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -70,6 +71,9 @@ public class DatabaseEditExpertise extends AppCompatActivity implements AdapterV
                 databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusExpertise");
                 String expertiseChange = valueFromSpinnerExpertise;
                 databaseReference.setValue(expertiseChange);
+                Intent intent = new Intent(DatabaseEditExpertise.this,ProfileActivity.class);
+                startActivity(intent);
+
 
             }
         });

@@ -6,54 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".DatabaseEditProfile">
 
-    <EditText
-        android:id="@+id/tvChangeBio"
-        android:layout_width="267dp"
-        android:layout_height="78dp"
-        android:hint="Change Biography"
+    <ImageView
+        android:id="@+id/editDetailsBG"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.3"
+        android:background="@drawable/ic_edit_details_screen"
+        android:backgroundTintMode="src_over"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <Button
-        android:id="@+id/btnChangeBio"
-        android:layout_width="36dp"
-        android:layout_height="23dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
-
-    <Button
-        android:id="@+id/btnChangeName"
-        android:layout_width="36dp"
-        android:layout_height="23dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        tools:ignore="ImageContrastCheck" />
 
     <EditText
         android:id="@+id/tvChangeName"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_change_name_icon"
+        android:drawablePadding="16dp"
+        android:ems="0"
         android:hint="Change Name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
+
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.334" />
+
+    <Button
+        android:id="@+id/btnChangeBio"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_border_teal"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <EditText
+        android:id="@+id/tvChangeBio"
+        android:layout_width="0dp"
+        android:layout_height="235dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_border_teal"
+        android:drawableStart="@drawable/ic_biography"
+        android:drawablePadding="0dp"
+        android:hint="Edit Your Biography"
+        android:padding="84dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
+
+    <Button
+        android:id="@+id/btnChangeName"
+        style="@style/FirebaseUI.Button"
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:background="@drawable/round_border_blue"
+
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334" />
+
+    <TextView
+        android:id="@+id/editDetailsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="211dp"
+        android:text="Edit Your Details"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

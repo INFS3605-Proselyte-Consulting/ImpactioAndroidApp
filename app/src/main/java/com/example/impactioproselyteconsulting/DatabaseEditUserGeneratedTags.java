@@ -3,6 +3,7 @@ package com.example.impactioproselyteconsulting;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,10 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
                 databaseReferenceUserGeneratedTags = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
                 String UserGeneratedTag = tvEditUserGeneratedTags.getText().toString();;
                 databaseReferenceUserGeneratedTags.setValue(UserGeneratedTag);
+
+                //Someone please put an if statement here if a user creates an empty tag it does nothing pls
+//                Intent intent = new Intent(DatabaseEditUserGeneratedTags.this,ProfileActivity.class);
+//                startActivity(intent);
             }
         });
 
