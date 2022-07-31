@@ -115,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRatingCommentTitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvComment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Type Your Comments Here" />
@@ -130,13 +131,16 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/bRatingSave"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="24dp"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

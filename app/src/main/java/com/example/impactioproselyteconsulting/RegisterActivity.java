@@ -38,15 +38,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     Animation animSlideIn, animFloatUp;
     // creating a variable for our
     // Firebase Database.
-    FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabaseRegister;
 
     // creating a variable for our Database
     // Reference for Firebase.
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReferenceRegister;
 
     // creating a variable for
     // our object class
-    CustomerInfo customerInfo;
+    CustomerInfo customerInfoRegister;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,9 +55,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         setTitle("Register");
 
         // below line is used to get the instance of our FIrebase database.
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabaseRegister = FirebaseDatabase.getInstance();
         // initializing our object class variable.
-        customerInfo = new CustomerInfo();
+        customerInfoRegister = new CustomerInfo();
 
         //Toasts just give a message on the screen
         Toast.makeText(RegisterActivity.this, "You can register now", Toast.LENGTH_LONG).show();
@@ -128,12 +128,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     }
     private void registerUser(String textName, String textEmail, String textPassword,
                               String textBio, String textExpertise, String textSDG){
-        customerInfo.setCusName(textName);
-        customerInfo.setCusEmail(textEmail);
-        customerInfo.setCusPass(textPassword);
-        customerInfo.setCusBio(textBio);
-        customerInfo.setCusExpertise(textExpertise);
-        customerInfo.setCusSDG(textSDG);
+        customerInfoRegister.setCusName(textName);
+        customerInfoRegister.setCusEmail(textEmail);
+        customerInfoRegister.setCusPass(textPassword);
+        customerInfoRegister.setCusBio(textBio);
+        customerInfoRegister.setCusExpertise(textExpertise);
+        customerInfoRegister.setCusSDG(textSDG);
         //This is for authentication
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -145,14 +145,14 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                     // below line is used to get reference for our database.
-                    databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid);
+                    databaseReferenceRegister = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
 
                     Toast.makeText(RegisterActivity.this,"User Registered",Toast.LENGTH_LONG).show();
 
-                    databaseReference.addValueEventListener(new ValueEventListener() {
+                    databaseReferenceRegister.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            databaseReference.setValue(customerInfo);
+                            databaseReferenceRegister.setValue(customerInfoRegister);
                             Toast.makeText(RegisterActivity.this,"data added",Toast.LENGTH_SHORT).show();
                         }
 

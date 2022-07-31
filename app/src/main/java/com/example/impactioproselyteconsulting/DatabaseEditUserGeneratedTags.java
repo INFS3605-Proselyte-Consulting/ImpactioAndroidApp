@@ -24,7 +24,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
     private Button btnUserGeneratedTags, btnRemove;
 
     //FireBase Database
-    FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabaseUserGeneratedTags;
 
     //Reference for firebase
 
@@ -34,7 +34,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
 
     //Create variable customerInfo
 
-    CustomerInfo customerInfo;
+    CustomerInfo customerInfoUserGeneratedTags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +49,10 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
 
 
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabaseUserGeneratedTags = FirebaseDatabase.getInstance();
 
         // initializing our object class variable.
-        customerInfo = new CustomerInfo();
+        customerInfoUserGeneratedTags = new CustomerInfo();
 
 //        //This is for authentication
 
@@ -64,7 +64,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //      Create string for bio change
-                databaseReferenceUserGeneratedTags = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
+                databaseReferenceUserGeneratedTags = firebaseDatabaseUserGeneratedTags.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
                 String UserGeneratedTag = tvEditUserGeneratedTags.getText().toString();;
                 databaseReferenceUserGeneratedTags.setValue(UserGeneratedTag);
 
@@ -78,7 +78,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Remove the child node and custom tag from firebase
-                databaseReferenceUserGeneratedTags = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
+                databaseReferenceUserGeneratedTags = firebaseDatabaseUserGeneratedTags.getReference("CustomerInfo/" + uid + "/cusUserGeneratedTags");
                 databaseReferenceUserGeneratedTags.setValue("");
 
 
@@ -86,7 +86,7 @@ public class DatabaseEditUserGeneratedTags extends AppCompatActivity {
         });
 
 
-        referenceGetGeneratedTag =  firebaseDatabase.getReference().child("CustomerInfo").child(uid);
+        referenceGetGeneratedTag =  firebaseDatabaseUserGeneratedTags.getReference().child("CustomerInfo").child(uid);
         referenceGetGeneratedTag.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

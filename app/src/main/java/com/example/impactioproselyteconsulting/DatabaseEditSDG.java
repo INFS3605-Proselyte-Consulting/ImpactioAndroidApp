@@ -2,7 +2,6 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -71,8 +70,6 @@ public class DatabaseEditSDG extends AppCompatActivity implements AdapterView.On
                 databaseReference = firebaseDatabase.getReference("CustomerInfo/" + uid + "/cusSDG");
                 String sdgChange = valueFromSpinnerSDG;
                 databaseReference.setValue(sdgChange);
-                Intent intent = new Intent(DatabaseEditSDG.this,ProfileActivity.class);
-                startActivity(intent);
 
             }
         });
