@@ -20,15 +20,14 @@
         <ImageView
             android:id="@+id/SolutionImgViewDetail"
             android:layout_width="500dp"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:adjustViewBounds="true"
-            android:padding="5dp"
             android:scaleType="fitXY" />
 
         <ToggleButton
             android:id="@+id/tglBtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
