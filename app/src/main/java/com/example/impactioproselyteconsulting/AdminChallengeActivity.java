@@ -10,50 +10,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-public class DiscoverChallengeActivity extends AppCompatActivity {
-    private static final String TAG = "DiscoverChallengeActivity";
+public class AdminChallengeActivity extends AppCompatActivity {
+    private static final String TAG = "AdminChallengeActivity";
     private ChallengeAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_discover_challenge);
-        setTitle("Discover Challenges");
-
-        // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.menuNav_Discover);
-
-        // Perform item selected listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch(item.getItemId())
-                {
-                    case R.id.menuNav_Dashboard:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.menuNav_Discover:
-                        return true;
-                    case R.id.menuNav_Profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+        setContentView(R.layout.activity_admin_challenge);
+        setTitle("All Challenges");
 
         RecyclerView challengeRecyclerView = findViewById(R.id.adminChallengeRV);
         challengeRecyclerView.setHasFixedSize(true);
@@ -82,11 +51,6 @@ public class DiscoverChallengeActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-    // Show message when user clicks to like project
-//    public void onCustomToggleClick (View view) {
-//        Toast.makeText(this, "Favourited!", Toast.LENGTH_SHORT).show();
-//    }
 
     // Instantiate the menu
     @Override

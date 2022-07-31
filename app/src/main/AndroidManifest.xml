@@ -23,6 +23,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AdminAllProfileActivity">
+
+        </activity>
+
+        <activity android:name=".AdminChallengeActivity">
+
+        </activity>
+
         <activity android:name=".RatingActivity">
 
         </activity>
