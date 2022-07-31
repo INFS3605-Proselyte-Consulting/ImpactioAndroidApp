@@ -2,12 +2,13 @@ package com.example.impactioproselyteconsulting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -17,8 +18,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
 
     private TextView tvUid;
     private EditText tvChangeBio, tvChangeName;
-    private Button btnChangeBio, btnChangeName;
-    Animation animSlideIn;
+    private Button btnChangeBio, btnChangeName, btnBackBio;
 
     //FireBase Database
     FirebaseDatabase firebaseDatabaseBio;
@@ -40,21 +40,16 @@ public class DatabaseEditProfile extends AppCompatActivity {
         setContentView(R.layout.activity_database_edit_profile);
 
 
-        animSlideIn = android.view.animation.AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.slide_in_bottom);
 
-
-        tvChangeName = findViewById(R.id.tvChangeName);
-        tvChangeName.startAnimation(animSlideIn);
+        tvChangeName = findViewById(R.id.tvChangeName);;
         btnChangeName = findViewById(R.id.btnChangeName);
-        btnChangeName.startAnimation(animSlideIn);
 
 
 
-        tvChangeBio = findViewById(R.id.tvChangeBio);
-        tvChangeBio.startAnimation(animSlideIn);
+        tvChangeBio = findViewById(R.id.tvChangeBio);;
         btnChangeBio = findViewById(R.id.btnChangeBio);
-        btnChangeBio.startAnimation(animSlideIn);
+
+        btnBackBio = findViewById(R.id.btnBackBio);
 
 
 
@@ -79,6 +74,7 @@ public class DatabaseEditProfile extends AppCompatActivity {
                     databaseReferenceBio = firebaseDatabaseBio.getReference("CustomerInfo/" + uid + "/cusBio");
                     String bioChange = tvChangeBio.getText().toString();;
                     databaseReferenceBio.setValue(bioChange);
+                    Toast.makeText(DatabaseEditProfile.this,"Biography Changed Successfully",Toast.LENGTH_SHORT).show();
 
                 }
         });
@@ -92,7 +88,19 @@ public class DatabaseEditProfile extends AppCompatActivity {
                 databaseReferenceName = firebaseDatabaseBio.getReference("CustomerInfo/" + uid + "/cusName");
                 String nameChange = tvChangeName.getText().toString();;
                 databaseReferenceName.setValue(nameChange);
+                Toast.makeText(DatabaseEditProfile.this,"Name Changed Successfully",Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        //Create button to go back to Profile page
+
+        btnBackBio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseEditProfile.this,ProfileActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
