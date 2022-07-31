@@ -26,6 +26,9 @@
         <activity android:name=".RatingActivity">
 
         </activity>
+        <activity android:name=".AdminDashboardActivity">
+
+        </activity>
 
         <activity
             android:name=".DatabaseEditUserGeneratedTags"
