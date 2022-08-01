@@ -49,6 +49,8 @@ public class Solution {
     // If Solution has 3 curator ratings then solutionFull is true, if less than 3 then false
     Boolean solutionFull;
 
+    public ArrayList<String> tempSolutionNamesList;
+
 
 
     public Solution() {
@@ -256,11 +258,14 @@ public class Solution {
 
     // TODO: Write a method that takes in a really long string of something separated by '%' symbols
     // and put them into an ArrayList of Strings and return that list
-    public static ArrayList<String> convertLongStringToList(String longString) {
+    public static ArrayList<String> convertLongStringToList(String longStr) {
+        System.out.println("Long String: " + longStr);
+
         // Make a new empty Array List of strings
         ArrayList<String> resultingStringList;
 
-        String[] list = longString.split("%");
+        String[] list = longStr.split("%");
+        System.out.println("List" + list);
 
         resultingStringList = new ArrayList<>(Arrays.asList(list));
 
@@ -519,6 +524,8 @@ public class Solution {
             }
         }
 
+        System.out.println("Solution name conversion: " + outputSolutions);
+
         return outputSolutions;
     }
 
@@ -676,6 +683,77 @@ public class Solution {
         return solutionList;
     }
 
+    // TODO: Write a method that returns a list of DB solutions names String that match the status of Discover
+    //
+    public static ArrayList<String> getDiscoverSolutionNamesFromUserDB() {
+        // First
+        //FireBase Database
+        FirebaseDatabase firebaseDatabase;
+
+        // Make an instance of Solution??
+        Solution solutionInstance = new Solution();
+
+        // Database Reference
+        DatabaseReference referenceGetSolutionName;
+
+        //Recognise the firebase database user
+        // May not be needed in this method
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // initializing our object class variable.
+        //solutionInstance = new Solution();
+
+        // Initialize the array list of solutions
+        //ArrayList<String> solutionsDiscoverOutputList = new ArrayList<>();
+
+        //Reference Database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        referenceGetSolutionName =  firebaseDatabase.getReference().child("CustomerInfo").child(uid).child("cusSolutions");
+
+        referenceGetSolutionName.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                // Write a for loop for the keys under Solution
+                int counter = 0;
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    //
+                    String solutionName = snapshot.child("solutionName").getValue().toString();
+                    System.out.println("Solution Name: " + solutionName);
+                    String solutionStatus = snapshot.child("solutionStatus").getValue().toString();
+                    System.out.println("Solution Status: " + solutionStatus);
+
+                    // If the solution status is equal to Discover then
+                    if (solutionStatus.equals("discover")) {
+                        // then add the solution name to the list
+                        System.out.println("Added: " + solutionName);
+                        solutionInstance.tempSolutionNamesList.add(solutionName);
+                    }
+
+                    System.out.println("List nowww has:..." + solutionInstance.tempSolutionNamesList);
+
+                }
+                // Now iterate the for loop for the next Child
+                System.out.println("List should have: " + solutionInstance.tempSolutionNamesList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        System.out.println("All Discover Solution names: " + solutionInstance.tempSolutionNamesList);
+
+        return solutionInstance.tempSolutionNamesList;
+
+    }
+
+    // This is the Solution List Discover
+    public static ArrayList<Solution> solutionsDiscoverDBList = getSolutionsFromSolutionNames(getDiscoverSolutionNamesFromUserDB());
+
+
+
     // TODO: Write a method that returns a list of ALL DB Solutions with those with more matches at the top
     // This is THE Algorithm
     // This can be used later in the To Do Solutions from the dashboard
@@ -767,7 +845,7 @@ public class Solution {
     public static ArrayList<Solution> getPrioritizedSolutionListFromTagListAndChallengeName(ArrayList<String> userTagList, String challengeName) {
 
         // Create a new empty Solution list
-        ArrayList<Solution> solutionList = new ArrayList<>();
+        ArrayList<Solution> solutionList = new ArrayList<Solution>();
 
         // Make a separate loop for each number to check
         // to ensure right order
@@ -923,6 +1001,92 @@ public class Solution {
                 solutionList.add(solution);
             }
         }
+
+        return solutionList;
+    }
+
+
+    // TODO: Write a method that returns a list of DB Solutions specific to the input Challenge name
+    // with those with more matches at the top
+    // This uses THE Algorithm
+    // This can be used later in the Discover page from Challenge Detail Activity
+    public static ArrayList<Solution> getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(ArrayList<String> userTagList, String challengeName) {
+
+        // Create a new empty Solution list
+        ArrayList<Solution> solutionList = new ArrayList<>();
+
+        // Make a separate loop for each number to check
+        // to ensure right order
+
+        // TODO: Not that important but if can, make this a loop so that it looks nicer
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) >= 10 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 9 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 8 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 7 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 6 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 5 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 4 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 3 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 2 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 1 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        for (Solution solution : solutionsDiscoverDBList) {
+            if (solution.howManyTagsMatch(userTagList) == 0 && solution.getSolutionChallengeOrigin().equals(challengeName)) {
+                solutionList.add(solution);
+            }
+        }
+
+        System.out.println("Priority List: " + solutionList);
 
         return solutionList;
     }

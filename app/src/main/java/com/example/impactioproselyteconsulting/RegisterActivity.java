@@ -48,6 +48,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     DatabaseReference databaseReferenceUserSolutionsOne;
     DatabaseReference databaseReferenceUserSolutionsTwo;
     DatabaseReference databaseReferenceUserSolutionsThree;
+    DatabaseReference databaseReferenceUserSolutionsFour;
 
     // creating a variable for
     // our object class
@@ -299,19 +300,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReferenceUserSolutionsThree.child("cusSolutions").child("United Future").child("solutionName").setValue("United Future");
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Contemporary Clothing").child("solutionStatus").setValue("discover");
+                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("United Future").child("solutionStatus").setValue("discover");
 
                             databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionName").setValue("Up-Rooted");
                             databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionStatus").setValue("discover");
-
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Voice Of Nature").child("solutionName").setValue("Voice Of Nature");
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Voice Of Nature").child("solutionStatus").setValue("discover");
-
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wayfairer").child("solutionName").setValue("Wayfairer");
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wayfairer").child("solutionStatus").setValue("discover");
-
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wildlife First").child("solutionName").setValue("Wildlife First");
-                            databaseReferenceUserSolutionsThree.child("cusSolutions").child("Wildlife First").child("solutionStatus").setValue("discover");
 
                             Toast.makeText(RegisterActivity.this,"Solutions generated 3",Toast.LENGTH_SHORT).show();
                         }
@@ -321,6 +313,31 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
                         }
                     });
+
+
+                    databaseReferenceUserSolutionsFour = firebaseDatabaseRegister.getReference("CustomerInfo/" + uid);
+
+                    databaseReferenceUserSolutionsFour.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Voice Of Nature").child("solutionName").setValue("Voice Of Nature");
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Voice Of Nature").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wayfairer").child("solutionName").setValue("Wayfairer");
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wayfairer").child("solutionStatus").setValue("discover");
+
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wildlife First").child("solutionName").setValue("Wildlife First");
+                            databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wildlife First").child("solutionStatus").setValue("discover");
+                            Toast.makeText(RegisterActivity.this,"Solutions generated 4",Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
 
                     //Open user Profile
                     Intent intent = new Intent(RegisterActivity.this,ProfileActivity.class);

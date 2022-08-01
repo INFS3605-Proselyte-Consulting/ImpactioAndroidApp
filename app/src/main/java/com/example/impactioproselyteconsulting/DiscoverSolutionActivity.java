@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DiscoverSolutionActivity extends AppCompatActivity {
@@ -221,13 +222,22 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         referenceGetName.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Get the Expertise string, the SDG string and the User Custom Tag string from the database
-                // and append them to an ArrayList<String>
-                // Then set that to be the ArrayList<String> cusCombinedTagList
-                ArrayList<String> userTagsList = new ArrayList<>();
-                userTagsList.add(snapshot.child("cusExpertise").getValue().toString());
-                userTagsList.add(snapshot.child("cusSDG").getValue().toString());
-                userTagsList.add(snapshot.child("cusUserGeneratedTags").getValue().toString());
+                // Get the cusCombinedTagsString from the db and then convert it to a array list string
+                String tempLongString = snapshot.child("cusCombinedTagsString").getValue().toString();
+                System.out.println("TempLongString: " + tempLongString);
+                String tempString = "Green";
+                System.out.println("TempString: " + tempString);
+                System.out.println("Sout: " + convertLongStringToList(tempLongString));
+                ArrayList<String> userTagsList = convertLongStringToList(tempLongString);
+
+                System.out.println("User Tags: " + userTagsList);
+
+                System.out.println("Challenge Origin: " + challenge.getChallengeName());
+
+                mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
+
+                System.out.println("Final Solution passed in: " + Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()));
+
                 customerInfo.setCusCombinedTagList(userTagsList);
             }
 
@@ -237,10 +247,25 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
             }
         });
 
-        mAdapter = new SolutionAdapter(Solution.getPrioritizedDBSolutionListFromTagListAndChallengeName(customerInfo.getCusCombinedTagList(), challenge.getChallengeName()), listener);
+        //mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
 
 
         recyclerView.setAdapter(mAdapter);
+        System.out.println("Success");
+    }
+
+    public static ArrayList<String> convertLongStringToList(String longStr) {
+        System.out.println("Long String: " + longStr);
+
+        // Make a new empty Array List of strings
+        ArrayList<String> resultingStringList;
+
+        String[] list = longStr.split("%");
+        System.out.println("List" + list.toString());
+
+        resultingStringList = new ArrayList<>(Arrays.asList(list));
+
+        return resultingStringList;
     }
 
 }
