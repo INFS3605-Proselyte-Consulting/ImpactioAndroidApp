@@ -103,7 +103,13 @@ public class SolutionDetailActivity extends AppCompatActivity {
                 // The solution should also be removed from
                 // Frontend wise: The user is taken to Main Activity aka the Dashboard
                 // They should see a Toast that says Successfully Applied
-                Intent intent = new Intent(SolutionDetailActivity.this, MainActivity.class);
+
+                // For Hardcoded:
+                // The User is taken to the Main Activity aka the Dashboard
+                // They should see a toast that says Successfully Applied
+                // Backend: Take them to Curate Activity and pass in the intent
+                Intent intent = new Intent(SolutionDetailActivity.this, RatingActivity.class);
+                intent.putExtra("Name", solution.getSolutionName());
                 startActivity(intent);
             }
         });

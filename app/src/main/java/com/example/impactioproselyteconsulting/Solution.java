@@ -276,7 +276,6 @@ public class Solution {
     public static ArrayList<Solution> getSolutions() {
         // Create a list of solutions here
         ArrayList<Solution> solutions = new ArrayList<>();
-        /*
 
 //        // Create the test Data Tags Lists here
 //        ArrayList<String> testTagListYesOne = new ArrayList<>();
@@ -311,6 +310,23 @@ public class Solution {
         testTagListEMS.add("Maths");
         testTagListEMS.add("Science");
 
+        ArrayList<String> testTagListTCG = new ArrayList<>();
+        testTagListTCG.add("Technology");
+        testTagListTCG.add("Responsible Consumption And Production");
+        testTagListTCG.add("Astrology");
+
+        ArrayList<String> testTagListEngineer = new ArrayList<>();
+        testTagListEngineer.add("Engineering");
+        testTagListEngineer.add("Astrology");
+        testTagListEngineer.add("Green");
+
+        ArrayList<String> testTagListFF = new ArrayList<>();
+        testTagListFF.add("Technology");
+        testTagListFF.add("Responsible Consumption And Production");
+        testTagListFF.add("Sustainability");
+
+
+
         // TODO: Create new test data of Tags list for each Solution (data that makes more sense)
         // TODO: Also related, make the tags visible on the Discover Solutions and Solution Detail screen
 
@@ -319,23 +335,20 @@ public class Solution {
         solutions.add(new Solution("Contemporary Clothing",
                 "Made by contemporaries for our changing times",
                 "Second-hand clothing shops help reduce textiles waste to landfill. Australia has 3,000 charity and social enterprise retailers that support 5,000 jobs, 33,000 volunteers, and 10,000 charity collection bins. A range of innovative products were displayed revealing the latest developments in clothing textile waste recycling and highlighting both the challenges and opportunities of addressing textile waste here in Australia.\n",
-                "To-Do",
                 "The Great Fashion Decarbonisation",
                 testTagListWrong,
                 R.drawable.contemporary));
         solutions.add(new Solution("Decarbonated Style",
                 "A holistic overview of decarbonisation actioning",
                 "Despite efforts to reduce emissions, the industry is on a trajectory that will exceed the 1.5-degree pathway to mitigate climate change set out by the Intergovernmental Panel on Climate Change (IPCC) and ratified in the 2015 Paris agreement. By 2023, 20% of major apparel companies by revenue committed to net zero through membership in the Fashion Charter\n",
-                "To-Do",
                 "The Great Fashion Decarbonisation",
-                testTagListWrong,
+                testTagListHSM,
                 R.drawable.decarbstyle));
         solutions.add(new Solution("Sweater Wearer",
                 "A change of wardrobe for the fashion industry",
                 "The Sweater Wearer Initiative works on the basis of bringing high quality textiles to designers that can make the most of what they're given. Each time a garment is washed as part of daily use, it releases thousands of tiny fibres that find their way through wastewater to the oceans. Although scientists have long noted microfibre or microplastics pollution, it is only now attracting wider public attention." +
                         "\n" +
                         "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
-                "In Progress",
                 "The Great Fashion Decarbonisation",
                 testTagListEMS,
                 R.drawable.sweater));
@@ -344,9 +357,8 @@ public class Solution {
                 "Here's the problem with fast fashion.\n" +
                         "\n" +
                         "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
-                "Done",
                 "The Great Fashion Decarbonisation",
-                testTagListWrong,
+                testTagListFF,
                 R.drawable.fasterfashion));
         solutions.add(new Solution("Wayfairer",
                 "Building community wealth through tourism",
@@ -357,14 +369,12 @@ public class Solution {
                         "Under the model, 50% of travel booking fees are reinvested back into the local community - to be invested across three themes - people, food, and the environment. And as an impact enterprise that is owned by these same local communities, the other 50% of the fees helps to create sustainable jobs.\n" +
                         "\n" +
                         "For this project, the funding contribution from WWF would enable the piloting of the Wayfairer model in the Ballarat region, specifically to support the accommodation needs of delegates attending the 2022 Australian Regional Tourism Convention.\n",
-                "To-Do",
                 "Innovate to Regenerate",
-                testTagListHSMA,
+                testTagListTCG,
                 R.drawable.wayfairer));
         solutions.add(new Solution("New Life",
                 "Pushing the boundaries of possible plant life in the public eye",
                 "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic.\n",
-                "To-Do",
                 "Innovate to Regenerate",
                 testTagListAstrology,
                 R.drawable.newlife));
@@ -373,7 +383,6 @@ public class Solution {
                 "This remarkable tree escaped discovery by earlier botanists in part because the only canyon system in which trees grow is bounded by tall sandstone cliffs, and access to the plants requires use of a helicopter or climbing gear. Fewer than 100 adult trees and a few hundred seedlings presently survive in the canyon’s moist sheltered microclimate; their location is kept secret to avoid the introduction of pathogens. The trees were threatened by a bushfire that burned most of Wollemi National Park during the devastating 2019–20 fire season" +
                         "\n" +
                         "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
-                "In Progress",
                 "Innovate to Regenerate",
                 testTagListHSM,
                 R.drawable.piningforyou));
@@ -382,11 +391,9 @@ public class Solution {
                 "Biodiversity is the ‘diversity of life’ and is not only important in its own right, but also helps support the very air we breathe, the water we drink and the food we eat.\n" +
                         "\n" +
                         "Together we can make a greater positive impact on the conservation. Small, local actions can also make a huge difference.",
-                "In Progress",
                 "Innovate to Regenerate",
                 testTagListEMS,
                 R.drawable.uprooted));
-        */
 
         return solutions;
     }
@@ -750,7 +757,7 @@ public class Solution {
     }
 
     // This is the Solution List Discover
-    public static ArrayList<Solution> solutionsDiscoverDBList = getSolutionsFromSolutionNames(getDiscoverSolutionNamesFromUserDB());
+    //public static ArrayList<Solution> solutionsDiscoverDBList = getSolutionsFromSolutionNames(getDiscoverSolutionNamesFromUserDB());
 
 
 
@@ -1010,6 +1017,7 @@ public class Solution {
     // with those with more matches at the top
     // This uses THE Algorithm
     // This can be used later in the Discover page from Challenge Detail Activity
+    /*
     public static ArrayList<Solution> getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(ArrayList<String> userTagList, String challengeName) {
 
         // Create a new empty Solution list
@@ -1090,6 +1098,7 @@ public class Solution {
 
         return solutionList;
     }
+    */
 
 
 
@@ -1149,7 +1158,7 @@ public class Solution {
         public static ArrayList<Solution> getSolutionsToDo() {
             // Create a list of challenges here
             ArrayList<Solution> solutions = new ArrayList<>();
-            /*
+
             ArrayList<String> testTagListYesOne = new ArrayList<>();
             testTagListYesOne.add("Yes");
             ArrayList<String> testTagListYesTwo = new ArrayList<>();
@@ -1158,17 +1167,15 @@ public class Solution {
             solutions.add(new Solution("Contemporary Clothing",
                     "Made by contemporaries for our changing times",
                     "Second-hand clothing shops help reduce textiles waste to landfill. Australia has 3,000 charity and social enterprise retailers that support 5,000 jobs, 33,000 volunteers, and 10,000 charity collection bins. A range of innovative products were displayed revealing the latest developments in clothing textile waste recycling and highlighting both the challenges and opportunities of addressing textile waste here in Australia.\n",
-                    "To-Do",
                     "The Great Fashion Decarbonisation",
                     testTagListYesTwo,
                     R.drawable.contemporary));
-            solutions.add(new Solution("Decarbonated Style",
-                    "A holistic overview of decarbonisation actioning",
-                    "Despite efforts to reduce emissions, the industry is on a trajectory that will exceed the 1.5-degree pathway to mitigate climate change set out by the Intergovernmental Panel on Climate Change (IPCC) and ratified in the 2015 Paris agreement. By 2023, 20% of major apparel companies by revenue committed to net zero through membership in the Fashion Charter\n",
-                    "To-Do",
-                    "The Great Fashion Decarbonisation",
-                    testTagListYesTwo,
-                    R.drawable.decarbstyle));
+//            solutions.add(new Solution("Decarbonated Style",
+//                    "A holistic overview of decarbonisation actioning",
+//                    "Despite efforts to reduce emissions, the industry is on a trajectory that will exceed the 1.5-degree pathway to mitigate climate change set out by the Intergovernmental Panel on Climate Change (IPCC) and ratified in the 2015 Paris agreement. By 2023, 20% of major apparel companies by revenue committed to net zero through membership in the Fashion Charter\n",
+//                    "The Great Fashion Decarbonisation",
+//                    testTagListYesTwo,
+//                    R.drawable.decarbstyle));
             solutions.add(new Solution("Wayfairer",
                     "Building community wealth through tourism",
                     "\"Every year in Australia, over $150m is paid to international accommodation booking platforms, with the vast majority of that money disappearing offshore. We have seen the impact of this model across Australia, with the hollowing out of communities, increasing unaffordability of housing, and the commodification of tourism that has become insensitive to its local context.\n" +
@@ -1178,20 +1185,24 @@ public class Solution {
                             "Under the model, 50% of travel booking fees are reinvested back into the local community - to be invested across three themes - people, food, and the environment. And as an impact enterprise that is owned by these same local communities, the other 50% of the fees helps to create sustainable jobs.\n" +
                             "\n" +
                             "For this project, the funding contribution from WWF would enable the piloting of the Wayfairer model in the Ballarat region, specifically to support the accommodation needs of delegates attending the 2022 Australian Regional Tourism Convention.\n",
-                    "To-Do",
                     "Innovate to Regenerate",
                     testTagListYesTwo,
                     R.drawable.wayfairer));
             solutions.add(new Solution("New Life",
                     "Pushing the boundaries of possible plant life in the public eye",
                     "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic.\n",
-                    "To-Do",
                     "Innovate to Regenerate",
                     testTagListYesTwo,
                     R.drawable.newlife));
+            solutions.add(new Solution("Faster Fashion",
+                    "Agile as they come, our solution is speed",
+                    "Here's the problem with fast fashion.\n" +
+                            "\n" +
+                            "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
+                    "The Great Fashion Decarbonisation",
+                    testTagListYesTwo,
+                    R.drawable.fasterfashion));
 
-
-             */
 
             return solutions;
     }
@@ -1200,41 +1211,44 @@ public class Solution {
     public static ArrayList<Solution> getSolutionsInProgress() {
         // Create a list of challenges here
         ArrayList<Solution> solutions = new ArrayList<>();
-        /*
+
         ArrayList<String> testTagListYesOne = new ArrayList<>();
         testTagListYesOne.add("Yes");
         ArrayList<String> testTagListYesTwo = new ArrayList<>();
         testTagListYesTwo.add("Not");
         testTagListYesTwo.add("Yes");
-        solutions.add(new Solution("Sweater Wearer",
-                "A change of wardrobe for the fashion industry",
-                "The Sweater Wearer Initiative works on the basis of bringing high quality textiles to designers that can make the most of what they're given. Each time a garment is washed as part of daily use, it releases thousands of tiny fibres that find their way through wastewater to the oceans. Although scientists have long noted microfibre or microplastics pollution, it is only now attracting wider public attention." +
+//        solutions.add(new Solution("Sweater Wearer",
+//                "A change of wardrobe for the fashion industry",
+//                "The Sweater Wearer Initiative works on the basis of bringing high quality textiles to designers that can make the most of what they're given. Each time a garment is washed as part of daily use, it releases thousands of tiny fibres that find their way through wastewater to the oceans. Although scientists have long noted microfibre or microplastics pollution, it is only now attracting wider public attention." +
+//                        "\n" +
+//                        "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
+//                "The Great Fashion Decarbonisation",
+//                testTagListYesTwo,
+//                R.drawable.sweater));
+////        solutions.add(new Solution("Pining for You",
+////                "Redfining the public's perception for the environment",
+////                "This remarkable tree escaped discovery by earlier botanists in part because the only canyon system in which trees grow is bounded by tall sandstone cliffs, and access to the plants requires use of a helicopter or climbing gear. Fewer than 100 adult trees and a few hundred seedlings presently survive in the canyon’s moist sheltered microclimate; their location is kept secret to avoid the introduction of pathogens. The trees were threatened by a bushfire that burned most of Wollemi National Park during the devastating 2019–20 fire season" +
+////                        "\n" +
+////                        "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
+////                "Innovate to Regenerate",
+////                testTagListYesTwo,
+////                R.drawable.piningforyou));
+//        solutions.add(new Solution("Up-Rooted",
+//                "Speaking for the trees, in the name of all that is good",
+//                "Biodiversity is the ‘diversity of life’ and is not only important in its own right, but also helps support the very air we breathe, the water we drink and the food we eat.\n" +
+//                        "\n" +
+//                        "Together we can make a greater positive impact on the conservation. Small, local actions can also make a huge difference.",
+//                "Innovate to Regenerate",
+//                testTagListYesTwo,
+//                R.drawable.uprooted));
+        solutions.add(new Solution("Faster Fashion",
+                "Agile as they come, our solution is speed",
+                "Here's the problem with fast fashion.\n" +
                         "\n" +
-                        "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
-                "In Progress",
+                        "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
                 "The Great Fashion Decarbonisation",
                 testTagListYesTwo,
-                R.drawable.sweater));
-        solutions.add(new Solution("Pining for You",
-                "Redfining the public's perception for the environment",
-                "This remarkable tree escaped discovery by earlier botanists in part because the only canyon system in which trees grow is bounded by tall sandstone cliffs, and access to the plants requires use of a helicopter or climbing gear. Fewer than 100 adult trees and a few hundred seedlings presently survive in the canyon’s moist sheltered microclimate; their location is kept secret to avoid the introduction of pathogens. The trees were threatened by a bushfire that burned most of Wollemi National Park during the devastating 2019–20 fire season" +
-                        "\n" +
-                        "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
-                "In Progress",
-                "Innovate to Regenerate",
-                testTagListYesTwo,
-                R.drawable.piningforyou));
-        solutions.add(new Solution("Up-Rooted",
-                "Speaking for the trees, in the name of all that is good",
-                "Biodiversity is the ‘diversity of life’ and is not only important in its own right, but also helps support the very air we breathe, the water we drink and the food we eat.\n" +
-                        "\n" +
-                        "Together we can make a greater positive impact on the conservation. Small, local actions can also make a huge difference.",
-                "In Progress",
-                "Innovate to Regenerate",
-                testTagListYesTwo,
-                R.drawable.uprooted));
-
-         */
+                R.drawable.fasterfashion));
 
         return solutions;
     }
@@ -1243,7 +1257,7 @@ public class Solution {
     public static ArrayList<Solution> getSolutionsCompleted() {
         // Create a list of challenges here
         ArrayList<Solution> solutions = new ArrayList<>();
-        /*
+
         ArrayList<String> testTagListYesOne = new ArrayList<>();
         testTagListYesOne.add("Yes");
         ArrayList<String> testTagListYesTwo = new ArrayList<>();
@@ -1254,12 +1268,9 @@ public class Solution {
                 "Here's the problem with fast fashion.\n" +
                         "\n" +
                         "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
-                "Done",
                 "The Great Fashion Decarbonisation",
                 testTagListYesTwo,
                 R.drawable.fasterfashion));
-
-         */
 
         return solutions;
     }

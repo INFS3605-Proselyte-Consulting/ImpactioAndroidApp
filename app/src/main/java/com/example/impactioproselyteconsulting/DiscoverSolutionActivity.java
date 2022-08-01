@@ -133,7 +133,7 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(intent);;
+                //startActivity(intent);;
             }
         }, 2000);
 
@@ -198,8 +198,8 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         //mAdapter = new SolutionAdapter(Solution.getAllSolutionsFromChallenge(challenge.challengeName), listener);
         // Test data for Tags
         ArrayList<String> testTagList = new ArrayList<>();
-        testTagList.add("Climate Change");
-        testTagList.add("Science");
+        testTagList.add("Technology");
+        testTagList.add("Responsible Consumption And Production");
         testTagList.add("Maths");
         testTagList.add("Astrology");
         // Should give me in this exact order
@@ -210,12 +210,13 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 //        SolutionTagMatchValue matchingSolutions = SolutionTagMatchValue.getSolutionTagMatchValue(testTagList);
 //        mAdapter = new SolutionAdapter(matchingSolutions.getSolutionList(), listener);
         //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
-        //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
+        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
 
         // This will test the database:
 
 
 
+        /*
         // TODO: Instead of passing in testTagList, pass in the user's specific tags from a database
         // Initialize the Firebase stuff again to get the UID and get the aggregated tags
 
@@ -249,6 +250,7 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 
         //mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
 
+        */
 
         recyclerView.setAdapter(mAdapter);
         System.out.println("Success");

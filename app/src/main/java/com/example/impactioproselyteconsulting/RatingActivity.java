@@ -81,7 +81,10 @@ public class RatingActivity extends AppCompatActivity {
 
 //      Locate the selected solution (to be changed when intention message is received when user clicks on curate button)
 
-        String intention = "Blazing Beauty";
+        String intention = "Faster Fashion";
+        Intent intent = getIntent();
+        Solution solution = Solution.getSolution(intent.getStringExtra("Name"));
+        intention = solution.getSolutionName();
         int ratingCount = 0 + 1;
 
 //      Retrieve solution name and description by creating an database instance and then reference
@@ -97,8 +100,8 @@ public class RatingActivity extends AppCompatActivity {
 
                 String name = dataSnapshot.child("solutionName").getValue().toString();
                 tvRatingProjectTitle.setText(name);
-                String desc = dataSnapshot.child("solutionDesc").getValue().toString();
-                tvRatingDesc.setText(desc);
+                String blurb = dataSnapshot.child("solutionBlurb").getValue().toString();
+                tvRatingDesc.setText(blurb);
 
 
             }
@@ -195,30 +198,31 @@ public class RatingActivity extends AppCompatActivity {
 
         //Create save button to add ratings to appropiate nodes in the database
         btnSave = findViewById(R.id.btnSave);
+        String finalIntention = intention;
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                        databaseReferenceCustomerInfo=  firebaseDatabaseRating.getReference("Solution/" + intention +"/" + "customerRating/" + rating + "/" + "/uid");
+                        databaseReferenceCustomerInfo=  firebaseDatabaseRating.getReference("Solution/" + finalIntention +"/" + "customerRating/" + rating + "/" + "/uid");
                         databaseReferenceCustomerInfo.setValue(uid);
 
                         //Add rating values
 
-                        databaseReferenceRating1 = firebaseDatabaseRating.getReference("Solution/" + intention +"/" + "customerRating/" + rating + "/" + "/impactRating");
+                        databaseReferenceRating1 = firebaseDatabaseRating.getReference("Solution/" + finalIntention +"/" + "customerRating/" + rating + "/" + "/impactRating");
                         databaseReferenceRating1.setValue(myRating1);
 
-                        databaseReferenceRating2 = firebaseDatabaseRating.getReference("Solution/" + intention +"/" + "customerRating/" + rating + "/" + "/feasibilityRating");
+                        databaseReferenceRating2 = firebaseDatabaseRating.getReference("Solution/" + finalIntention +"/" + "customerRating/" + rating + "/" + "/feasibilityRating");
                         databaseReferenceRating2.setValue(myRating2);
 
                         //Add comment values
 
-                        databaseReferenceComment = firebaseDatabaseRating.getReference("Solution/" + intention + "/" + "customerRating/" + rating + "/" + "/comment");
+                        databaseReferenceComment = firebaseDatabaseRating.getReference("Solution/" + finalIntention + "/" + "customerRating/" + rating + "/" + "/comment");
                         String comment = tvComment.getText().toString();
                         databaseReferenceComment.setValue(comment);
 
                         //Add sum of rating values
 
-                        databaseReferenceRatingTotal = firebaseDatabaseRating.getReference("Solution/" + intention + "/" + "customerRating/" + rating + "/" + "/totalRating");
+                        databaseReferenceRatingTotal = firebaseDatabaseRating.getReference("Solution/" + finalIntention + "/" + "customerRating/" + rating + "/" + "/totalRating");
                         databaseReferenceRatingTotal.setValue(myRating1 + myRating2);
                 Toast.makeText(RatingActivity.this,"Saved successfully",Toast.LENGTH_SHORT).show();
                     }

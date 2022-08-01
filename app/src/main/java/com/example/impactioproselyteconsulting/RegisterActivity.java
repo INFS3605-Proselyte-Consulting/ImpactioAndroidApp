@@ -188,7 +188,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 //                                databaseReferenceRegister.child("cusSolutions").child(solution.getSolutionName()).setValue(solution.getSolutionName());
 //                            }
 
-                            Toast.makeText(RegisterActivity.this,"data added",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"Data added!",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -255,7 +255,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                             databaseReferenceUserSolutionsOne.child("cusSolutions").child("Foundation").child("solutionName").setValue("Foundation");
                             databaseReferenceUserSolutionsOne.child("cusSolutions").child("Foundation").child("solutionStatus").setValue("discover");
 
-                            Toast.makeText(RegisterActivity.this,"Solutions generated 1",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(RegisterActivity.this,"Solutions generated 1",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -284,7 +284,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                             databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Sweater Wearer").child("solutionName").setValue("Sweater Wearer");
                             databaseReferenceUserSolutionsTwo.child("cusSolutions").child("Sweater Wearer").child("solutionStatus").setValue("discover");
 
-                            Toast.makeText(RegisterActivity.this,"Solutions generated 2",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(RegisterActivity.this,"Solutions generated 2",Toast.LENGTH_SHORT).show();
 
                         }
 
@@ -305,7 +305,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                             databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionName").setValue("Up-Rooted");
                             databaseReferenceUserSolutionsThree.child("cusSolutions").child("Up-Rooted").child("solutionStatus").setValue("discover");
 
-                            Toast.makeText(RegisterActivity.this,"Solutions generated 3",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(RegisterActivity.this,"Solutions generated 3",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -328,7 +328,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
                             databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wildlife First").child("solutionName").setValue("Wildlife First");
                             databaseReferenceUserSolutionsFour.child("cusSolutions").child("Wildlife First").child("solutionStatus").setValue("discover");
-                            Toast.makeText(RegisterActivity.this,"Solutions generated 4",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(RegisterActivity.this,"Solutions generated 4",Toast.LENGTH_SHORT).show();
 
                         }
 
