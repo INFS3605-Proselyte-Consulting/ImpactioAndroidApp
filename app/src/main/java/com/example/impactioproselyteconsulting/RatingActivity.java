@@ -82,7 +82,7 @@ public class RatingActivity extends AppCompatActivity {
 //      Locate the selected solution (to be changed when intention message is received when user clicks on curate button)
 
         String intention = "Blazing Beauty";
-        int ratingCount = 2 + 1;
+        int ratingCount = 0 + 1;
 
 //      Retrieve solution name and description by creating an database instance and then reference
 
