@@ -210,13 +210,14 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 //        SolutionTagMatchValue matchingSolutions = SolutionTagMatchValue.getSolutionTagMatchValue(testTagList);
 //        mAdapter = new SolutionAdapter(matchingSolutions.getSolutionList(), listener);
         //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagList(testTagList), listener);
-        mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
+
+        // ***** This is the line to uncomment for hardcoding
+        //mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(testTagList, challenge.challengeName), listener);
 
         // This will test the database:
 
 
 
-        /*
         // TODO: Instead of passing in testTagList, pass in the user's specific tags from a database
         // Initialize the Firebase stuff again to get the UID and get the aggregated tags
 
@@ -235,9 +236,11 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
 
                 System.out.println("Challenge Origin: " + challenge.getChallengeName());
 
-                mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
-
-                System.out.println("Final Solution passed in: " + Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()));
+                //mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
+                // Swap with
+                mAdapter = new SolutionAdapter(Solution.getPrioritizedSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
+                recyclerView.setAdapter(mAdapter);
+                //System.out.println("Final Solution passed in: " + Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()));
 
                 customerInfo.setCusCombinedTagList(userTagsList);
             }
@@ -249,8 +252,6 @@ public class DiscoverSolutionActivity extends AppCompatActivity {
         });
 
         //mAdapter = new SolutionAdapter(Solution.getPrioritizedDBDiscoverSolutionListFromTagListAndChallengeName(userTagsList, challenge.getChallengeName()), listener);
-
-        */
 
         recyclerView.setAdapter(mAdapter);
         System.out.println("Success");

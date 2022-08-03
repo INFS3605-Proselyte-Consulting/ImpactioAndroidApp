@@ -332,34 +332,169 @@ public class Solution {
 
 
         // Add the test data Solutions to the list
+        ArrayList<String> testTagListBewildered = new ArrayList<>();
+        testTagListBewildered.add("Biodiversity");
+        testTagListBewildered.add("Wildlife");
+        solutions.add(new Solution("Bewildered",
+                "Supporting the diversity on Planet Earth",
+                "As things stand today, leading scientists predict that one million species face extinction within mere decades. Habitat destruction and the impacts of climate change have accelerated the rate of biodiversity loss—and this crisis will surely continue unless immediate action is taken.",
+                "Innovate for Wildlife & People Challenge",
+                testTagListBewildered,
+                R.drawable.bewildered));
+        ArrayList<String> testTagListBlazingBeauty = new ArrayList<>();
+        testTagListBewildered.add("Australia");
+        testTagListBewildered.add("Bushfire");
+        testTagListBewildered.add("Climate Change");
+        solutions.add(new Solution("Blazing Beauty",
+                "A brand new perspective on bushfire regeneration",
+                "When a fire comes through, seeds drop to the forest floor and germinate to produce a new stand of trees. The aftermath of the disaster brings regeneration by producing seeds rather than sprouting recovery buds.",
+                "Bushfire Regeneration Challenge",
+                testTagListBlazingBeauty,
+                R.drawable.blazingbeauty));
+        ArrayList<String> testTagListContemporaryClothing = new ArrayList<>();
+        testTagListContemporaryClothing.add("Textiles");
+        testTagListContemporaryClothing.add("Charity");
         solutions.add(new Solution("Contemporary Clothing",
                 "Made by contemporaries for our changing times",
                 "Second-hand clothing shops help reduce textiles waste to landfill. Australia has 3,000 charity and social enterprise retailers that support 5,000 jobs, 33,000 volunteers, and 10,000 charity collection bins. A range of innovative products were displayed revealing the latest developments in clothing textile waste recycling and highlighting both the challenges and opportunities of addressing textile waste here in Australia.\n",
                 "The Great Fashion Decarbonisation",
-                testTagListWrong,
+                testTagListContemporaryClothing,
                 R.drawable.contemporary));
+        ArrayList<String> testTagListDecarbonatedStyle = new ArrayList<>();
+        testTagListDecarbonatedStyle.add("Decarbonisation");
+        testTagListDecarbonatedStyle.add("Climate Change");
+        testTagListDecarbonatedStyle.add("Textiles");
+        testTagListDecarbonatedStyle.add("Ecological");
+        testTagListDecarbonatedStyle.add("Green");
         solutions.add(new Solution("Decarbonated Style",
                 "A holistic overview of decarbonisation actioning",
                 "Despite efforts to reduce emissions, the industry is on a trajectory that will exceed the 1.5-degree pathway to mitigate climate change set out by the Intergovernmental Panel on Climate Change (IPCC) and ratified in the 2015 Paris agreement. By 2023, 20% of major apparel companies by revenue committed to net zero through membership in the Fashion Charter\n",
                 "The Great Fashion Decarbonisation",
-                testTagListHSM,
+                testTagListDecarbonatedStyle,
                 R.drawable.decarbstyle));
-        solutions.add(new Solution("Sweater Wearer",
-                "A change of wardrobe for the fashion industry",
-                "The Sweater Wearer Initiative works on the basis of bringing high quality textiles to designers that can make the most of what they're given. Each time a garment is washed as part of daily use, it releases thousands of tiny fibres that find their way through wastewater to the oceans. Although scientists have long noted microfibre or microplastics pollution, it is only now attracting wider public attention." +
-                        "\n" +
-                        "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
-                "The Great Fashion Decarbonisation",
-                testTagListEMS,
-                R.drawable.sweater));
+        ArrayList<String> testTagListFasterFashion = new ArrayList<>();
+        testTagListFasterFashion.add("Climate Change");
+        testTagListFasterFashion.add("Ecological");
+        testTagListFasterFashion.add("Green");
+        testTagListFasterFashion.add("Industry, Innovation And Infrastructure");
         solutions.add(new Solution("Faster Fashion",
                 "Agile as they come, our solution is speed",
                 "Here's the problem with fast fashion.\n" +
                         "\n" +
                         "Up until the mid-twentieth century, the fashion industry ran on four seasons a year: fall, winter, spring, and summer. Designers would work many months ahead to plan for each season and predict the styles they believed customers would want. This method, although more methodical than fashion today, took away agency from the wearers. Before fashion became accessible to the masses, it was prescribed to high society, and there were rules to be followed.",
                 "The Great Fashion Decarbonisation",
-                testTagListFF,
+                testTagListFasterFashion,
                 R.drawable.fasterfashion));
+        ArrayList<String> testTagListFoundation = new ArrayList<>();
+        testTagListFoundation.add("Architechture");
+        testTagListFoundation.add("Sustainability");
+        testTagListFoundation.add("Construction");
+        testTagListFoundation.add("Engineering");
+        testTagListFoundation.add("Sustainable Cities And Communities");
+        solutions.add(new Solution("Foundation",
+                "Setting up the Foundation for the Future",
+                "Big data will continue to be analyzed to enable more proficient use of city services, streets, and public transportation. The advances in Low Power Wide Area Networks and 5G will provide better connectivity over a vast number of devices and long distances. Urban apps will merge with alternative reality (AR) technology to make intelligent, personalized suggestions for a highly intuitive urban experience.",
+                "Cities of Tomorrow",
+                testTagListFoundation,
+                R.drawable.foundation));
+        ArrayList<String> testTagListMetropolitic = new ArrayList<>();
+        testTagListMetropolitic.add("Architechture");
+        testTagListMetropolitic.add("Technology");
+        testTagListMetropolitic.add("Peace, Justice And Strong Institutions");
+        testTagListMetropolitic.add("Engineering");
+        testTagListMetropolitic.add("Sustainable Cities And Communities");
+        solutions.add(new Solution("Metropolitic",
+                "Building blocks for a future utopia",
+                "Space is of the essence, but also low energy and building costs. Underground structures cover it all. How? They eliminate the need for foundations, which cuts construction costs. Plus, the temperature remains stable, reducing heating and cooling bills by up to 80%. Subterranean construction may also prove more resilient in locations where natural disasters prevail.",
+                "Cities of Tomorrow",
+                testTagListMetropolitic,
+                R.drawable.metropolitic));
+        ArrayList<String> testTagListNewLife = new ArrayList<>();
+        testTagListNewLife.add("Organic");
+        testTagListNewLife.add("Green");
+        testTagListNewLife.add("Community");
+        solutions.add(new Solution("New Life",
+                "Pushing the boundaries of possible plant life in the public eye",
+                "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic",
+                "Innovate to Regenerate",
+                testTagListNewLife,
+                R.drawable.newlife));
+        ArrayList<String> testTagListPiningForYou = new ArrayList<>();
+        testTagListPiningForYou.add("Forestry");
+        testTagListPiningForYou.add("Green");
+        testTagListPiningForYou.add("Ecological");
+        testTagListPiningForYou.add("Science");
+        testTagListPiningForYou.add("Industry, Innovation And Infrastructure");
+        solutions.add(new Solution("Pining for You",
+                "Redefining the public's perception for the environment",
+                "This remarkable tree escaped discovery by earlier botanists in part because the only canyon system in which trees grow is bounded by tall sandstone cliffs, and access to the plants requires use of a helicopter or climbing gear. Fewer than 100 adult trees and a few hundred seedlings presently survive in the canyon’s moist sheltered microclimate; their location is kept secret to avoid the introduction of pathogens. The trees were threatened by a bushfire that burned most of Wollemi National Park during the devastating 2019–20 fire season" +
+                        "\n" +
+                        "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
+                "Innovate to Regenerate",
+                testTagListPiningForYou,
+                R.drawable.piningforyou));
+        ArrayList<String> testTagListRegrowth = new ArrayList<>();
+        testTagListRegrowth.add("Australia");
+        testTagListRegrowth.add("Bushfire");
+        testTagListRegrowth.add("Climate  Change");
+        testTagListRegrowth.add("Ecological");
+        solutions.add(new Solution("Regrowth",
+                "A new overview of the regrowth cycle for bushfires",
+                "Forests in some subalpine areas near Mount Kosciuszko and in Victoria’s East Gippsland region are struggling to recover from the 2019-20 bushfires, according to researchers examining the aftermath of the disaster. But eucalypts in forested areas of the New South Wales south coast appear to be recovering well, say the scientists, who are tracking the sites using data gathered by groups of citizen scientists.",
+                "Bushfire Regeneration Challenge",
+                testTagListRegrowth,
+                R.drawable.regrowth));
+        ArrayList<String> testTagListSweaterWearer = new ArrayList<>();
+        testTagListSweaterWearer.add("Biodegradable");
+        testTagListSweaterWearer.add("Green");
+        testTagListSweaterWearer.add("Textiles");
+        testTagListSweaterWearer.add("Technology");
+        testTagListSweaterWearer.add("No Poverty");
+        solutions.add(new Solution("Sweater Wearer",
+                "A change of wardrobe for the fashion industry",
+                "The Sweater Wearer Initiative works on the basis of bringing high quality textiles to designers that can make the most of what they're given. Each time a garment is washed as part of daily use, it releases thousands of tiny fibres that find their way through wastewater to the oceans. Although scientists have long noted microfibre or microplastics pollution, it is only now attracting wider public attention." +
+                        "\n" +
+                        "100 billion garments are produced every year, with around a third of them ending up in landfills within the first initial year of their purchase.The textile industry is estimated to emit 8% of carbon emissions, and 20% of the world's waste water.",
+                "The Great Fashion Decarbonisation",
+                testTagListSweaterWearer,
+                R.drawable.sweater));
+        ArrayList<String> testTagListUnitedFuture = new ArrayList<>();
+        testTagListUnitedFuture.add("Australia");
+        testTagListUnitedFuture.add("NSW");
+        testTagListUnitedFuture.add("UN");
+        testTagListUnitedFuture.add("Community");
+        testTagListUnitedFuture.add("Engineering");
+        testTagListUnitedFuture.add("Technology");
+        testTagListUnitedFuture.add("Science");
+        solutions.add(new Solution("United Future",
+                "Moving together towards a United Future",
+                "Exploring the SDGs as a social imaginary of a moral order and linking this to a framework of ‘localizing human rights’, we determine whether and in what way the SDGs might be a source of inspiration in some pioneering city-initiatives.",
+                "Sustainability Advantage Impact Challenge",
+                testTagListUnitedFuture,
+                R.drawable.unitedfuture));
+        ArrayList<String> testTagListVoiceOfNature = new ArrayList<>();
+        testTagListVoiceOfNature.add("Ecological");
+        testTagListVoiceOfNature.add("Green");
+        testTagListVoiceOfNature.add("Wildlife");
+        testTagListVoiceOfNature.add("Forestry");
+        testTagListVoiceOfNature.add("Biodiversity");
+        testTagListVoiceOfNature.add("Technology");
+        testTagListVoiceOfNature.add("Science");
+        solutions.add(new Solution("Voice Of Nature",
+                "On behalf of Nature, we stand","We rely on wilderness not only to inspire and enjoy but also to protect our watersheds, clean the air we breathe, and provide a home for the diverse species that enrich our world."
+                ,"Innovate for Wildlife & People Challenge",
+                testTagListVoiceOfNature,
+                R.drawable.voiceofnature));
+        ArrayList<String> testTagListWayfairer = new ArrayList<>();
+        testTagListWayfairer.add("Tourism");
+        testTagListWayfairer.add("Community");
+        testTagListWayfairer.add("Sustainability");
+        testTagListWayfairer.add("Accommodation");
+        testTagListWayfairer.add("Technology");
+        testTagListWayfairer.add("Engineering");
+        testTagListWayfairer.add("Science");
+        testTagListWayfairer.add("Maths");
+        testTagListWayfairer.add("No Poverty");
         solutions.add(new Solution("Wayfairer",
                 "Building community wealth through tourism",
                 "\"Every year in Australia, over $150m is paid to international accommodation booking platforms, with the vast majority of that money disappearing offshore. We have seen the impact of this model across Australia, with the hollowing out of communities, increasing unaffordability of housing, and the commodification of tourism that has become insensitive to its local context.\n" +
@@ -370,30 +505,17 @@ public class Solution {
                         "\n" +
                         "For this project, the funding contribution from WWF would enable the piloting of the Wayfairer model in the Ballarat region, specifically to support the accommodation needs of delegates attending the 2022 Australian Regional Tourism Convention.\n",
                 "Innovate to Regenerate",
-                testTagListTCG,
+                testTagListWayfairer,
                 R.drawable.wayfairer));
-        solutions.add(new Solution("New Life",
-                "Pushing the boundaries of possible plant life in the public eye",
-                "In 2020, the government of Cameroon announced an initiative to log nearly 170,000 acres of the Ebo Forest's 500,000 acres. The forest is home to a variety of endangered species, like critically endangered western gorillas and endangered forest elephants, sending conservationists into a panic.\n",
-                "Innovate to Regenerate",
-                testTagListAstrology,
-                R.drawable.newlife));
-        solutions.add(new Solution("Pining for You",
-                "Redfining the public's perception for the environment",
-                "This remarkable tree escaped discovery by earlier botanists in part because the only canyon system in which trees grow is bounded by tall sandstone cliffs, and access to the plants requires use of a helicopter or climbing gear. Fewer than 100 adult trees and a few hundred seedlings presently survive in the canyon’s moist sheltered microclimate; their location is kept secret to avoid the introduction of pathogens. The trees were threatened by a bushfire that burned most of Wollemi National Park during the devastating 2019–20 fire season" +
-                        "\n" +
-                        "The trees that produced these pollen grains began disappearing from the fossil record within the last 10 million years when other species of Wollemia gradually became extinct.",
-                "Innovate to Regenerate",
-                testTagListHSM,
-                R.drawable.piningforyou));
-        solutions.add(new Solution("Up-Rooted",
-                "Speaking for the trees, in the name of all that is good",
-                "Biodiversity is the ‘diversity of life’ and is not only important in its own right, but also helps support the very air we breathe, the water we drink and the food we eat.\n" +
-                        "\n" +
-                        "Together we can make a greater positive impact on the conservation. Small, local actions can also make a huge difference.",
-                "Innovate to Regenerate",
-                testTagListEMS,
-                R.drawable.uprooted));
+        ArrayList<String> testTagListWildlifeFirst = new ArrayList<>();
+        testTagListWildlifeFirst.add("Community");
+        testTagListWildlifeFirst.add("Climate Change");
+        testTagListWildlifeFirst.add("Wildlife");
+        solutions.add(new Solution("Wildlife First",
+                "Strengthening our ties to our wildlife", "We take responsibility for the animals in our care and understand the role we must play in the conservation of endangered creatures and habitats around the world. We work to world-class welfare standards through our animal care network.",
+                "Innovate for Wildlife & People Challenge",
+                testTagListWildlifeFirst,
+                R.drawable.wildlifefirst));
 
         return solutions;
     }
