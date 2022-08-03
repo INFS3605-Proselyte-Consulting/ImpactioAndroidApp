@@ -6,8 +6,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ public class SolutionDetailActivity extends AppCompatActivity {
 
     private ImageView SolutionImgViewDetail;
     private TextView SolutionNameTxtDetail, SolutionBlurbTxtDetail, descriptionLabel, SolutionDescTxtDetail;
+    private ListView TagsListView;
     private Button applySolutionBtn, btnBackSolution;
     private CardView SolCV;
 
@@ -76,6 +79,7 @@ public class SolutionDetailActivity extends AppCompatActivity {
         descriptionLabel.startAnimation(animSlideIn);
         SolutionDescTxtDetail = findViewById(R.id.SolutionDescTxtDetail);
         SolutionDescTxtDetail.startAnimation(animSlideIn);
+        TagsListView = findViewById(R.id.tagsListView);
         applySolutionBtn = findViewById(R.id.applySolutionBtn);
         applySolutionBtn.startAnimation(animSlideIn);
         btnBackSolution = findViewById(R.id.btnBackSolution);
@@ -150,6 +154,13 @@ public class SolutionDetailActivity extends AppCompatActivity {
         SolutionNameTxtDetail.setText(solution.getSolutionName());
         SolutionBlurbTxtDetail.setText(solution.getSolutionBlurb());
         SolutionDescTxtDetail.setText(solution.getSolutionDesc());
+        ArrayAdapter<String> arr;
+        arr
+                = new ArrayAdapter<String>(
+                this,
+                com.airbnb.lottie.R.layout.support_simple_spinner_dropdown_item,
+                solution.getSolutionTagsList());
+        TagsListView.setAdapter(arr);
     }
 
 }

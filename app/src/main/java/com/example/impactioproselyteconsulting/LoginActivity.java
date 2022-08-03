@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            if(uid.equals("TuoPYIxWW7XhqWB6HHWaj4nOoUM2")){
+                            if(uid.equals("On3A3lyM8gh9XfDSjP5iypbVcwp1")){
                                 Log.d(TAG, "Admin login processed. Welcome administrator.");
                                 startActivity(new Intent(LoginActivity.this,AdminDashboardActivity.class));
                                 finish();
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                             // This will either send them to the topic activity screen OR it will display an error on console. This is also the case for any Toasts below.
                             else if(task.isSuccessful()){
                                 Log.d(TAG, "Login button is clicked, launch Topic Activity.");
-                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                startActivity(new Intent(LoginActivity.this,ProfileActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "ERROR! Your details are invalid! Please try again. ", Toast.LENGTH_SHORT).show();
