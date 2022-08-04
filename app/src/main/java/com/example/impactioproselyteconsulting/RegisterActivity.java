@@ -66,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         customerInfoRegister = new CustomerInfo();
 
         //Toasts just give a message on the screen
-        Toast.makeText(RegisterActivity.this, "You can register now", Toast.LENGTH_LONG).show();
+        Toast.makeText(RegisterActivity.this, "Registration ready", Toast.LENGTH_LONG).show();
 
 
         //Animations
@@ -123,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 if (TextUtils.isEmpty(textEmail) && TextUtils.isEmpty(textPassword) && TextUtils.isEmpty(textName)) {
                     // if the text fields are empty
                     // then show the below message.
-                    Toast.makeText(RegisterActivity.this, "Please add some data.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Added some data.", Toast.LENGTH_SHORT).show();
                 } else {
                     // else call the method to add
                     // data to our database.
@@ -344,7 +344,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(RegisterActivity.this,"Registration Failed Lol",Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this,"Registration Failed. Please use a valid email.",Toast.LENGTH_LONG).show();
                 }
             }
         });
